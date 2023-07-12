@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Hotel extends Model
+{
+    use HasFactory, SoftDeletes;
+
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'address',
+        'phone',
+        'email',
+        'rating',
+        'city_id',
+        'country_id',
+        'photo_gallery_id',
+    ];
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function photoGallery(): BelongsTo
+    {
+        return $this->belongsTo(PhotoGallery::class);
+    }
+
+}
