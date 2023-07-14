@@ -27,7 +27,6 @@ class TravelInsuranceFactory extends Factory
             'coverage_end_date' => fake()->dateTimeBetween($date, '+1 year')->format('Y-m-d'),
             'insurance_company' => fake()->name,
             'user_id' => User::inRandomOrder()->value('id'),
-            'photo_gallery_id' => null,
         ];
     }
 }

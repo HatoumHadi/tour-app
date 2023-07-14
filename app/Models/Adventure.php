@@ -25,7 +25,6 @@ class Adventure extends Model
         'duration',
         'city_id',
         'user_id',
-        'photo_gallery_id',
     ];
 
     public function user(): BelongsTo
@@ -38,8 +37,8 @@ class Adventure extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function photoGallery(): BelongsTo
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
-        return $this->belongsTo(PhotoGallery::class);
+        return $this->morphMany(PhotoGallery::class, 'tag');
     }
 }

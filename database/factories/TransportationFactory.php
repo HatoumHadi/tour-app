@@ -30,7 +30,6 @@ class TransportationFactory extends Factory
             'from' => fake()->name,
             'to' => fake()->name,
             'user_id' => User::inRandomOrder()->value('id'),
-            'photo_gallery_id' => null,
         ];
     }
 }

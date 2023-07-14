@@ -22,7 +22,6 @@ return new class extends Migration {
             $table->string('from')->nullable();
             $table->string('to')->nullable();
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(PhotoGallery::class)->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

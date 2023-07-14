@@ -25,7 +25,6 @@ class Hotel extends Model
         'rating',
         'city_id',
         'country_id',
-        'photo_gallery_id',
     ];
 
     public function city(): BelongsTo
@@ -38,9 +37,9 @@ class Hotel extends Model
         return $this->belongsTo(Country::class);
     }
 
-    public function photoGallery(): BelongsTo
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
-        return $this->belongsTo(PhotoGallery::class);
+        return $this->morphMany(PhotoGallery::class, 'tag');
     }
 
 }

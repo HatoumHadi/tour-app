@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages\TransportationResource\Pages;
 use App\Filament\Resources\Packages\TransportationResource\RelationManagers;
+use App\Filament\Resources\Packages\TransportationResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\PhotoGallery;
 use App\Models\Transportation;
@@ -29,9 +30,6 @@ class TransportationResource extends Resource
                 Forms\Components\Select::make('user_id')
                     ->relationship('user', 'name')
                     ->required(),
-                Forms\Components\Select::make('photo_gallery_id')
-                    ->options(PhotoGallery::where('tag',Transportation::class)->pluck('media','id'))
-                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -52,19 +50,54 @@ class TransportationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\ImageColumn::make('photoGallery.media'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('type'),
-                Tables\Columns\TextColumn::make('company'),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('type')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('company')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('departure_date')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('return_date')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('from'),
-                Tables\Columns\TextColumn::make('to'),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('from')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('to')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -84,7 +117,7 @@ class TransportationResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 

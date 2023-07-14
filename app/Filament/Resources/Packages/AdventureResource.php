@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages\AdventureResource\Pages;
 use App\Filament\Resources\Packages\AdventureResource\RelationManagers;
 use App\Filament\Resources\Packages;
+use App\Filament\Resources\Packages\AdventureResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\Hotel;
 use App\Models\PhotoGallery;
@@ -32,10 +33,7 @@ class AdventureResource extends Resource
                 Forms\Components\Select::make('user_id')
                     ->relationship('user', 'name')
                     ->required(),
-                Forms\Components\Select::make('photo_gallery_id')
-                    ->options(PhotoGallery::where('tag',Adventure::class)->pluck('media','id'))
-                    ->required(),
-                Forms\Components\TextInput::make('title')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('description')
@@ -53,15 +51,42 @@ class AdventureResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('city.name'),
-                Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\ImageColumn::make('photoGallery.media'),
-                Tables\Columns\TextColumn::make('title'),
-                Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('price'),
-                Tables\Columns\TextColumn::make('duration'),
+                Tables\Columns\TextColumn::make('city.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('user.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('price')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('duration')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -81,7 +106,7 @@ class AdventureResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages\TravelInsuranceResource\Pages;
 use App\Filament\Resources\Packages\TravelInsuranceResource\RelationManagers;
+use App\Filament\Resources\Packages\TravelInsuranceResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\PhotoGallery;
 use App\Models\TravelInsurance;
@@ -29,9 +30,6 @@ class TravelInsuranceResource extends Resource
                 Forms\Components\Select::make('user_id')
                     ->relationship('user', 'name')
                     ->required(),
-                Forms\Components\Select::make('photo_gallery_id')
-                    ->options(PhotoGallery::where('tag',TravelInsurance::class)->pluck('media','id'))
-                    ->required(),
                 Forms\Components\TextInput::make('policy_number')
                     ->required()
                     ->maxLength(255),
@@ -49,16 +47,39 @@ class TravelInsuranceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\ImageColumn::make('photoGallery.media'),
-                Tables\Columns\TextColumn::make('policy_number'),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('policy_number')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('coverage_start_date')
-                    ->date(),
+                    ->date()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('coverage_end_date')
-                    ->date(),
-                Tables\Columns\TextColumn::make('insurance_company'),
+                    ->date()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('insurance_company')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -78,7 +99,7 @@ class TravelInsuranceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 

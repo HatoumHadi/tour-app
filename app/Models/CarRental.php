@@ -26,7 +26,6 @@ class CarRental extends Model
         'price',
         'user_id',
         'car_id',
-        'photo_gallery_id',
     ];
 
     public function user(): BelongsTo
@@ -34,8 +33,8 @@ class CarRental extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function photoGallery(): BelongsTo
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
-        return $this->belongsTo(PhotoGallery::class);
+        return $this->morphMany(PhotoGallery::class, 'tag');
     }
 }

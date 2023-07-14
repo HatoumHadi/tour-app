@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('photo_galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('tag');
+            $table->string('tag_type');
             $table->unsignedBigInteger('tag_id')->nullable();
             $table->string('media');
             $table->timestamps();

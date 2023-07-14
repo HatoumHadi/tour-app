@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('rating');
             $table->foreignIdFor(City::class)->constrained();
             $table->foreignIdFor(Country::class)->constrained();
-            $table->foreignIdFor(PhotoGallery::class)->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

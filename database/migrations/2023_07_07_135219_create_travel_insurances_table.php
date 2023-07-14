@@ -21,7 +21,6 @@ return new class extends Migration
             $table->date('coverage_end_date');
             $table->string('insurance_company');
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(PhotoGallery::class)->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

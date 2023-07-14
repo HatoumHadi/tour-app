@@ -8,10 +8,8 @@ use App\Models\Adventure;
 use App\Models\CarRental;
 use App\Models\Hotel;
 use App\Models\PhotoGallery;
-use App\Models\Ticket;
 use App\Models\Transportation;
 use App\Models\TravelInsurance;
-use App\Models\Visa;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -30,7 +28,7 @@ class PhotoGalleryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('tag')
+                Forms\Components\Select::make('tag_type')
                     ->options([
                         Adventure::class => 'Adventure',
                         CarRental::class => 'CarRental',
@@ -43,29 +41,51 @@ class PhotoGalleryResource extends Resource
                 Forms\Components\Select::make('tag_id')
                     ->options(
                         function (callable $get) {
-                            if ($get('tag')) {
-                                return $get('tag')::pluck('name','id');
+                            if ($get('tag_type')) {
+                                return $get('tag_type')::pluck('name', 'id');
                             } else {
                                 return [];
                             }
                         }
                     )
                     ->required(),
+
                 Forms\Components\FileUpload::make('media')
+                    ->disk('public')
+                    ->directory('images')
+                    ->multiple()
+                    ->visibility('public')
                     ->preserveFilenames()
                     ->required(),
             ]);
     }
 
+
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('tag'),
-                Tables\Columns\TextColumn::make('tag_id'),
-                Tables\Columns\TextColumn::make('media'),
+                Tables\Columns\TextColumn::make('tag_type')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('tag_id')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\ImageColumn::make('media')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')

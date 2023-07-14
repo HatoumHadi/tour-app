@@ -28,7 +28,6 @@ class CarRentalFactory extends Factory
             'num_of_days' => fake()->numberBetween(1,30),
             'price' => fake()->numberBetween(1,2000),
             'user_id' => User::inRandomOrder()->value('id'),
-            'photo_gallery_id' => null,
         ];
     }
 }

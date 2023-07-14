@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('num_of_days');
             $table->string('price');
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(PhotoGallery::class)->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

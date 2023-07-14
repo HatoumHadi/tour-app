@@ -23,7 +23,6 @@ class TravelInsurance extends Model
         'coverage_end_date',
         'insurance_company',
         'user_id',
-        'photo_gallery_id',
     ];
 
     public function user(): BelongsTo
@@ -31,8 +30,8 @@ class TravelInsurance extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function photoGallery(): BelongsTo
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
     {
-        return $this->belongsTo(PhotoGallery::class);
+        return $this->morphMany(PhotoGallery::class, 'tag');
     }
 }

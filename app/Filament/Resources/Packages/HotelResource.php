@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Packages;
 
 use App\Filament\Resources\Packages\HotelResource\Pages;
 use App\Filament\Resources\Packages;
+use App\Filament\Resources\Packages\HotelResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Hotel;
 use App\Models\PhotoGallery;
 use Filament\Forms;
@@ -31,9 +32,6 @@ class HotelResource extends Resource
                 Forms\Components\Select::make('country_id')
                     ->relationship('country', 'name')
                     ->required(),
-                Forms\Components\Select::make('photo_gallery_id')
-                    ->options(PhotoGallery::where('tag',Hotel::class)->pluck('media','id'))
-                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -58,16 +56,47 @@ class HotelResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('city.name'),
-                Tables\Columns\TextColumn::make('country.name'),
-                Tables\Columns\ImageColumn::make('photoGallery.media'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('address'),
-                Tables\Columns\TextColumn::make('phone'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('rating'),
+                Tables\Columns\TextColumn::make('city.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('country.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('address')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('rating')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -87,7 +116,7 @@ class HotelResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 

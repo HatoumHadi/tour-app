@@ -25,7 +25,6 @@ class AdventureFactory extends Factory
             'duration' => fake()->numberBetween(1,24),
             'city_id' => City::inRandomOrder()->value('id'),
             'user_id' => User::inRandomOrder()->value('id'),
-            'photo_gallery_id' => null,
         ];
     }
 }

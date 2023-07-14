@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('duration');
             $table->foreignIdFor(City::class)->constrained();
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(PhotoGallery::class)->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

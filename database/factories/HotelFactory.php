@@ -27,7 +27,6 @@ class HotelFactory extends Factory
             'rating' => fake()->numberBetween(1,5),
             'city_id' => City::inRandomOrder()->value('id'),
             'country_id' => Country::inRandomOrder()->value('id'),
-            'photo_gallery_id' => null,
         ];
     }
 }

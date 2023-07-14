@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages\CarRentalResource\Pages;
 use App\Filament\Resources\Packages\CarRentalResource\RelationManagers;
 use App\Filament\Resources\Packages;
+use App\Filament\Resources\Packages\CarRentalResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\CarRental;
 use App\Models\PhotoGallery;
@@ -39,9 +40,6 @@ class CarRentalResource extends Resource
                         'off-road vehicle'
                     ])
                     ->required(),
-                Forms\Components\Select::make('photo_gallery_id')
-                    ->options(PhotoGallery::where('tag',CarRental::class)->pluck('media','id'))
-                    ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -62,18 +60,49 @@ class CarRentalResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user.name'),
-                Tables\Columns\TextColumn::make('type'),
-                Tables\Columns\ImageColumn::make('photoGallery.media'),
-                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('type')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('start_date')
-                    ->date(),
+                    ->date()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('end_date')
-                    ->date(),
-                Tables\Columns\TextColumn::make('num_of_days'),
-                Tables\Columns\TextColumn::make('price'),
+                    ->date()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('num_of_days')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
+                Tables\Columns\TextColumn::make('price')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('deleted_at')
@@ -93,7 +122,7 @@ class CarRentalResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 
