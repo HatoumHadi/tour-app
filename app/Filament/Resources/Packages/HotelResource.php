@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\Packages;
 
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Filament\Resources\Packages\HotelResource\Pages;
 use App\Filament\Resources\Packages;
-use App\Filament\Resources\Packages\HotelResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Hotel;
 use App\Models\PhotoGallery;
 use Filament\Forms;
@@ -96,11 +96,11 @@ class HotelResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+//
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime(),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime(),
             ])
             ->filters([
                 //

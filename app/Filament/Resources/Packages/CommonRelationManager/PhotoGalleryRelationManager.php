@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Packages\HotelResource\RelationManagers;
+namespace App\Filament\Resources\Packages\CommonRelationManager;
 
-use App\Models\Hotel;
+use App\Models\Adventure;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Contracts\HasRelationshipTable;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PhotoGalleryRelationManager extends RelationManager
 {
@@ -19,12 +17,14 @@ class PhotoGalleryRelationManager extends RelationManager
 
     protected static ?string $recordTitleAttribute = 'media';
 
+    protected $listeners = ['refresh' => '$refresh'];
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Hidden::make('tag_type')
-                    ->default(Hotel::class),
+                    ->default(Adventure::class),
 
                 Forms\Components\Hidden::make('tag_id')
                     ->default(function (RelationManager $livewire): int {
@@ -47,7 +47,7 @@ class PhotoGalleryRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('tag_type'),
                 Tables\Columns\TextColumn::make('tag_id'),
-                Tables\Columns\ImageColumn::make('media'),
+                Tables\Columns\TextColumn::make('media'),
             ])
             ->filters([
                 //

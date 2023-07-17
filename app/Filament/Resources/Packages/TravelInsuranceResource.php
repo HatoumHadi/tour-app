@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Packages;
 
 use App\Filament\Resources\Packages;
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Filament\Resources\Packages\TravelInsuranceResource\Pages;
 use App\Filament\Resources\Packages\TravelInsuranceResource\RelationManagers;
-use App\Filament\Resources\Packages\TravelInsuranceResource\RelationManagers\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\PhotoGallery;
 use App\Models\TravelInsurance;
@@ -79,11 +79,11 @@ class TravelInsuranceResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+//
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime(),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime(),
             ])
             ->filters([
                 //

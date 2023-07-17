@@ -2,13 +2,10 @@
 
 namespace App\Filament\Resources\Packages;
 
-use App\Filament\Resources\Packages\AdventureResource\Pages;
-use App\Filament\Resources\Packages\AdventureResource\RelationManagers;
 use App\Filament\Resources\Packages;
-use App\Filament\Resources\Packages\AdventureResource\RelationManagers\PhotoGalleryRelationManager;
+use App\Filament\Resources\Packages\AdventureResource\RelationManagers;
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Models\Adventure;
-use App\Models\Hotel;
-use App\Models\PhotoGallery;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -86,11 +83,11 @@ class AdventureResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+//
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime(),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime(),
             ])
             ->filters([
                 //

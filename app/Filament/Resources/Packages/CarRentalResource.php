@@ -5,7 +5,7 @@ namespace App\Filament\Resources\Packages;
 use App\Filament\Resources\Packages\CarRentalResource\Pages;
 use App\Filament\Resources\Packages\CarRentalResource\RelationManagers;
 use App\Filament\Resources\Packages;
-use App\Filament\Resources\Packages\CarRentalResource\RelationManagers\PhotoGalleryRelationManager;
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Models\Adventure;
 use App\Models\CarRental;
 use App\Models\PhotoGallery;
@@ -102,11 +102,11 @@ class CarRentalResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+//
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime(),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime(),
             ])
             ->filters([
                 //

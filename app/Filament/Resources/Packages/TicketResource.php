@@ -129,11 +129,11 @@ class TicketResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+//
+//                Tables\Columns\TextColumn::make('updated_at')
+//                    ->dateTime(),
+//                Tables\Columns\TextColumn::make('deleted_at')
+//                    ->dateTime(),
             ])
             ->filters([
                 //
