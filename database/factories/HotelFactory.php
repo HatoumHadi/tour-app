@@ -20,8 +20,12 @@ class HotelFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name,
-            'address' => fake()->address,
+            'name' => [
+                'en' => fake()->name
+            ],
+            'address' => [
+                'en' => fake()->address
+            ],
             'phone' => fake()->phoneNumber,
             'email' => fake()->email,
             'rating' => fake()->numberBetween(1,5),

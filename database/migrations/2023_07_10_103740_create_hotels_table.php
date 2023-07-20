@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
+            $table->json('name');
+            $table->json('address');
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('rating');

@@ -23,9 +23,19 @@ class PackageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
+                Forms\Components\TextInput::make('title.ar')
+                    ->label('Arabic Title')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('title.en')
+                    ->label('English Title')
+                    ->maxLength(255)
                     ->required(),
-                Forms\Components\TextInput::make('description')
+                Forms\Components\TextInput::make('description.ar')
+                    ->label('Arabic Description')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('description.en')
+                    ->label('English Description')
+                    ->maxLength(255)
                     ->required(),
                 Forms\Components\DatePicker::make('date')
                     ->required(),

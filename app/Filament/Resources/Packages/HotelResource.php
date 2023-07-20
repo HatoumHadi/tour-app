@@ -32,10 +32,18 @@ class HotelResource extends Resource
                 Forms\Components\Select::make('country_id')
                     ->relationship('country', 'name')
                     ->required(),
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name.ar')
+                    ->label('Arabic Name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('name.en')
+                    ->label('English Name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('address')
+                Forms\Components\TextInput::make('address.ar')
+                    ->label('Arabic Address')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('address.en')
+                    ->label('English Address')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('phone')

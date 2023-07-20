@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class Adventure extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasTranslations, HasFactory, SoftDeletes;
 
 
     /**
@@ -25,6 +26,17 @@ class Adventure extends Model
         'duration',
         'city_id',
         'user_id',
+    ];
+
+
+    public array $translatable = [
+        'name',
+        'description',
+    ];
+
+    protected $casts = [
+        'name' => 'json',
+        'description' => 'json'
     ];
 
     public function user(): BelongsTo

@@ -30,10 +30,18 @@ class AdventureResource extends Resource
                 Forms\Components\Select::make('user_id')
                     ->relationship('user', 'name')
                     ->required(),
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name.ar')
+                    ->label('Arabic Name')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('name.en')
+                    ->label('English Name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('description')
+                Forms\Components\Textarea::make('description.ar')
+                    ->label('Arabic Description')
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description.en')
+                    ->label('English Description')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('price')
@@ -83,11 +91,6 @@ class AdventureResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-//
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->dateTime(),
-//                Tables\Columns\TextColumn::make('deleted_at')
-//                    ->dateTime(),
             ])
             ->filters([
                 //
@@ -99,6 +102,7 @@ class AdventureResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
+
 
     public static function getRelations(): array
     {

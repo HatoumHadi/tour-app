@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('adventures', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
+            $table->json('name');
+            $table->json('description');
             $table->double('price');
             $table->string('duration');
             $table->foreignIdFor(City::class)->constrained();

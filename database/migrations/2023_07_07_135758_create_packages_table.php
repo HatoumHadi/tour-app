@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
+            $table->json('title');
+            $table->json('description');
             $table->date('date');
             $table->string('duration');
             $table->double('price');

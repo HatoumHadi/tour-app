@@ -19,8 +19,12 @@ class AdventureFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name,
-            'description' => fake()->sentence,
+            'name' => [
+                'en' => fake()->name,
+            ],
+            'description' => [
+                'en' => fake()->sentence,
+            ],
             'price' => fake()->numberBetween(1,100),
             'duration' => fake()->numberBetween(1,24),
             'city_id' => City::inRandomOrder()->value('id'),

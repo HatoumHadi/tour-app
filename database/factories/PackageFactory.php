@@ -17,8 +17,12 @@ class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->name,
-            'description' => fake()->sentence,
+            'title' => [
+                'en' => fake()->name
+            ],
+            'description' => [
+                'en' => fake()->sentence
+            ],
             'date' => fake()->date,
             'duration' => fake()->numberBetween(1,24),
             'price' => fake()->numberBetween(1,10000),

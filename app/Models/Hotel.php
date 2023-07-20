@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Translatable\HasTranslations;
 
 class Hotel extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasTranslations, HasFactory, SoftDeletes;
 
 
     /**
@@ -25,6 +26,16 @@ class Hotel extends Model
         'rating',
         'city_id',
         'country_id',
+    ];
+
+    public array $translatable = [
+        'name',
+        'address',
+    ];
+
+    protected $casts = [
+        'name' => 'json',
+        'address' => 'json'
     ];
 
     public function city(): BelongsTo
