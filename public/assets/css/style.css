@@ -3026,7 +3026,7 @@ position: relative;
 =========================*/
 /* --Common Banner-- */
 #common_banner {
-    background-image: url('common-banner.png');
+    background-image: url('../img/banner/common-banner.png');
     padding: 200px 0 130px 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -3985,7 +3985,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 #consultation_area {
-    background-image: url('counter_bg.png');
+    background-image: url('../img/common/counter_bg.png');
     padding: 150px 0 220px 0;
     background-repeat: no-repeat;
     background-size: cover;
