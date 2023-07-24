@@ -31,6 +31,46 @@ Route::get('/flight-booking-submission', function () {
     return view('components.pages.flight.flight-booking-submission');
 })->name('flight-booking-submission');
 
+Route::get('/hotels', function () {
+    return view('components.pages.hotel.hotels');
+})->name('hotels');
+
+Route::get('/hotel-details', function () {
+    return view('components.pages.hotel.hotel-details');
+})->name('hotel-details');
+
+Route::get('/visa-info', function () {
+    return view('components.pages.visa.visa-info');
+})->name('visa-info');
+
+Route::get('/visa-details', function () {
+    return view('components.pages.visa.visa-details');
+})->name('visa-details');
+
+Route::get('/visa-application', function () {
+    return view('components.pages.visa.visa-application');
+})->name('visa-application');
+
+Route::get('/travel-insurance', function () {
+    return view('components.pages.travel-insurance.insurance');
+})->name('travel-insurance');
+
+Route::get('/dashboard', function () {
+    return view('components.pages.packages.dashboard');
+})->name('dashboard');
+
+Route::get('/package-details', function () {
+    return view('components.pages.packages.package-details');
+})->name('package-details');
+
+
+Route::get('/login', function () {
+    return view('components.pages.auth.login');
+})->name('login');
+
+Route::get('/sign-up', function () {
+    return view('components.pages.auth.sign-up');
+})->name('sign-up');
 
 Route::get('/contact-us', function () {
     return view('components.pages.contact-us');

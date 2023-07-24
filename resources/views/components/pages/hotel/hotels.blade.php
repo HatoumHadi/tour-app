@@ -7,13 +7,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Flight search result</h2>
-                            <div>
-                                <ul>
-                                    <li><a href="{{route('home')}}">Home</a></li>
-                                    <li><span><i class="fas fa-circle"></i></span> Flight search result</li>
-                                </ul>
-                            </div>
+                            <h2>Hotel search result</h2>
+                            <ul>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><span><i class="fas fa-circle"></i></span> Hotel</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -21,7 +19,7 @@
         </section>
 
         <!-- Form Area -->
-        <section id="theme_search_form">
+        <section id="theme_search_form_tour">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -62,6 +60,19 @@
                                                 aria-selected="false"><i class="fas fa-building"></i> Apartments
                                         </button>
                                     </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="bus-tab" data-bs-toggle="tab"
+                                                data-bs-target="#bus" type="button" role="tab" aria-controls="bus"
+                                                aria-selected="false"><i class="fas fa-bus"></i> Bus
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="cruise-tab" data-bs-toggle="tab"
+                                                data-bs-target="#cruise" type="button" role="tab" aria-controls="cruise"
+                                                aria-selected="false"><i class="fas fa-ship"></i> Cruise
+                                        </button>
+                                    </li>
+
                                 </ul>
                             </div>
                             <div class="tab-content" id="myTabContent">
@@ -167,7 +178,7 @@
                                                                                                         class="type-label">
                                                                                                         <p>Adult</p>
                                                                                                         <span>12+
-                                                                                                            yrs</span>
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -195,8 +206,8 @@
                                                                                                             class="fz14 mb-xs-0">
                                                                                                             Children
                                                                                                         </p><span>2
-                                                                                                            - Less than 12
-                                                                                                            yrs</span>
+                                                                                                        - Less than 12
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -224,8 +235,8 @@
                                                                                                             class="fz14 mb-xs-0">
                                                                                                             Infant
                                                                                                         </p><span>Less
-                                                                                                            than 2
-                                                                                                            yrs</span>
+                                                                                                        than 2
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -250,22 +261,22 @@
                                                                                         <div class="cabin-list">
                                                                                             <button type="button"
                                                                                                     class="label-select-btn">
-                                                                                                <span
-                                                                                                    class="muiButton-label">Economy
-                                                                                                </span>
+                                                                                            <span
+                                                                                                class="muiButton-label">Economy
+                                                                                            </span>
                                                                                             </button>
                                                                                             <button type="button"
                                                                                                     class="label-select-btn active">
-                                                                                                <span
-                                                                                                    class="muiButton-label">
-                                                                                                    Business
-                                                                                                </span>
+                                                                                            <span
+                                                                                                class="muiButton-label">
+                                                                                                Business
+                                                                                            </span>
                                                                                             </button>
                                                                                             <button type="button"
                                                                                                     class="label-select-btn">
-                                                                                                <span
-                                                                                                    class="MuiButton-label">First
-                                                                                                    Class </span>
+                                                                                            <span
+                                                                                                class="MuiButton-label">First
+                                                                                                Class </span>
                                                                                             </button>
                                                                                         </div>
                                                                                     </div>
@@ -357,7 +368,7 @@
                                                                                                         class="type-label">
                                                                                                         <p>Adult</p>
                                                                                                         <span>12+
-                                                                                                            yrs</span>
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -385,8 +396,8 @@
                                                                                                             class="fz14 mb-xs-0">
                                                                                                             Children
                                                                                                         </p><span>2
-                                                                                                            - Less than 12
-                                                                                                            yrs</span>
+                                                                                                        - Less than 12
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -414,8 +425,8 @@
                                                                                                             class="fz14 mb-xs-0">
                                                                                                             Infant
                                                                                                         </p><span>Less
-                                                                                                            than 2
-                                                                                                            yrs</span>
+                                                                                                        than 2
+                                                                                                        yrs</span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="button-set">
@@ -440,22 +451,22 @@
                                                                                         <div class="cabin-list">
                                                                                             <button type="button"
                                                                                                     class="label-select-btn">
-                                                                                                <span
-                                                                                                    class="muiButton-label">Economy
-                                                                                                </span>
+                                                                                            <span
+                                                                                                class="muiButton-label">Economy
+                                                                                            </span>
                                                                                             </button>
                                                                                             <button type="button"
                                                                                                     class="label-select-btn active">
-                                                                                                <span
-                                                                                                    class="muiButton-label">
-                                                                                                    Business
-                                                                                                </span>
+                                                                                            <span
+                                                                                                class="muiButton-label">
+                                                                                                Business
+                                                                                            </span>
                                                                                             </button>
                                                                                             <button type="button"
                                                                                                     class="label-select-btn">
-                                                                                                <span
-                                                                                                    class="MuiButton-label">First
-                                                                                                    Class </span>
+                                                                                            <span
+                                                                                                class="MuiButton-label">First
+                                                                                                Class </span>
                                                                                             </button>
                                                                                         </div>
                                                                                     </div>
@@ -488,7 +499,7 @@
                                                                                 <p>From</p>
                                                                                 <input type="text" value="New York">
                                                                                 <span>DAC, Hazrat Shahajalal
-                                                                                    International...</span>
+                                                                                International...</span>
                                                                                 <div class="plan_icon_posation">
                                                                                     <i class="fas fa-plane-departure"></i>
                                                                                 </div>
@@ -554,14 +565,14 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count pcount">2</span>
+                                                                                                        <span
+                                                                                                            class="count pcount">2</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p>
                                                                                                                     Adult</p>
                                                                                                                 <span>12+
-                                                                                                                    yrs</span>
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -584,8 +595,8 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count ccount">0</span>
+                                                                                                        <span
+                                                                                                            class="count ccount">0</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p
@@ -593,9 +604,9 @@
                                                                                                                     Children
                                                                                                                 </p>
                                                                                                                 <span>2
-                                                                                                                    - Less
-                                                                                                                    than 12
-                                                                                                                    yrs</span>
+                                                                                                                - Less
+                                                                                                                than 12
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -618,8 +629,8 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count incount">0</span>
+                                                                                                        <span
+                                                                                                            class="count incount">0</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p
@@ -627,8 +638,8 @@
                                                                                                                     Infant
                                                                                                                 </p>
                                                                                                                 <span>Less
-                                                                                                                    than 2
-                                                                                                                    yrs</span>
+                                                                                                                than 2
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -656,24 +667,24 @@
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">Economy
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">Economy
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn active">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">
-                                                                                                            Business
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">
+                                                                                                        Business
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="MuiButton-label">First
-                                                                                                            Class </span>
+                                                                                                    <span
+                                                                                                        class="MuiButton-label">First
+                                                                                                        Class </span>
                                                                                                     </button>
                                                                                                 </div>
                                                                                             </div>
@@ -692,7 +703,7 @@
                                                                                 <p>From</p>
                                                                                 <input type="text" value="New York">
                                                                                 <span>DAC, Hazrat Shahajalal
-                                                                                    International...</span>
+                                                                                International...</span>
                                                                                 <div class="plan_icon_posation">
                                                                                     <i class="fas fa-plane-departure"></i>
                                                                                 </div>
@@ -758,14 +769,14 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count pcount">2</span>
+                                                                                                        <span
+                                                                                                            class="count pcount">2</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p>
                                                                                                                     Adult</p>
                                                                                                                 <span>12+
-                                                                                                                    yrs</span>
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -788,8 +799,8 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count ccount">0</span>
+                                                                                                        <span
+                                                                                                            class="count ccount">0</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p
@@ -797,9 +808,9 @@
                                                                                                                     Children
                                                                                                                 </p>
                                                                                                                 <span>2
-                                                                                                                    - Less
-                                                                                                                    than 12
-                                                                                                                    yrs</span>
+                                                                                                                - Less
+                                                                                                                than 12
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -822,8 +833,8 @@
                                                                                                         class="passengers-type">
                                                                                                         <div
                                                                                                             class="text">
-                                                                                                            <span
-                                                                                                                class="count incount">0</span>
+                                                                                                        <span
+                                                                                                            class="count incount">0</span>
                                                                                                             <div
                                                                                                                 class="type-label">
                                                                                                                 <p
@@ -831,8 +842,8 @@
                                                                                                                     Infant
                                                                                                                 </p>
                                                                                                                 <span>Less
-                                                                                                                    than 2
-                                                                                                                    yrs</span>
+                                                                                                                than 2
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -860,24 +871,24 @@
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">Economy
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">Economy
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn active">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">
-                                                                                                            Business
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">
+                                                                                                        Business
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="MuiButton-label">First
-                                                                                                            Class </span>
+                                                                                                    <span
+                                                                                                        class="MuiButton-label">First
+                                                                                                        Class </span>
                                                                                                     </button>
                                                                                                 </div>
                                                                                             </div>
@@ -962,7 +973,7 @@
                                                                                             <div class="type-label">
                                                                                                 <p>Adult</p>
                                                                                                 <span>12+
-                                                                                                    yrs</span>
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -983,8 +994,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Children
                                                                                                 </p><span>2
-                                                                                                    - Less than 12
-                                                                                                    yrs</span>
+                                                                                                - Less than 12
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1005,8 +1016,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Infant
                                                                                                 </p><span>Less
-                                                                                                    than 2
-                                                                                                    yrs</span>
+                                                                                                than 2
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1027,20 +1038,20 @@
                                                                                 <div class="cabin-list">
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span
-                                                                                            class="muiButton-label">Economy
-                                                                                        </span>
+                                                                                    <span
+                                                                                        class="muiButton-label">Economy
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn active">
-                                                                                        <span class="muiButton-label">
-                                                                                            Business
-                                                                                        </span>
+                                                                                    <span class="muiButton-label">
+                                                                                        Business
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span class="MuiButton-label">First
-                                                                                            Class </span>
+                                                                                    <span class="MuiButton-label">First
+                                                                                        Class </span>
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
@@ -1111,7 +1122,7 @@
                                                                                             <div class="type-label">
                                                                                                 <p>Adult</p>
                                                                                                 <span>12+
-                                                                                                    yrs</span>
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1132,8 +1143,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Children
                                                                                                 </p><span>2
-                                                                                                    - Less than 12
-                                                                                                    yrs</span>
+                                                                                                - Less than 12
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1154,8 +1165,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Infant
                                                                                                 </p><span>Less
-                                                                                                    than 2
-                                                                                                    yrs</span>
+                                                                                                than 2
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1176,20 +1187,20 @@
                                                                                 <div class="cabin-list">
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span
-                                                                                            class="muiButton-label">Economy
-                                                                                        </span>
+                                                                                    <span
+                                                                                        class="muiButton-label">Economy
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn active">
-                                                                                        <span class="muiButton-label">
-                                                                                            Business
-                                                                                        </span>
+                                                                                    <span class="muiButton-label">
+                                                                                        Business
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span class="MuiButton-label">First
-                                                                                            Class </span>
+                                                                                    <span class="MuiButton-label">First
+                                                                                        Class </span>
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
@@ -1268,7 +1279,7 @@
                                                                                             <div class="type-label">
                                                                                                 <p>Adult</p>
                                                                                                 <span>12+
-                                                                                                    yrs</span>
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1289,8 +1300,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Children
                                                                                                 </p><span>2
-                                                                                                    - Less than 12
-                                                                                                    yrs</span>
+                                                                                                - Less than 12
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1311,8 +1322,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Infant
                                                                                                 </p><span>Less
-                                                                                                    than 2
-                                                                                                    yrs</span>
+                                                                                                than 2
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1396,7 +1407,7 @@
                                                                                             <div class="type-label">
                                                                                                 <p>Adult</p>
                                                                                                 <span>12+
-                                                                                                    yrs</span>
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1417,8 +1428,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Children
                                                                                                 </p><span>2
-                                                                                                    - Less than 12
-                                                                                                    yrs</span>
+                                                                                                - Less than 12
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1439,8 +1450,8 @@
                                                                                                 <p class="fz14 mb-xs-0">
                                                                                                     Infant
                                                                                                 </p><span>Less
-                                                                                                    than 2
-                                                                                                    yrs</span>
+                                                                                                than 2
+                                                                                                yrs</span>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="button-set">
@@ -1461,20 +1472,20 @@
                                                                                 <div class="cabin-list">
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span
-                                                                                            class="muiButton-label">Economy
-                                                                                        </span>
+                                                                                    <span
+                                                                                        class="muiButton-label">Economy
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn active">
-                                                                                        <span class="muiButton-label">
-                                                                                            Business
-                                                                                        </span>
+                                                                                    <span class="muiButton-label">
+                                                                                        Business
+                                                                                    </span>
                                                                                     </button>
                                                                                     <button type="button"
                                                                                             class="label-select-btn">
-                                                                                        <span class="MuiButton-label">First
-                                                                                            Class </span>
+                                                                                    <span class="MuiButton-label">First
+                                                                                        Class </span>
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
@@ -1580,7 +1591,7 @@
                                                                                                                 <p>
                                                                                                                     Adult</p>
                                                                                                                 <span>12+
-                                                                                                                    yrs</span>
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -1611,8 +1622,8 @@
                                                                                                                     Children
                                                                                                                 </p>
                                                                                                                 <span>2
-                                                                                                                    - Less than 12
-                                                                                                                    yrs</span>
+                                                                                                                - Less than 12
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -1643,8 +1654,8 @@
                                                                                                                     Infant
                                                                                                                 </p>
                                                                                                                 <span>Less
-                                                                                                                    than 2
-                                                                                                                    yrs</span>
+                                                                                                                than 2
+                                                                                                                yrs</span>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                         <div
@@ -1672,24 +1683,24 @@
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">Economy
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">Economy
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn active">
-                                                                                                        <span
-                                                                                                            class="muiButton-label">
-                                                                                                            Business
-                                                                                                        </span>
+                                                                                                    <span
+                                                                                                        class="muiButton-label">
+                                                                                                        Business
+                                                                                                    </span>
                                                                                                     </button>
                                                                                                     <button
                                                                                                         type="button"
                                                                                                         class="label-select-btn">
-                                                                                                        <span
-                                                                                                            class="MuiButton-label">First
-                                                                                                            Class </span>
+                                                                                                    <span
+                                                                                                        class="MuiButton-label">First
+                                                                                                        Class </span>
                                                                                                     </button>
                                                                                                 </div>
                                                                                             </div>
@@ -1700,7 +1711,8 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="top_form_search_button">
-                                                                            <button class="btn btn_theme btn_md">Search
+                                                                            <button class="btn btn_theme btn_md">
+                                                                                Search
                                                                             </button>
                                                                         </div>
                                                                     </div>
@@ -1767,13 +1779,28 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="section_heading_center">
-                            <h2>42 tours found</h2>
+                            <h2>38 hotels found</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="left_side_search_area">
+                            <div class="left_side_search_boxed">
+                                <div class="item_searc_map_area">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.6962663570607!2d89.56355961427838!3d22.813715829827952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff901efac79b59%3A0x5be01a1bc0dc7eba!2sAnd+IT!5e0!3m2!1sen!2sbd!4v1557901943656!5m2!1sen!2sbd"></iframe>
+                                </div>
+                            </div>
+                            <div class="left_side_search_boxed">
+                                <div class="left_side_search_heading">
+                                    <h5>Search by name</h5>
+                                </div>
+                                <div class="name_search_form">
+                                    <input type="text" class="form-control" placeholder="e.g Deluxe bus">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
                             <div class="left_side_search_boxed">
                                 <div class="left_side_search_heading">
                                     <h5>Filter by price</h5>
@@ -1785,42 +1812,184 @@
                             </div>
                             <div class="left_side_search_boxed">
                                 <div class="left_side_search_heading">
-                                    <h5>Number of stops</h5>
+                                    <h5>Filter by Review</h5>
+                                </div>
+                                <div class="filter_review">
+                                    <form class="review_star">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault1">
+                                            <label class="form-check-label" for="flexCheckDefault1">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault2">
+                                            <label class="form-check-label" for="flexCheckDefault2">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault3">
+                                            <label class="form-check-label" for="flexCheckDefault3">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefault5">
+                                            <label class="form-check-label" for="flexCheckDefault5">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="left_side_search_boxed">
+                                <div class="left_side_search_heading">
+                                    <h5>Filter by hotel star</h5>
+                                </div>
+                                <div class="filter_review">
+                                    <form class="review_star">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefaulta">
+                                            <label class="form-check-label" for="flexCheckDefaulta">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefaulf21">
+                                            <label class="form-check-label" for="flexCheckDefaulf21">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefaultf3">
+                                            <label class="form-check-label" for="flexCheckDefaultf3">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefaultf4">
+                                            <label class="form-check-label" for="flexCheckDefaultf4">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                   id="flexCheckDefaultf5">
+                                            <label class="form-check-label" for="flexCheckDefaultf5">
+                                                <i class="fas fa-star color_theme"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                                <i class="fas fa-star color_asse"></i>
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="left_side_search_boxed">
+                                <div class="left_side_search_heading">
+                                    <h5>Facilities</h5>
                                 </div>
                                 <div class="tour_search_type">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultf1">
                                         <label class="form-check-label" for="flexCheckDefaultf1">
                                         <span class="area_flex_one">
-                                            <span>1 stop</span>
+                                            <span>Wake-up call</span>
                                             <span>20</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf2">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultf2">
                                         <label class="form-check-label" for="flexCheckDefaultf2">
                                         <span class="area_flex_one">
-                                            <span>2 stop</span>
-                                            <span>16</span>
+                                            <span>Flat TV</span>
+                                            <span>14</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf3">
-                                        <label class="form-check-label" for="flexCheckDefaultf3">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultaf3">
+                                        <label class="form-check-label" for="flexCheckDefaultaf3">
                                         <span class="area_flex_one">
-                                            <span>3 stop</span>
+                                            <span>Vehicle service</span>
                                             <span>30</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf4">
-                                        <label class="form-check-label" for="flexCheckDefaultf4">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultaf4">
+                                        <label class="form-check-label" for="flexCheckDefaultaf4">
                                         <span class="area_flex_one">
-                                            <span>Non-stop</span>
+                                            <span>Guide service</span>
                                             <span>22</span>
+                                        </span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultaf5">
+                                        <label class="form-check-label" for="flexCheckDefaultaf5">
+                                        <span class="area_flex_one">
+                                            <span>Internet, Wi-fi</span>
+                                            <span>41</span>
                                         </span>
                                         </label>
                                     </div>
@@ -1828,110 +1997,56 @@
                             </div>
                             <div class="left_side_search_boxed">
                                 <div class="left_side_search_heading">
-                                    <h5>Flight class</h5>
+                                    <h5>Hotel service</h5>
                                 </div>
                                 <div class="tour_search_type">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultt1">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultt1">
                                         <label class="form-check-label" for="flexCheckDefaultt1">
                                         <span class="area_flex_one">
-                                            <span>Economy</span>
+                                            <span>Gymnasium</span>
                                             <span>20</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultt2">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultt2">
                                         <label class="form-check-label" for="flexCheckDefaultt2">
                                         <span class="area_flex_one">
-                                            <span>Business</span>
-                                            <span>26</span>
-                                        </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="left_side_search_boxed">
-                                <div class="left_side_search_heading">
-                                    <h5>Airlines</h5>
-                                </div>
-                                <div class="tour_search_type">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults1">
-                                        <label class="form-check-label" for="flexCheckDefaults1">
-                                        <span class="area_flex_one">
-                                            <span>Quatar Airways</span>
-                                            <span>17</span>
-                                        </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults2">
-                                        <label class="form-check-label" for="flexCheckDefaults2">
-                                        <span class="area_flex_one">
-                                            <span>Fly Amirates </span>
+                                            <span>Mountain Bike</span>
                                             <span>14</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults3">
-                                        <label class="form-check-label" for="flexCheckDefaults3">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultt3">
+                                        <label class="form-check-label" for="flexCheckDefaultt3">
                                         <span class="area_flex_one">
-                                            <span>Novo Air </span>
+                                            <span>Wifi</span>
                                             <span>62</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults4">
-                                        <label class="form-check-label" for="flexCheckDefaults4">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultt4">
+                                        <label class="form-check-label" for="flexCheckDefaultt4">
                                         <span class="area_flex_one">
-                                            <span>Air Asia </span>
+                                            <span>Aerobics Room</span>
                                             <span>08</span>
                                         </span>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults5">
-                                        <label class="form-check-label" for="flexCheckDefaults5">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="flexCheckDefaultt5">
+                                        <label class="form-check-label" for="flexCheckDefaultt5">
                                         <span class="area_flex_one">
-                                            <span>Singapore Airlines </span>
+                                            <span>Golf Cages</span>
                                             <span>12</span>
-                                        </span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="left_side_search_boxed">
-                                <div class="left_side_search_heading">
-                                    <h5>Refundable</h5>
-                                </div>
-                                <div class="tour_search_type">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp1">
-                                        <label class="form-check-label" for="flexCheckDefaultp1">
-                                        <span class="area_flex_one">
-                                            <span>Yes</span>
-                                            <span>17</span>
-                                        </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp2">
-                                        <label class="form-check-label" for="flexCheckDefaultp2">
-                                        <span class="area_flex_one">
-                                            <span>No</span>
-                                            <span>14</span>
-                                        </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp3">
-                                        <label class="form-check-label" for="flexCheckDefaultp3">
-                                        <span class="area_flex_one">
-                                            <span>As per rules</span>
-                                            <span>62</span>
                                         </span>
                                         </label>
                                     </div>
@@ -1942,1056 +2057,285 @@
                     <div class="col-lg-9">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="flight_search_result_wrapper">
-                                    <div class="flight_search_item_wrappper">
-                                        <div class="flight_search_items">
-                                            <div class="multi_city_flight_lists">
-                                                <div class="flight_multis_area_wrapper">
-                                                    <div class="flight_search_left">
-                                                        <div class="flight_logo">
-                                                            <img src="assets/img/common/biman_bangla.png" alt="img">
+                                <div class="cruise_search_result_wrapper">
+                                    <div class="cruise_search_item">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cruise_item_img">
+                                                    <img src="assets/img/hotel/hotel-list-1.png" alt="img">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="cruise_item_inner_content">
+                                                    <div class="cruise_content_top_wrapper">
+                                                        <div class="cruise_content_top_left">
+                                                            <h4>Hotel castle salam</h4>
+                                                            <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
                                                         </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>From</p>
-                                                            <h3>New York</h3>
-                                                            <h6>JFK - John F. Kennedy International...</h6>
+                                                        <div class="cruise_content_top_right">
+                                                            <h5>4.8/5 Excellent</h5>
+                                                            <h4>(1214 reviewes)</h4>
                                                         </div>
                                                     </div>
-                                                    <div class="flight_search_middel">
-                                                        <div class="flight_right_arrow">
-                                                            <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                            <h6>Non-stop</h6>
-                                                            <p>01h 05minute </p>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Deluxe room</h5>
+                                                            <p>1 extra large double bed</p>
                                                         </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>To</p>
-                                                            <h3>London </h3>
-                                                            <h6>LCY, London city airport </h6>
+                                                        <div class="cruise_content_middel_right">
+                                                            <p>2 nights, 1 adult</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Free cancellation</h5>
+                                                            <p>Cancel your booking at any time</p>
+                                                        </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <h3>$99.00 <sub>/Per person</sub></h3>
+                                                            <p>+ $20.00 tax and vat</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cruise_content_bottom_wrapper">
+                                                        <div class="cruise_content_bottom_left">
+                                                            <ul>
+                                                                <li>Breakfast</li>
+                                                                <li>Free wi fi</li>
+                                                                <li>Transport</li>
+                                                                <li>Gym</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="cruise_content_bottom_right">
+                                                            <a href="{{route('hotel-details')}}" class="btn btn_theme btn_md">Check
+                                                                availability</a>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                            </div>
-                                            <div class="flight_search_right">
-                                                <h5><del>$9,560</del></h5>
-                                                <h2>$7,560<sup>*20% OFF</sup></h2>
-                                                <a href="{{route('flight-booking-submission')}}" class="btn btn_theme btn_sm">Book
-                                                    now</a>
-                                                <p>*Discount applicable on some conditions</p>
-                                                <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                                                    aria-expanded="false" aria-controls="collapseExample">Show more <i
-                                                        class="fas fa-chevron-down"></i></h6>
-                                            </div>
-                                        </div>
-                                        <div class="flight_policy_refund collapse" id="collapseExample">
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
-                                                        </div>
-                                                    </div>
+                                    <div class="cruise_search_item">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cruise_item_img">
+                                                    <img src="assets/img/hotel/hotel-list-2.png" alt="img">
                                                 </div>
                                             </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="cruise_item_inner_content">
+                                                    <div class="cruise_content_top_wrapper">
+                                                        <div class="cruise_content_top_left">
+                                                            <h4>Hotel Royel</h4>
+                                                            <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_top_right">
+                                                            <h5>4.8/5 Excellent</h5>
+                                                            <h4>(1214 reviewes)</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Deluxe room</h5>
+                                                            <p>1 extra large double bed</p>
+                                                        </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <p>2 nights, 1 adult</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Free cancellation</h5>
+                                                            <p>Cancel your booking at any time</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <h3>$99.00 <sub>/Per person</sub></h3>
+                                                            <p>+ $20.00 tax and vat</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_bottom_wrapper">
+                                                        <div class="cruise_content_bottom_left">
+                                                            <ul>
+                                                                <li>Breakfast</li>
+                                                                <li>Free wi fi</li>
+                                                                <li>Transport</li>
+                                                                <li>Gym</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="cruise_content_bottom_right">
+                                                            <a href="{{route('hotel-details')}}" class="btn btn_theme btn_md">Check
+                                                                availability</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Flight Search Item -->
-                                    <div class="flight_search_item_wrappper">
-                                        <div class="flight_search_items">
-                                            <div class="multi_city_flight_lists">
-                                                <div class="flight_multis_area_wrapper">
-                                                    <div class="flight_search_left">
-                                                        <div class="flight_logo">
-                                                            <img src="assets/img/common/biman_bangla.png" alt="img">
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>From</p>
-                                                            <h3>New York</h3>
-                                                            <h6>JFK - John F. Kennedy International...</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flight_search_middel">
-                                                        <div class="flight_right_arrow">
-                                                            <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                            <h6>Non-stop</h6>
-                                                            <p>01h 05minute </p>
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>To</p>
-                                                            <h3>London </h3>
-                                                            <h6>LCY, London city airport </h6>
-                                                        </div>
-                                                    </div>
+
+                                    <div class="cruise_search_item">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cruise_item_img">
+                                                    <img src="assets/img/hotel/hotel-list-3.png" alt="img">
                                                 </div>
                                             </div>
-                                            <div class="flight_search_right">
-                                                <h5><del>$9,560</del></h5>
-                                                <h2>$7,560<sup>*20% OFF</sup></h2>
-                                                <a href="{{route('flight-booking-submission')}}" class="btn btn_theme btn_sm">Book
-                                                    now</a>
-                                                <p>*Discount applicable on some conditions</p>
-                                                <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample2"
-                                                    aria-expanded="false" aria-controls="collapseExample2">Show more <i
-                                                        class="fas fa-chevron-down"></i></h6>
-                                            </div>
-                                        </div>
-                                        <div class="flight_policy_refund collapse" id="collapseExample2">
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="cruise_item_inner_content">
+                                                    <div class="cruise_content_top_wrapper">
+                                                        <div class="cruise_content_top_left">
+                                                            <h4>Hotel sun hommachi</h4>
+                                                            <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_top_right">
+                                                            <h5>4.8/5 Excellent</h5>
+                                                            <h4>(1214 reviewes)</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Deluxe room</h5>
+                                                            <p>1 extra large double bed</p>
+                                                        </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <p>2 nights, 1 adult</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Free cancellation</h5>
+                                                            <p>Cancel your booking at any time</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <h3>$99.00 <sub>/Per person</sub></h3>
+                                                            <p>+ $20.00 tax and vat</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_bottom_wrapper">
+                                                        <div class="cruise_content_bottom_left">
+                                                            <ul>
+                                                                <li>Breakfast</li>
+                                                                <li>Free wi fi</li>
+                                                                <li>Transport</li>
+                                                                <li>Gym</li>
+                                                            </ul>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                        <div class="cruise_content_bottom_right">
+                                                            <a href="{{route('hotel-details')}}" class="btn btn_theme btn_md">Check
+                                                                availability</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Flight Search Item -->
-                                    <div class="flight_search_item_wrappper">
-                                        <div class="flight_search_items">
-                                            <div class="multi_city_flight_lists">
-                                                <div class="flight_multis_area_wrapper">
-                                                    <div class="flight_search_left">
-                                                        <div class="flight_logo">
-                                                            <img src="assets/img/common/biman_bangla.png" alt="img">
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>From</p>
-                                                            <h3>New York</h3>
-                                                            <h6>JFK - John F. Kennedy International...</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flight_search_middel">
-                                                        <div class="flight_right_arrow">
-                                                            <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                            <h6>Non-stop</h6>
-                                                            <p>01h 05minute </p>
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>To</p>
-                                                            <h3>London </h3>
-                                                            <h6>LCY, London city airport </h6>
-                                                        </div>
-                                                    </div>
+
+                                    <div class="cruise_search_item">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cruise_item_img">
+                                                    <img src="assets/img/hotel/hotel-list-4.png" alt="img">
                                                 </div>
                                             </div>
-                                            <div class="flight_search_right">
-                                                <h5><del>$9,560</del></h5>
-                                                <h2>$7,560<sup>*20% OFF</sup></h2>
-                                                <a href="{{route('flight-booking-submission')}}" class="btn btn_theme btn_sm">Book
-                                                    now</a>
-                                                <p>*Discount applicable on some conditions</p>
-                                                <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample3"
-                                                    aria-expanded="false" aria-controls="collapseExample3">Show more <i
-                                                        class="fas fa-chevron-down"></i></h6>
-                                            </div>
-                                        </div>
-                                        <div class="flight_policy_refund collapse" id="collapseExample3">
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="cruise_item_inner_content">
+                                                    <div class="cruise_content_top_wrapper">
+                                                        <div class="cruise_content_top_left">
+                                                            <h4>Hotel paradise international</h4>
+                                                            <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_top_right">
+                                                            <h5>4.8/5 Excellent</h5>
+                                                            <h4>(1214 reviewes)</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Deluxe room</h5>
+                                                            <p>1 extra large double bed</p>
+                                                        </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <p>2 nights, 1 adult</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Free cancellation</h5>
+                                                            <p>Cancel your booking at any time</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <h3>$99.00 <sub>/Per person</sub></h3>
+                                                            <p>+ $20.00 tax and vat</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_bottom_wrapper">
+                                                        <div class="cruise_content_bottom_left">
+                                                            <ul>
+                                                                <li>Breakfast</li>
+                                                                <li>Free wi fi</li>
+                                                                <li>Transport</li>
+                                                                <li>Gym</li>
+                                                            </ul>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                        <div class="cruise_content_bottom_right">
+                                                            <a href="{{route('hotel-details')}}" class="btn btn_theme btn_md">Check
+                                                                availability</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Flight Search Item -->
-                                    <div class="flight_search_item_wrappper">
-                                        <div class="flight_search_items">
-                                            <div class="multi_city_flight_lists">
-                                                <div class="flight_multis_area_wrapper">
-                                                    <div class="flight_search_left">
-                                                        <div class="flight_logo">
-                                                            <img src="assets/img/common/biman_bangla.png" alt="img">
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>From</p>
-                                                            <h3>New York</h3>
-                                                            <h6>JFK - John F. Kennedy International...</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flight_search_middel">
-                                                        <div class="flight_right_arrow">
-                                                            <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                            <h6>Non-stop</h6>
-                                                            <p>01h 05minute </p>
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>To</p>
-                                                            <h3>London </h3>
-                                                            <h6>LCY, London city airport </h6>
-                                                        </div>
-                                                    </div>
+
+                                    <div class="cruise_search_item">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="cruise_item_img">
+                                                    <img src="assets/img/hotel/hotel-list-5.png" alt="img">
                                                 </div>
                                             </div>
-                                            <div class="flight_search_right">
-                                                <h5><del>$9,560</del></h5>
-                                                <h2>$7,560<sup>*20% OFF</sup></h2>
-                                                <a href="{{route('flight-booking-submission')}}" class="btn btn_theme btn_sm">Book
-                                                    now</a>
-                                                <p>*Discount applicable on some conditions</p>
-                                                <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample4"
-                                                    aria-expanded="false" aria-controls="collapseExample4">Show more <i
-                                                        class="fas fa-chevron-down"></i></h6>
-                                            </div>
-                                        </div>
-                                        <div class="flight_policy_refund collapse" id="collapseExample4">
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="cruise_item_inner_content">
+                                                    <div class="cruise_content_top_wrapper">
+                                                        <div class="cruise_content_top_left">
+                                                            <h4>Manila international resorti</h4>
+                                                            <p><i class="fas fa-map-marker-alt"></i> Beijing, China</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_top_right">
+                                                            <h5>4.8/5 Excellent</h5>
+                                                            <h4>(1214 reviewes)</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Deluxe room</h5>
+                                                            <p>1 extra large double bed</p>
+                                                        </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <p>2 nights, 1 adult</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                    <div class="cruise_content_middel_wrapper">
+                                                        <div class="cruise_content_middel_left">
+                                                            <h5>Free cancellation</h5>
+                                                            <p>Cancel your booking at any time</p>
                                                         </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
+                                                        <div class="cruise_content_middel_right">
+                                                            <h3>$99.00 <sub>/Per person</sub></h3>
+                                                            <p>+ $20.00 tax and vat</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                    <div class="cruise_content_bottom_wrapper">
+                                                        <div class="cruise_content_bottom_left">
+                                                            <ul>
+                                                                <li>Breakfast</li>
+                                                                <li>Free wi fi</li>
+                                                                <li>Transport</li>
+                                                                <li>Gym</li>
+                                                            </ul>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Flight Search Item -->
-                                    <div class="flight_search_item_wrappper">
-                                        <div class="flight_search_items">
-                                            <div class="multi_city_flight_lists">
-                                                <div class="flight_multis_area_wrapper">
-                                                    <div class="flight_search_left">
-                                                        <div class="flight_logo">
-                                                            <img src="assets/img/common/biman_bangla.png" alt="img">
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>From</p>
-                                                            <h3>New York</h3>
-                                                            <h6>JFK - John F. Kennedy International...</h6>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flight_search_middel">
-                                                        <div class="flight_right_arrow">
-                                                            <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                            <h6>Non-stop</h6>
-                                                            <p>01h 05minute </p>
-                                                        </div>
-                                                        <div class="flight_search_destination">
-                                                            <p>To</p>
-                                                            <h3>London </h3>
-                                                            <h6>LCY, London city airport </h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_search_right">
-                                                <h5><del>$9,560</del></h5>
-                                                <h2>$7,560<sup>*20% OFF</sup></h2>
-                                                <a href="{{route('flight-booking-submission')}}" class="btn btn_theme btn_sm">Book
-                                                    now</a>
-                                                <p>*Discount applicable on some conditions</p>
-                                                <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample5"
-                                                    aria-expanded="false" aria-controls="collapseExample5">Show more <i
-                                                        class="fas fa-chevron-down"></i></h6>
-                                            </div>
-                                        </div>
-                                        <div class="flight_policy_refund collapse" id="collapseExample5">
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flight_show_down_wrapper">
-                                                <div class="flight-shoe_dow_item">
-                                                    <div class="airline-details">
-                                                        <div class="img"><img src="assets/img/icon/bg.png" alt="img"></div>
-                                                        <span class="airlineName fw-500">Biman Bangladesh Airlines &nbsp;
-                                                        BG435</span>
-                                                        <span class="flightNumber">BOEING 737-800 - 738</span>
-                                                    </div>
-                                                    <div class="flight_inner_show_component">
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="flight_duration">
-                                                            <div class="arrow_right"></div>
-                                                            <span>01h 15m</span>
-                                                        </div>
-                                                        <div class="flight_det_wrapper">
-                                                            <div class="flight_det">
-                                                                <div class="code_time">
-                                                                    <span class="code">DAC</span>
-                                                                    <span class="time">15:00</span>
-                                                                </div>
-                                                                <p class="airport">Hazrat Shahjalal International Airport
-                                                                </p>
-                                                                <p class="date">7th Jun 2022</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_refund_policy">
-                                                    <div class="TabPanelInner flex_widht_less">
-                                                        <h4>Refund Policy</h4>
-                                                        <p class="fz12">1. Refund and Date Change are done as per the
-                                                            following policies.</p>
-                                                        <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                            policy + ShareTrip Convenience Fee). </p>
-                                                        <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                            Airline Policy + ShareTrip Convenience Fee).</p>
-                                                    </div>
-                                                    <div class="TabPanelInner">
-                                                        <h4>Baggage</h4>
-                                                        <div class="flight_info_taable">
-                                                            <h3>DAC-SPD</h3>
-                                                            <p><span>20KG /</span> person</p>
+                                                        <div class="cruise_content_bottom_right">
+                                                            <a href="{{route('hotel-details')}}" class="btn btn_theme btn_md">Check
+                                                                availability</a>
                                                         </div>
                                                     </div>
                                                 </div>

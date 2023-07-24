@@ -57,8 +57,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <ul class="topbar-others-options">
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Sign up</a></li>
+                        <li><a href="{{route('login')}}">Login</a></li>
+                        <li><a href="{{route('sign-up')}}">Sign up</a></li>
                         <li>
                             <div class="dropdown language-option">
                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
@@ -83,7 +83,7 @@
             <div class="container">
                 <div class="main-responsive-menu">
                     <div class="logo">
-                        <a href="index-2.html">
+                        <a href="{{route('home')}}">
                             <img src="assets/img/logo.png" alt="logo">
                         </a>
                     </div>
@@ -93,7 +93,7 @@
         <div class="main-navbar">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index-2.html">
+                    <a class="navbar-brand" href="{{route('home')}}">
                         <img src="assets/img/logo.png" alt="logo">
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -110,97 +110,24 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('flight-search-result')}}" class="nav-link">
                                             Flights
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="{{route('flight-search-result')}}" class="nav-link">Flight</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{route('flight-booking-submission')}}" class="nav-link">Flight
-                                                    Booking</a>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('hotels')}}" class="nav-link">
                                             Hotel reservation
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="hotel-search.html" class="nav-link">Hotel Grid</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="hotel-search-list.html" class="nav-link">Hotel List</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="hotel-map.html" class="nav-link">Hotel Map</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="hotel-details.html" class="nav-link">Hotel Booking</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="room-details.html" class="nav-link">Room Details</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="room-booking.html" class="nav-link">Room Booking</a>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('visa-info')}}" class="nav-link">
                                             Visa
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="visa-details.html" class="nav-link">Visa Details</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-application.html" class="nav-link">Visa Application</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">Business visa </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">Education visa </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">Working visa </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">Tourist visa </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">Medical visa </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="visa-info.html" class="nav-link">On-arrival visa </a>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
+                                        <a href="{{route('travel-insurance')}}" class="nav-link">
                                             Travel insurance
                                         </a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item">
-                                                <a href="apartment-search.html" class="nav-link">Apartments Grid</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="apartment-search-list.html" class="nav-link">Apartments
-                                                    List</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="apartment-search-map.html" class="nav-link">Apartments Map</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="apartment-details.html" class="nav-link">Apartments Details</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="apartment-booking.html" class="nav-link">Apartments Booking</a>
-                                            </li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -209,7 +136,7 @@
                                 <a href="#" class="nav-link">Packages <i class="fas fa-angle-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                                        <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="hotel-booking.html" class="nav-link">Hotel booking</a>
@@ -248,9 +175,6 @@
                                 <a href="#" class="search-box">
                                     <i class="bi bi-search"></i>
                                 </a>
-                            </div>
-                            <div class="option-item">
-                                <a href="become-vendor.html" class="btn  btn_navber">Become a partner</a>
                             </div>
                         </div>
                     </div>
@@ -354,7 +278,7 @@
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{route('contact-us')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -364,7 +288,7 @@
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="hotel-search.html">List My Hotel</a></li>
+                        <li><a href="{{route('hotels')}}">List My Hotel</a></li>
                     </ul>
                 </div>
             </div>
@@ -374,12 +298,12 @@
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="room-details.html">Chicago</a></li>
-                        <li><a href="hotel-details.html">New York</a></li>
-                        <li><a href="hotel-booking.html">San Francisco</a></li>
-                        <li><a href="tour-search.html">California</a></li>
-                        <li><a href="tour-booking.html">Ohio </a></li>
-                        <li><a href="tour-guides.html">Alaska</a></li>
+                        <li><a>Chicago</a></li>
+                        <li><a>New York</a></li>
+                        <li><a>San Francisco</a></li>
+                        <li><a>California</a></li>
+                        <li><a>Ohio </a></li>
+                        <li><a>Alaska</a></li>
                     </ul>
                 </div>
             </div>
