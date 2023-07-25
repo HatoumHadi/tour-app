@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,71 +17,55 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 //Route::get('/',function (){
 //    return view('components.pages.index');
 //})->name('home');
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/adventure-details', function () {
-    return view('components.pages.adventure-details');
-})->name('adventure-details');
+Route::view('/adventure-details', 'components.pages.adventure-details')->name('adventure-details');
 
-Route::get('/flight-search-result', function () {
-    return view('components.pages.flight.flight-search-result');
-})->name('flight-search-result');
+Route::view('/flight-search-result', 'components.pages.flight.flight-search-result')->name('flight-search-result');
 
-Route::get('/flight-booking-submission', function () {
-    return view('components.pages.flight.flight-booking-submission');
-})->name('flight-booking-submission');
+Route::view('/flight-booking-submission', 'components.pages.flight.flight-booking-submission')->name('flight-booking-submission');
 
-Route::get('/hotels', function () {
-    return view('components.pages.hotel.hotels');
-})->name('hotels');
+Route::view('/hotels', 'components.pages.hotel.hotels')->name('hotels');
 
-Route::get('/hotel-details', function () {
-    return view('components.pages.hotel.hotel-details');
-})->name('hotel-details');
+Route::view('/hotel-details', 'components.pages.hotel.hotel-details')->name('hotel-details');
 
-Route::get('/visa-info', function () {
-    return view('components.pages.visa.visa-info');
-})->name('visa-info');
+Route::view('/visa-info', 'components.pages.visa.visa-info')->name('visa-info');
 
-Route::get('/visa-details', function () {
-    return view('components.pages.visa.visa-details');
-})->name('visa-details');
+Route::view('/visa-details', 'components.pages.visa.visa-details')->name('visa-details');
 
-Route::get('/visa-application', function () {
-    return view('components.pages.visa.visa-application');
-})->name('visa-application');
+Route::view('/visa-application', 'components.pages.visa.visa-application')->name('visa-application');
 
-Route::get('/travel-insurance', function () {
-    return view('components.pages.travel-insurance.insurance');
-})->name('travel-insurance');
+Route::view('/travel-insurance', 'components.pages.travel-insurance.insurance')->name('travel-insurance');
 
-Route::get('/dashboard', function () {
-    return view('components.pages.packages.dashboard');
-})->name('dashboard');
+Route::view('/dashboard', 'components.pages.packages.dashboard')->name('dashboard');
 
-Route::get('/package-details', function () {
-    return view('components.pages.packages.package-details');
-})->name('package-details');
+Route::view('/package-details', 'components.pages.packages.package-details')->name('package-details');
 
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])
+        ->name('login');
+    Route::post('/login', [AuthController::class, 'postLogin'])
+        ->name('login.post');
+    Route::get('/sign-up', [AuthController::class, 'signUp'])
+        ->name('sign-up');
+    Route::post('sign-up', [AuthController::class, 'postSignUp'])
+        ->name('sign-up.post');
+});
+Route::middleware('auth')->group(function () {
+    Route::get('profile', [ProfileController::class, 'index'])
+        ->name('profile');
+    Route::get('logout', [AuthController::class, 'logout'])
+        ->name('logout');
+});
 
-Route::get('/login', function () {
-    return view('components.pages.auth.login');
-})->name('login');
+Route::view('/contact-us', 'components.pages.contact-us')->name('contact-us');
 
-Route::get('/sign-up', function () {
-    return view('components.pages.auth.sign-up');
-})->name('sign-up');
+Route::view('/about-us', 'components.pages.about-us')->name('about-us');
 
-Route::get('/contact-us', function () {
-    return view('components.pages.contact-us');
-})->name('contact-us');
-
-Route::get('/about-us', function () {
-    return view('components.pages.about-us');
-})->name('about-us');
-
+Route::get('test', function () {
+    dd(__('validation.required', ['attribute' => 'test']));
+});
