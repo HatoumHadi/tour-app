@@ -1770,12 +1770,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="promotional_tour_slider owl-theme owl-carousel dot_style">
-                            @foreach($adventures as $index=>$singleAdventure)
+                            @foreach($places as $singlePlace)
                                 <div class="theme_common_box_two img_hover">
                                     <div class="theme_two_box_img">
                                         <a href="{{route('adventure-details')}}">
-                                            @if(count($singleAdventure->photoGallery) > 0)
-                                                @foreach($singleAdventure->photoGallery as $image)
+                                            @if(count($singlePlace->photoGallery) > 0)
+                                                @foreach($singlePlace->photoGallery as $image)
                                                     <img src="{{ asset('storage/' . $image->media) }}"
                                                          alt="img">
                                                 @endforeach
@@ -1784,15 +1784,11 @@
                                                      alt="img">
                                             @endif
                                         </a>
-                                        <p><i class="fas fa-map-marker-alt"></i>{{$singleAdventure->city->name}}</p>
-                                        <div class="discount_tab">
-                                            <span>50%</span>
-                                        </div>
+                                        <p><i class="fas fa-map-marker-alt"></i>{{$singlePlace->city->name}}</p>
                                     </div>
                                     <div class="theme_two_box_content">
-                                        <h4><a href="{{route('adventure-details')}}">{{$singleAdventure->name}}</a></h4>
-                                        <p>{{$singleAdventure->description}}</p>
-                                        <h3>{{$singleAdventure->price}} <span>Price starts from</span></h3>
+                                        <h4><a href="{{route('adventure-details')}}">{{$singlePlace->title}}</a></h4>
+                                        <p>{{$singlePlace->description}}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -1807,28 +1803,28 @@
         <section id="offer_area" class="section_padding_top">
             <div class="container">
                 <div class="row">
-                    @foreach($packages as $package)
-
-                        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                            <div class="offer_area_box d-none-phone img_animation">
-                                @if(count($singleAdventure->photoGallery) > 0)
-                                    @foreach($singleAdventure->photoGallery as $image)
-                                        <img src="{{ asset('storage/' . $image->media) }}"
+                    @foreach($packages as $index=>$package)
+                        @if($index<2)
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                                <div class="offer_area_box d-none-phone img_animation">
+                                    @if(count($package->photoGallery) > 0)
+                                        @foreach($package->photoGallery as $image)
+                                            <img src="{{ asset('storage/' . $image->media) }}"
+                                                 alt="img">
+                                        @endforeach
+                                    @else
+                                        <img src="{{ asset('storage/images/AdventureDefualtImage.png') }}"
                                              alt="img">
-                                    @endforeach
-                                @else
-                                    <img src="{{ asset('storage/images/AdventureDefualtImage.png') }}"
-                                         alt="img">
-                                @endif
-                                <div class="offer_area_content">
-                                    <h2>Special Offers</h2>
-                                    <h2>{{$package->title}}</h2>
-                                    <p>{{$package->description}}</p>
-                                    <a href="#!" class="btn btn_theme btn_md">Holiday deals</a>
+                                    @endif
+                                    <div class="offer_area_content">
+                                        <h2>Special Offers</h2>
+                                        <h2>{{$package->title}}</h2>
+                                        <p>{{$package->description}}</p>
+                                        <a href="#!" class="btn btn_theme btn_md">Holiday deals</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                        @endif
                     @endforeach
 
                 </div>
