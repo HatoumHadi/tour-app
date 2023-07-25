@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Packages;
 
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Filament\Resources\Packages\PackageResource\Pages;
 use App\Filament\Resources\Packages\PackageResource\RelationManagers;
 use App\Models\Package;
@@ -120,7 +121,7 @@ class PackageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 

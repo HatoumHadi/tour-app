@@ -37,4 +37,9 @@ class Package extends Model
     ];
 
 
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    {
+        return $this->morphMany(PhotoGallery::class, 'tag');
+    }
+
 }

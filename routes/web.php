@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',function (){
-    return view('components.pages.index');
-})->name('home');
+//Route::get('/',function (){
+//    return view('components.pages.index');
+//})->name('home');
+
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::get('/adventure-details', function () {
     return view('components.pages.adventure-details');
