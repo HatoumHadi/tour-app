@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->date('application_date')->nullable();
-            $table->enum('status', ['Valid', 'Expired', 'Approved', 'Denied', 'Pending', 'Revoked', 'Overstay'])->default('Pending');
+            $table->enum('status', ['valid', 'expired', 'approved', 'denied', 'pending', 'revoked', 'overstay'])->default('pending');
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->softDeletes();

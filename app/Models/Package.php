@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Translatable\HasTranslations;
 
 class Package extends Model
 {
-    use HasTranslations, HasFactory, SoftDeletes;
+    use HasFactory;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -23,23 +25,17 @@ class Package extends Model
         'duration',
         'price',
         'type',
-        'is_active',
+        'user_id'
     ];
 
-    public array $translatable = [
-        'title',
-        'description',
-    ];
-
-    protected $casts = [
-        'title' => 'json',
-        'description' => 'json'
-    ];
-
-
-    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    public function photoGallery(): MorphMany
     {
         return $this->morphMany(PhotoGallery::class, 'tag');
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

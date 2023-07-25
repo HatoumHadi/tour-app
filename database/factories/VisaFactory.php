@@ -21,7 +21,7 @@ class VisaFactory extends Factory
             'name' => fake()->name,
             'phone' => fake()->phoneNumber,
             'application_date' => fake()->date,
-            'status' => fake()->randomElement( ['Valid', 'Expired', 'Approved', 'Denied', 'Pending', 'Revoked', 'Overstay']),
+            'status' => fake()->randomElement( ['valid', 'expired', 'approved', 'denied', 'pending', 'revoked', 'overstay']),
             'user_id' => User::inRandomOrder()->value('id'),
         ];
     }

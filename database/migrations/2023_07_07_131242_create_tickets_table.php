@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->string('rating')->nullable();
             $table->date('departure_date')->nullable();
             $table->date('arrival_date')->nullable();
             $table->string('departure_from')->nullable();

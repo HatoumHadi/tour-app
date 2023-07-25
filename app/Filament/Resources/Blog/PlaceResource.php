@@ -5,11 +5,14 @@ namespace App\Filament\Resources\Blog;
 use App\Filament\Resources\Blog\PlaceResource\Pages;
 use App\Filament\Resources\Blog\PlaceResource\RelationManagers;
 use App\Models\Place;
+use Closure;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class PlaceResource extends Resource
 {
@@ -23,11 +26,24 @@ class PlaceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('city_id')
-                    ->relationship('city', 'name')
-                    ->required(),
                 Forms\Components\Select::make('country_id')
                     ->relationship('country', 'name')
+                    ->reactive()
+                    ->required(),
+                Forms\Components\Select::make('city_id')
+                    ->reactive()
+                    ->relationship('city', 'name', function (Builder $query, Closure $get, ?Model $record) {
+                        if ($get('country_id')) {
+                            return $query->where('country_id', $get('country_id'));
+                        }
+                        if ($record?->country_id) {
+                            return $query->where('country_id', $record->country_id);
+                        }
+                        return $query;
+                    })
+                    ->disabled(function (Closure $get, ?Model $record) {
+                        return !($get('country_id') || $record?->country_id);
+                    })
                     ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
@@ -49,8 +65,6 @@ class PlaceResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime(),
             ])
             ->filters([

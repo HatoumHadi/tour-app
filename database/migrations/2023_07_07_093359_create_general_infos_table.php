@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->string('email')->nullable();
             $table->string('copy_right')->nullable();
-            $table->string('main_color')->nullable();
             $table->timestamps();
         });
     }
