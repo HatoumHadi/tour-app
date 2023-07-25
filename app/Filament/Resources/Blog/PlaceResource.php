@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Blog;
 
 use App\Filament\Resources\Blog\PlaceResource\Pages;
 use App\Filament\Resources\Blog\PlaceResource\RelationManagers;
+use App\Filament\Resources\Packages\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Models\Place;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -67,7 +68,7 @@ class PlaceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            PhotoGalleryRelationManager::class,
         ];
     }
 
