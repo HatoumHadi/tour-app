@@ -265,7 +265,7 @@ section {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #8b3eea9c;
+    background: rgba(35, 65, 173, 0.61);
     left: 0;
     top: 0;
     opacity: 0;
@@ -1297,6 +1297,7 @@ section {
 
 /* --Cta Area-- */
 #cta_area {
+    margin-top: 50px;
     background: var(--bg-color);
     padding: 70px 0;
 }

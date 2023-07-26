@@ -33,11 +33,8 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="contact_left_top_heading">
-                                <h2>Do you have any query? Contact with us to get any
-                                    any support.</h2>
+                                <h2>Do you have any query? Contact with us to get any support.</h2>
                                 <h3>Leave us a message</h3>
-                                <p>Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum.
-                                    There are many variations of passages of Lorem Ipsum available but the majority.</p>
                             </div>
                             <div class="contact_form_two">
                                 <form action="https://andit.co/projects/html/and-tour/demo/!#" id="contact_form_content">
@@ -85,11 +82,11 @@
                                 <div class="contact_details_wrapper">
                                     <div class="contact_detais_item">
                                         <h4>Help line</h4>
-                                        <h3><a href="tel:+01-234-567-890">+01 234 567 890</a></h3>
+                                        <h3><a href="tel:+01-234-567-890">{{$generalInfo->phone}}</a></h3>
                                     </div>
                                     <div class="contact_detais_item">
                                         <h4>Support mail</h4>
-                                        <h3><a href="mailto:support@domain.com">support@domain.com</a></h3>
+                                        <h3><a href="mailto:support@domain.com">{{$generalInfo->email}}</a></h3>
                                     </div>
                                     <div class="contact_detais_item">
                                         <h4>Contact hour</h4>

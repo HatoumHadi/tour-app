@@ -16,16 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-//Route::get('/',function (){
-//    return view('components.pages.index');
-//})->name('home');
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/show-places', [HomeController::class, 'showPlaces'])->name('show-places');
+
+Route::get('/show-packages', [HomeController::class, 'showPackages'])->name('show-packages');
 
 Route::view('/adventure-details', 'components.pages.adventure-details')->name('adventure-details');
 
-Route::view('/flight-search-result', 'components.pages.flight.flight-search-result')->name('flight-search-result');
+Route::view('/flights', 'components.pages.flight.flights')->name('flights');
 
 Route::view('/flight-booking-submission', 'components.pages.flight.flight-booking-submission')->name('flight-booking-submission');
 
@@ -62,9 +61,9 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
-Route::view('/contact-us', 'components.pages.contact-us')->name('contact-us');
+Route::get('/contact-us', [HomeController::class, 'showGeneralInfo'])->name('contact-us');
 
-Route::view('/about-us', 'components.pages.about-us')->name('about-us');
+Route::get('/about-us', [HomeController::class, 'showGeneralInfoAboutUs'])->name('about-us');
 
 Route::get('test', function () {
     dd(__('validation.required', ['attribute' => 'test']));

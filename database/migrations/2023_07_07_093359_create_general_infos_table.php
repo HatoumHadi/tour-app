@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('general_infos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phone');
+            $table->text('description')->nullable();
             $table->string('logo')->nullable();
             $table->string('email')->nullable();
             $table->string('copy_right')->nullable();

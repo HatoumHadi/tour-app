@@ -9,8 +9,8 @@
                         <div class="common_bannner_text">
                             <h2>Flight submission</h2>
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span><a href="flight-search-result.html">Flight
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><span><i class="fas fa-circle"></i></span><a href="{{route('flights')}}">Flight
                                         search </a></li>
                                 <li><span><i class="fas fa-circle"></i></span> Flight booking</li>
                             </ul>

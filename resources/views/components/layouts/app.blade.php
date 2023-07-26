@@ -125,7 +125,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('flight-search-result')}}" class="nav-link">
+                                        <a href="{{route('flights')}}" class="nav-link">
                                             Flights
                                         </a>
                                     </li>

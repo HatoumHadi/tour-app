@@ -26,6 +26,14 @@ class GeneralInfoResource extends Resource
                     ->columnSpan(2)
                     ->required()
                     ->maxLength(255),
+
+                Forms\Components\TextInput::make('phone')
+                    ->columnSpan(2)
+                    ->required(),
+
+                Forms\Components\Textarea::make('description')
+                    ->required(),
+
                 Forms\Components\FileUpload::make('logo')
                     ->columnSpan(2)
                     ->directory('general_infos')
@@ -43,6 +51,8 @@ class GeneralInfoResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('phone'),
+                Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\ImageColumn::make('logo'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('copy_right'),

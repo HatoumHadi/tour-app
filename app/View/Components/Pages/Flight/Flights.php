@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FlightSearchResult extends Component
+class Flights extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class FlightSearchResult extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.flight.flight-search-result');
+        return view('components.pages.flight.flights');
     }
 }

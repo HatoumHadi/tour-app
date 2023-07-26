@@ -1795,6 +1795,11 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="load_more_flight">
+                    <a href="{{route('show-places')}}" class="btn btn_theme btn_md"> View all</a>
+                </div>
+
             </div>
         </section>
 
@@ -1827,6 +1832,10 @@
                         @endif
                     @endforeach
 
+                </div>
+
+                <div class="load_more_flight">
+                    <a href="{{route('show-packages')}}" class="btn btn_theme btn_md"> View all</a>
                 </div>
             </div>
         </section>

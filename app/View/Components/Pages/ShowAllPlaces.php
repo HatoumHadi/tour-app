@@ -2,19 +2,18 @@
 
 namespace App\View\Components\Pages;
 
-use App\Models\GeneralInfo;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class AboutUs extends Component
+class ShowAllPlaces extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-       //
+        //
     }
 
     /**
@@ -22,6 +21,6 @@ class AboutUs extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.about-us');
+        return view('components.pages.show-all-places');
     }
 }

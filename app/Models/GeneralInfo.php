@@ -17,6 +17,8 @@ class GeneralInfo extends Model
      */
     protected $fillable = [
         'name',
+        'phone',
+        'description',
         'logo',
         'email',
         'copy_right',
