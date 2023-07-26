@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Adventure;
 use App\Models\City;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Adventure>
+ * @extends Factory<Adventure>
  */
 class AdventureFactory extends Factory
 {
@@ -19,14 +20,10 @@ class AdventureFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => [
-                'en' => fake()->name,
-            ],
-            'description' => [
-                'en' => fake()->sentence,
-            ],
-            'price' => fake()->numberBetween(1,100),
-            'duration' => fake()->numberBetween(1,24),
+            'name' => fake()->name,
+            'description' => fake()->sentence,
+            'price' => fake()->numberBetween(1, 100),
+            'duration' => fake()->numberBetween(1, 24),
             'city_id' => City::inRandomOrder()->value('id'),
             'user_id' => User::inRandomOrder()->value('id'),
         ];

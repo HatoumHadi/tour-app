@@ -29,13 +29,17 @@
                                 <h2>Logged in to stay in touch</h2>
                             </div>
                             <div class="common_author_form">
-                                <form action="#" id="main_author_form">
+                                <form action="{{ route('login.post') }}" method="post" id="main_author_form">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter user name" />
+                                        <input type="email" @class(['form-control', 'border-danger border-2 border' => $errors->hasAny('email', 'password')]) value="{{ old('email') }}" placeholder="Enter email" name="email" aria-describedby="emailHelp"/>
+                                        @error('email')
+                                        <div id="emailHelp" class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Enter password" />
-                                        <a href="forgot-password.html">Forgot password?</a>
+                                        <input type="password" value="{{ old('password') }}" @class(['form-control']) placeholder="Enter password" name="password" aria-describedby="passwordHelp"/>
+                                        {{--                                        <a href="forgot-password.html">Forgot password?</a>--}}
                                     </div>
                                     <div class="common_form_submit">
                                         <button class="btn btn_theme btn_md">Log in</button>

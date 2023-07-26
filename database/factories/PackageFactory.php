@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Package;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Package>
+ * @extends Factory<Package>
  */
 class PackageFactory extends Factory
 {
@@ -17,17 +19,13 @@ class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => [
-                'en' => fake()->name
-            ],
-            'description' => [
-                'en' => fake()->sentence
-            ],
+            'title' => fake()->name,
+            'description' => fake()->sentence,
             'date' => fake()->date,
-            'duration' => fake()->numberBetween(1,24),
-            'price' => fake()->numberBetween(1,10000),
-            'type' => fake()->randomElement(['Basic','Standard','Premium']),
-            'is_active' => true,
+            'duration' => fake()->numberBetween(1, 24),
+            'price' => fake()->numberBetween(1, 10000),
+            'type' => fake()->randomElement(['basic', 'standard', 'premium']),
+            'user_id' => User::inRandomOrder()->value('id')
         ];
     }
 }

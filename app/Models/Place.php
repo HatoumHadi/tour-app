@@ -34,4 +34,9 @@ class Place extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    {
+        return $this->morphMany(PhotoGallery::class, 'tag');
+    }
 }
