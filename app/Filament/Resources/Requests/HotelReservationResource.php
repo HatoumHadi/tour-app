@@ -28,7 +28,7 @@ class HotelReservationResource extends Resource
                 Forms\Components\TextInput::make('number_of_guests'),
                 Forms\Components\Select::make('status')
                     ->options([
-                        'waitlist' => 'Wait list',
+                        'wait_list' => 'Wait list',
                         'cancelled' => 'Cancelled',
                         'confirmed' => 'Confirmed'
                     ]),

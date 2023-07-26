@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RequestsController;
+use App\Http\Controllers\RequestsPostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,10 +39,6 @@ Route::view('/visa-info', 'components.pages.visa.visa-info')->name('visa-info');
 
 Route::view('/visa-details', 'components.pages.visa.visa-details')->name('visa-details');
 
-Route::view('/visa-application', 'components.pages.visa.visa-application')->name('visa-application');
-
-Route::view('/travel-insurance', 'components.pages.travel-insurance.insurance')->name('travel-insurance');
-
 Route::view('/dashboard', 'components.pages.packages.dashboard')->name('dashboard');
 
 Route::view('/package-details', 'components.pages.packages.package-details')->name('package-details');
@@ -60,6 +58,44 @@ Route::middleware('auth')->group(function () {
         ->name('profile');
     Route::get('logout', [AuthController::class, 'logout'])
         ->name('logout');
+    Route::prefix('requests')
+        ->name('requests.')
+        ->controller(RequestsController::class)
+        ->group(function () {
+            Route::get('travel-insurance', 'travelInsurance')
+                ->name('travel-insurance');
+            Route::get('visa-application', 'visa')
+                ->name('visa');
+            Route::get('transportation', 'transportation')
+                ->name('transportation');
+            Route::get('hotel-reservation', 'hotelReservation')
+                ->name('hotel-reservation');
+            Route::get('car-rental', 'carRental')
+                ->name('car-rental');
+            Route::get('adventure', 'adventure')
+                ->name('adventure');
+            Route::get('package', 'package')
+                ->name('package');
+        });
+    Route::prefix('requests')
+        ->name('requests.')
+        ->controller(RequestsPostController::class)
+        ->group(function () {
+            Route::post('travel-insurance', 'travelInsurance')
+                ->name('travel-insurance.post');
+            Route::post('visa-application', 'visa')
+                ->name('visa.post');
+            Route::post('transportation', 'transportation')
+                ->name('transportation.post');
+            Route::post('hotel-reservation', 'hotelReservation')
+                ->name('hotel-reservation.post');
+            Route::post('car-rental', 'carRental')
+                ->name('car-rental.post');
+            Route::post('adventure', 'adventure')
+                ->name('adventure.post');
+            Route::post('package', 'package')
+                ->name('package.post');
+        });
 });
 
 Route::view('/contact-us', 'components.pages.contact-us')->name('contact-us');
