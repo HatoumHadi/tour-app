@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Blog;
 use App\Filament\Resources\Blog;
 use App\Filament\Resources\Blog\CountryResource\Pages;
 use App\Filament\Resources\Blog\CountryResource\RelationManagers;
+use App\Filament\Resources\Blog\CountryResource\RelationManagers\CitiesRelationManager;
 use App\Models\Country;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -30,15 +31,15 @@ class CountryResource extends Resource
                 Forms\Components\TextInput::make('code')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Toggle::make('is_visa')
+                Forms\Components\Toggle::make('has  _visa')
                     ->required(),
-                Forms\Components\Toggle::make('is_ticket')
+                Forms\Components\Toggle::make('has_ticket')
                     ->required(),
-                Forms\Components\Toggle::make('is_adventure')
+                Forms\Components\Toggle::make('has_adventure')
                     ->required(),
-                Forms\Components\Toggle::make('is_hotel')
+                Forms\Components\Toggle::make('has_hotel')
                     ->required(),
-                Forms\Components\Toggle::make('is_packages')
+                Forms\Components\Toggle::make('has_packages')
                     ->required(),
             ]);
     }
@@ -49,21 +50,19 @@ class CountryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('code'),
-                Tables\Columns\IconColumn::make('is_visa')
+                Tables\Columns\IconColumn::make('has_visa')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_ticket')
+                Tables\Columns\IconColumn::make('has_ticket')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_adventure')
+                Tables\Columns\IconColumn::make('has_adventure')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_hotel')
+                Tables\Columns\IconColumn::make('has_hotel')
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_packages')
+                Tables\Columns\IconColumn::make('has_packages')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime(),
             ])
             ->filters([
@@ -80,7 +79,7 @@ class CountryResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CitiesRelationManager::class
         ];
     }
 

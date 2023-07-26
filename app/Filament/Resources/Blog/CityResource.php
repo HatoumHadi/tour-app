@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Blog;
 use App\Filament\Resources\Blog;
 use App\Filament\Resources\Blog\CityResource\Pages;
 use App\Filament\Resources\Blog\CityResource\RelationManagers;
+use App\Filament\Resources\Blog\CountryResource\RelationManagers\CitiesRelationManager;
 use App\Models\City;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -26,8 +27,17 @@ class CityResource extends Resource
             ->schema([
                 Forms\Components\Select::make('country_id')
                     ->relationship('country', 'name')
+                    ->hidden(function ($livewire) {
+                        return $livewire instanceof CitiesRelationManager;
+                    })
                     ->required(),
                 Forms\Components\TextInput::make('name')
+                    ->columnSpan(function ($livewire) {
+                        if ($livewire instanceof CitiesRelationManager) {
+                            return 2;
+                        }
+                        return 1;
+                    })
                     ->required()
                     ->maxLength(255),
             ]);
@@ -37,13 +47,14 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('country.name'),
+                Tables\Columns\TextColumn::make('country.name')
+                ->hidden(function ($livewire) {
+                    return $livewire instanceof CitiesRelationManager;
+                }),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime(),
             ])
             ->filters([

@@ -29,28 +29,42 @@
                                 <h2>Register your account</h2>
                             </div>
                             <div class="common_author_form">
-                                <form action="#" id="main_author_form">
+                                <form action="{{ route('sign-up.post') }}" method="post" id="main_author_form">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter first name*" />
+                                        <input type="text" value="{{ old('name') }}"
+                                               @class(['form-control', 'border-danger border-2 border' => $errors->has('name')])
+                                               placeholder="Enter name" name="name"/>
+                                        @error('name')
+                                        <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Enter last name*" />
+                                        <input type="text" value="{{ old('email') }}"
+                                               @class(['form-control', 'border-danger border-2 border' => $errors->has('email')])
+                                               placeholder="your email address" name="email"/>
+                                        @error('name')
+                                        <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control"
-                                               placeholder="your email address (Optional)" />
+                                        <input type="tel" value="{{ old('phone_number') }}"
+                                               @class(['form-control', 'border-danger border-2 border' => $errors->has('phone_number')])
+                                               placeholder="Phone number" name="phone_number"/>
+                                        @error('phone_number')
+                                        <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Mobile number*" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="User name*" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" />
+                                        <input type="password" name="password"
+                                               @class(['form-control', 'border-danger border-2 border' => $errors->has('password')])
+                                               placeholder="Password"/>
+                                        @error('password')
+                                        <div class="form-text text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <div class="common_form_submit">
-                                        <button class="btn btn_theme btn_md">Register</button>
+                                        <button class="btn btn_theme btn_md" type="submit">Register</button>
                                     </div>
                                     <div class="have_acount_area other_author_option">
                                         <div class="line_or">
@@ -58,10 +72,11 @@
                                         </div>
                                         <ul>
                                             <li><a href="#!"><img src="assets/img/icon/google.png" alt="icon"></a></li>
-                                            <li><a href="#!"><img src="assets/img/icon/facebook.png" alt="icon"></a></li>
+                                            <li><a href="#!"><img src="assets/img/icon/facebook.png" alt="icon"></a>
+                                            </li>
                                             <li><a href="#!"><img src="assets/img/icon/twitter.png" alt="icon"></a></li>
                                         </ul>
-                                        <p>Already have an account? <a href="{{route('login')}}">Log in now</a></p>
+                                        <p>Already have an account? <a href="{{route('login')}}">Login now</a></p>
                                     </div>
                                 </form>
                             </div>

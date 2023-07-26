@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->boolean('is_visa')->default(true);
-            $table->boolean('is_ticket')->default(true);
-            $table->boolean('is_adventure')->default(true);
-            $table->boolean('is_hotel')->default(true);
-            $table->boolean('is_packages')->default(true);
+            $table->boolean('has_visa')->default(true);
+            $table->boolean('has_ticket')->default(true);
+            $table->boolean('has_adventure')->default(true);
+            $table->boolean('has_hotel')->default(true);
+            $table->boolean('has_packages')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

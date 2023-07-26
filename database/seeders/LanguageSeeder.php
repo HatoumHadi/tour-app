@@ -14,17 +14,17 @@ class LanguageSeeder extends Seeder
     public function run(): void
     {
         Language::create([
-            'name' => json_encode([
+            'name' => [
                 'en' => 'English',
                 'ar' => 'الانكليزية',
-            ]),
+            ],
             'code' => 'en'
         ]);
         Language::create([
-            'name' => json_encode([
+            'name' => [
                 'en' => 'Arabic',
                 'ar' => 'العربية'
-            ]),
+            ],
             'code' => 'ar'
         ]);
     }

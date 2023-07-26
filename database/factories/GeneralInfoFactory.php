@@ -2,11 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\GeneralInfo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Storage;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\GeneralInfo>
+ * @extends Factory<GeneralInfo>
  */
 class GeneralInfoFactory extends Factory
 {
@@ -17,12 +19,15 @@ class GeneralInfoFactory extends Factory
      */
     public function definition(): array
     {
+        $name = fake()->name;
+        $slug = Str::slug($name);
+        $imageName = "general_infos/$slug.png";
+        Storage::put("public/$imageName", file_get_contents(fake()->imageUrl()));
         return [
-            'name' => fake()->name(),
-            'logo' => fake()->image,
+            'name' => $name,
+            'logo' => $imageName,
             'email' => fake()->email,
             'copy_right' => fake()->sentence,
-            'main_color' => fake()->hexColor(),
         ];
     }
 }

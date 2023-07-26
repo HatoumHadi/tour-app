@@ -10,7 +10,7 @@
                     <div class="common_bannner_text">
                         <h2>About us</h2>
                         <ul>
-                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <li><span><i class="fas fa-circle"></i></span> About</li>
                         </ul>
                     </div>

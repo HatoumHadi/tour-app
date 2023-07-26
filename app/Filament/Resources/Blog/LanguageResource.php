@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources\Blog;
 
-use App\Filament\Resources\Blog\LanguageResource\Pages;
-use App\Filament\Resources\Blog\LanguageResource\RelationManagers;
 use App\Models\Language;
 use Filament\Forms;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
@@ -13,6 +12,13 @@ use Filament\Tables;
 
 class LanguageResource extends Resource
 {
+    use Translatable;
+
+    public static function getTranslatableLocales(): array
+    {
+        return Language::pluck('code')->toArray();
+    }
+
     protected static ?string $model = Language::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-translate';
@@ -40,8 +46,6 @@ class LanguageResource extends Resource
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime(),
             ])
             ->filters([

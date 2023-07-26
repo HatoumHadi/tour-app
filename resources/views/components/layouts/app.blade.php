@@ -57,8 +57,23 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <ul class="topbar-others-options">
-                        <li><a href="{{route('login')}}">Login</a></li>
-                        <li><a href="{{route('sign-up')}}">Sign up</a></li>
+                        @guest
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            <li><a href="{{route('sign-up')}}">Sign up</a></li>
+                        @else
+                            <li>
+                                <div class="dropdown language-option">
+                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span>My Account</span>
+                                    </button>
+                                    <div class="dropdown-menu language-dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        @endguest
                         <li>
                             <div class="dropdown language-option">
                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
