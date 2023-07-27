@@ -21,13 +21,13 @@ class GeneralInfoFactory extends Factory
     {
         $name = "Runway";
         $slug = Str::slug($name);
-        $imageName = "general_infos/$slug.png";
-        Storage::put("public/$imageName", file_get_contents(fake()->imageUrl()));
+//        $imageName = "general_infos/$slug.png";
+//        Storage::put("public/$imageName", file_get_contents(fake()->imageUrl()));
         return [
             'name' => $name,
             'phone' => fake()->phoneNumber,
             'description' => fake()->paragraph(5),
-            'logo' => $imageName,
+            'logo' => null,
             'email' => "Runway@admin.com",
             'copy_right' => "Copyright © 2023 All Rights Reserved",
         ];

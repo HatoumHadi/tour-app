@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages;
+namespace App\View\Components\Pages\Adventures;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class AdventureDetails extends Component
+class Adventures extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class AdventureDetails extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.adventure-details');
+        return view('components.pages.adventures.adventures');
     }
 }

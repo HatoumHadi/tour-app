@@ -32,7 +32,7 @@
                         @foreach($items as $item)
                             <div class="theme_common_box_two img_hover">
                                 <div class="theme_two_box_img">
-                                    <a href="{{route('adventure-details')}}">
+                                    <div>
                                         @if(count($item->photoGallery) > 0)
                                             @foreach($item->photoGallery as $image)
                                                 <img src="{{ asset('storage/' . $image->media) }}"
@@ -42,13 +42,13 @@
                                             <img src="{{ asset('storage/images/AdventureDefualtImage.png') }}"
                                                  alt="img">
                                         @endif
-                                    </a>
+                                    </div>
                                     @if($item->city)
                                         <p><i class="fas fa-map-marker-alt"></i>{{$item->city->name}}</p>
                                     @endif
                                 </div>
                                 <div class="theme_two_box_content">
-                                    <h4><a href="{{route('adventure-details')}}">{{$item->title}}</a></h4>
+                                    <h4>{{$item->title}}</h4>
                                     <p>{{$item->description}}</p>
                                 </div>
                             </div>

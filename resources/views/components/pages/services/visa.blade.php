@@ -1,18 +1,15 @@
 <x-layouts.app>
     <div>
-
         <!-- Common Banner Area -->
         <section id="common_banner">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Flight submission</h2>
+                            <h2>Visa application</h2>
                             <ul>
                                 <li><a href="{{route('home')}}">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span><a href="{{route('flights')}}">Flight
-                                        search </a></li>
-                                <li><span><i class="fas fa-circle"></i></span> Flight booking</li>
+                                <li><span><i class="fas fa-circle"></i></span> Visa application</li>
                             </ul>
                         </div>
                     </div>
@@ -20,14 +17,14 @@
             </div>
         </section>
 
-        <!-- Tour Booking Submission Areas -->
+        <!-- Visa application  Areas -->
         <section id="tour_booking_submission" class="section_padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="tou_booking_form_Wrapper">
                             <div class="booking_tour_form">
-                                <h3 class="heading_theme">Passenger information</h3>
+                                <h3 class="heading_theme">Traveller details</h3>
                                 <div class="tour_booking_form_box">
                                     <form action="https://andit.co/projects/html/and-tour/demo/!#" id="tour_bookking_form_item">
                                         <div class="row">
@@ -55,10 +52,37 @@
                                                            placeholder="Mobile number*">
                                                 </div>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <select class="form-control form-select bg_input">
+                                                        <option value="1">Gender</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="1">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control bg_input"
+                                                           placeholder="Date of birth">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control bg_input"
+                                                           placeholder="Passport number">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control bg_input"
+                                                           placeholder="Passport expiry date">
+                                                </div>
+                                            </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control bg_input"
-                                                           placeholder="Street address">
+                                                           placeholder="Local street address">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -70,7 +94,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <select class="form-control form-select bg_input">
-                                                        <option value="1">Khulna</option>
+                                                        <option value="1">City</option>
                                                         <option value="1">New York</option>
                                                         <option value="1">Barisal</option>
                                                         <option value="1">Nator</option>
@@ -98,17 +122,6 @@
                                                         <option value="1">Nator</option>
                                                         <option value="1">Joybangla</option>
                                                     </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control bg_input"
-                                                           placeholder="Passport no.">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control bg_input" placeholder="Visa no.">
                                                 </div>
                                             </div>
                                         </div>
@@ -206,11 +219,13 @@
                                 <div class="form-check write_spical_check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1">
                                     <label class="form-check-label" for="flexCheckDefaultf1">
-                                        I read and accept all <a href="terms-service.html">Terms and conditios</a>
-
+                                    <span class="main_spical_check">
+                                        <span>I read and accept all <a href="terms-service.html">Terms and
+                                                conditios</a></span>
+                                    </span>
                                     </label>
                                 </div>
-                                <a href="booking-confirmation.html" class="btn btn_theme btn_md">Pay now</a>
+                                <a href="booking-confirmation.html" class="btn btn_theme btn_md">Submit</a>
                             </div>
                         </div>
                     </div>
@@ -219,31 +234,20 @@
                             <div class="tour_detail_right_sidebar">
                                 <div class="tour_details_right_boxed">
                                     <div class="tour_details_right_box_heading">
-                                        <h3>Flights</h3>
+                                        <h3>Business visa</h3>
                                     </div>
-                                    <div class="flight_sidebar_right">
-                                        <div class="flight_search_left_sidebar">
-                                            <div class="flight_search_destination_sidebar">
-                                                <p>From</p>
-                                                <h3>New York</h3>
-                                                <h6>JFK - John F. Kennedy International...</h6>
-                                            </div>
+                                    <div class="valid_date_area">
+                                        <div class="valid_date_area_one">
+                                            <h5>Valid from</h5>
+                                            <p>01 Feb 2022</p>
                                         </div>
-                                        <div class="flight_search_middel_sidebar">
-                                            <div class="flight_right_arrow_sidebar">
-                                                <img src="assets/img/icon/right_arrow.png" alt="icon">
-                                                <h6>Non-stop</h6>
-                                                <p>01h 05minute </p>
-                                            </div>
-                                            <div class="flight_search_destination_sidebar">
-                                                <p>To</p>
-                                                <h3>London </h3>
-                                                <h6>LCY, London city airport </h6>
-                                            </div>
+                                        <div class="valid_date_area_one">
+                                            <h5>Valid till</h5>
+                                            <p>15 Feb 2022</p>
                                         </div>
                                     </div>
                                     <div class="tour_package_details_bar_list">
-                                        <h5>Package rules</h5>
+                                        <h5>Room facilities</h5>
                                         <ul>
                                             <li><i class="fas fa-circle"></i>Buffet breakfast as per the Itinerary</li>
                                             <li><i class="fas fa-circle"></i>Visit eight villages showcasing Polynesian
@@ -260,7 +264,7 @@
                                         <h5>Price</h5>
                                         <div class="tour_package_bar_price">
                                             <h6><del>$ 35,500</del></h6>
-                                            <h3>$ 30,500 <sub> / Adult X 1</sub> </h3>
+                                            <h3>$ 30,500 <sub>/Per serson</sub> </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +277,7 @@
                                     <div class="edit_date_form">
                                         <div class="form-group">
                                             <label for="dates">Edit Date</label>
-                                            <input type="date" value="2022-05-05" class="form-control" id="dates">
+                                            <input type="date" id="dates" value="2022-05-05" class="form-control">
                                         </div>
                                     </div>
                                     <div class="tour_package_details_bar_list">
@@ -315,25 +319,6 @@
                             <div class="tour_detail_right_sidebar">
                                 <div class="tour_details_right_boxed">
                                     <div class="tour_details_right_box_heading">
-                                        <h3>Coupon code</h3>
-                                    </div>
-                                    <div class="coupon_code_area_booking">
-                                        <form action="#!">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control bg_input"
-                                                       placeholder="Enter coupon code">
-                                            </div>
-                                            <div class="coupon_code_submit">
-                                                <button class="btn btn_theme btn_md">Apply voucher</button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="tour_detail_right_sidebar">
-                                <div class="tour_details_right_boxed">
-                                    <div class="tour_details_right_box_heading">
                                         <h3>Booking amount</h3>
                                     </div>
 
@@ -362,5 +347,6 @@
                 </div>
             </div>
         </section>
+
     </div>
 </x-layouts.app>

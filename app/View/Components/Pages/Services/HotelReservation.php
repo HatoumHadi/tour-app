@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages\TravelInsurance;
+namespace App\View\Components\Pages\Services;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Insurance extends Component
+class HotelReservation extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Insurance extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.travel-insurance.insurance');
+        return view('components.pages.services.hotel-reservation');
     }
 }

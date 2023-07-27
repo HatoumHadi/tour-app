@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages\Packages;
+namespace App\View\Components\Pages\Services;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Dashboard extends Component
+class FlightBooking extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class Dashboard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.packages.dashboard');
+        return view('components.pages.services.flight-booking');
     }
 }

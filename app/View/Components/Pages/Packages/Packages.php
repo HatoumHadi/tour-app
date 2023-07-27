@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages\Hotel;
+namespace App\View\Components\Pages\Packages;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class HotelDetails extends Component
+class Packages extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class HotelDetails extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.hotel.hotel-details');
+        return view('components.pages.packages.packages');
     }
 }

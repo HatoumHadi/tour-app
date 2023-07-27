@@ -13,21 +13,6 @@ use Illuminate\Support\Facades\Blade;
 
 class RequestsController extends Controller
 {
-    public function travelInsurance()
-    {
-        return Blade::renderComponent(new Insurance());
-    }
-
-    public function visa()
-    {
-        return Blade::renderComponent(new VisaApplication());
-    }
-
-    public function transportation()
-    {
-        return Blade::renderComponent(new Transportation());
-    }
-
     public function hotelReservation()
     {
         return Blade::renderComponent(new HotelReservation());
@@ -38,13 +23,9 @@ class RequestsController extends Controller
         return Blade::renderComponent(new CarRental());
     }
 
-    public function adventure()
-    {
-        return Blade::renderComponent(new Adventure());
-    }
-
     public function package()
     {
         return Blade::renderComponent(new Package());
     }
+
 }

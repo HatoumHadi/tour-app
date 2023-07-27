@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages\Visa;
+namespace App\View\Components\Pages\Services;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class VisaInfo extends Component
+class Visa extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class VisaInfo extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.visa.visa-info');
+        return view('components.pages.services.visa');
     }
 }

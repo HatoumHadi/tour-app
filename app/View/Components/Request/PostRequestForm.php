@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\Pages\Visa;
+namespace App\View\Components\Request;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class VisaDetails extends Component
+class PostRequestForm extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class VisaDetails extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.pages.visa.visa-details');
+        return view('components.request.post-request-form');
     }
 }

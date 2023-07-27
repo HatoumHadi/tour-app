@@ -8,6 +8,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Livewire\TemporaryUploadedFile;
 
 class GeneralInfoResource extends Resource
 {
@@ -23,24 +24,32 @@ class GeneralInfoResource extends Resource
             ->columns(2)
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->columnSpan(2)
+                    ->columnSpan(1)
                     ->required()
                     ->maxLength(255),
 
                 Forms\Components\TextInput::make('phone')
-                    ->columnSpan(2)
+                    ->columnSpan(1)
                     ->required(),
 
                 Forms\Components\Textarea::make('description')
+                    ->columnSpan(2)
                     ->required(),
 
                 Forms\Components\FileUpload::make('logo')
                     ->columnSpan(2)
+                    ->multiple()
                     ->directory('general_infos')
+                    ->preserveFilenames()
+                    ->getUploadedFileNameForStorageUsing(function (TemporaryUploadedFile $file): string {
+                        return (string) str($file->getClientOriginalName());
+                    })
                     ->image(),
+
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->maxLength(255),
+
                 Forms\Components\TextInput::make('copy_right')
                     ->maxLength(255),
             ]);
@@ -71,6 +80,7 @@ class GeneralInfoResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
+
 
     public static function getRelations(): array
     {

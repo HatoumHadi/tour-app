@@ -18,11 +18,11 @@
     <!-- owl.theme.default css -->
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}"/>
     <!-- Slick css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}"/>
     <!--slick-theme.css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.html')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.html')}}"/>
     <!-- Rangeslider css -->
-    <link rel="stylesheet" href="{{asset('assets/css/nouislider.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/nouislider.css')}}"/>
     <!-- navber css -->
     <link rel="stylesheet" href="{{asset('assets/css/navber.css')}}"/>
     <!-- meanmenu css -->
@@ -99,8 +99,9 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{route('home')}}">
-                            <img src="assets/img/logo.png" alt="logo">
                         </a>
+
+
                     </div>
                 </div>
             </div>
@@ -109,7 +110,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="{{route('home')}}">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <div class="logo-image-size"></div>
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
@@ -125,56 +126,26 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('flights')}}" class="nav-link">
-                                            Flights
-                                        </a>
+                                        <a href="{{route('flight-booking')}}">Flight booking</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('hotels')}}" class="nav-link">
-                                            Hotel reservation
-                                        </a>
+                                        <a href="{{route('hotel-reservation')}}">Hotel reservation</a>
+
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('visa-info')}}" class="nav-link">
-                                            Visa
-                                        </a>
+                                        <a href="{{route('visa')}}">Visa</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('requests.travel-insurance')}}" class="nav-link">
-                                            Travel insurance
-                                        </a>
+                                        <a href="{{route('travel-insurance')}}">Travel insurance</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Packages <i class="fas fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="hotel-booking.html" class="nav-link">Hotel booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="flight-booking.html" class="nav-link">Flight booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="tour-booking.html" class="nav-link">Tour booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="booking-history.html" class="nav-link">Booking history</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="my-profile.html" class="nav-link">My profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="wallet.html" class="nav-link">Wallet</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="notification.html" class="nav-link">Notifications</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('packages')}}" class="nav-link">Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('adventures')}}" class="nav-link">Adventures</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('contact-us')}}" class="nav-link">Contact us</a>
@@ -185,13 +156,6 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="others-options d-flex align-items-center">
-                            <div class="option-item">
-                                <a href="#" class="search-box">
-                                    <i class="bi bi-search"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </nav>
             </div>
@@ -294,16 +258,6 @@
                 <div class="footer_link_area">
                     <ul>
                         <li><a href="{{route('contact-us')}}">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                <div class="footer_heading_area">
-                    <h5>Other Services</h5>
-                </div>
-                <div class="footer_link_area">
-                    <ul>
-                        <li><a href="{{route('hotels')}}">List My Hotel</a></li>
                     </ul>
                 </div>
             </div>
