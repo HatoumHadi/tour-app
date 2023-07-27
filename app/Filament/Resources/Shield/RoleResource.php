@@ -4,7 +4,6 @@ namespace App\Filament\Resources\Shield;
 
 use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use BezhanSalleh\FilamentShield\Facades\FilamentShield;
-use App\Filament\Resources\Shield\RoleResource\Pages;
 use BezhanSalleh\FilamentShield\Support\Utils;
 use Closure;
 use Filament\Forms;
@@ -174,10 +173,10 @@ class RoleResource extends Resource implements HasShieldPermissions
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListRoles::route('/'),
-            'create' => Pages\CreateRole::route('/create'),
-            'view' => Pages\ViewRole::route('/{record}'),
-            'edit' => Pages\EditRole::route('/{record}/edit'),
+            'index' => \App\Filament\Resources\Shield\RoleResource\Pages\ListRoles::route('/'),
+            'create' => \App\Filament\Resources\Shield\RoleResource\Pages\CreateRole::route('/create'),
+            'view' => \App\Filament\Resources\Shield\RoleResource\Pages\ViewRole::route('/{record}'),
+            'edit' => \App\Filament\Resources\Shield\RoleResource\Pages\EditRole::route('/{record}/edit'),
         ];
     }
 
@@ -203,9 +202,7 @@ class RoleResource extends Resource implements HasShieldPermissions
 
     protected static function getNavigationGroup(): ?string
     {
-        return Utils::isResourceNavigationGroupEnabled()
-            ? __('filament-shield::filament-shield.nav.group')
-            : '';
+        return 'Users And Permissions';
     }
 
     protected static function getNavigationLabel(): string

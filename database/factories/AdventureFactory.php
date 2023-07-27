@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Adventure;
-use App\Models\City;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Adventure>
@@ -19,13 +19,17 @@ class AdventureFactory extends Factory
      */
     public function definition(): array
     {
+
+        $title = fake()->words(asText: true);
+        $slug = Str::slug($title);
+        $imageName = "adventures/$slug.png";
+        Storage::put("public/$imageName", file_get_contents(fake()->imageUrl()));
         return [
-            'name' => fake()->name,
-            'description' => fake()->sentence,
-            'price' => fake()->numberBetween(1, 100),
-            'duration' => fake()->numberBetween(1, 24),
-            'city_id' => City::inRandomOrder()->value('id'),
-            'user_id' => User::inRandomOrder()->value('id'),
+            'title' => $title,
+            'slug' => $slug,
+            'description' => fake()->paragraph,
+            'content' => fake()->paragraphs(asText: true),
+            'thumbnail' => $imageName
         ];
     }
 }

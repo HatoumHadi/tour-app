@@ -21,26 +21,9 @@ class Adventure extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'title',
         'description',
-        'price',
-        'duration',
-        'city_id',
-        'user_id',
+        'content',
+        'slug'
     ];
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function city(): BelongsTo
-    {
-        return $this->belongsTo(City::class);
-    }
-
-    public function photoGallery(): MorphMany
-    {
-        return $this->morphMany(PhotoGallery::class, 'tag');
-    }
 }

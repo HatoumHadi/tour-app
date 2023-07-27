@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdventureController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RequestsController;
 use App\Http\Controllers\RequestsPostController;
@@ -24,13 +26,11 @@ Route::get('/show-places', [HomeController::class, 'showPlaces'])->name('show-pl
 
 Route::get('/show-packages', [HomeController::class, 'showPackages'])->name('show-packages');
 
-Route::view('/adventures', 'components.pages.adventures.adventures')->name('adventures');
+Route::resource('adventures', AdventureController::class)
+    ->only('index', 'show');
 
-Route::view('/adventure-details', 'components.pages.adventures.adventure-details')->name('adventure-details');
-
-Route::view('/packages', 'components.pages.packages.packages')->name('packages');
-
-Route::view('/package-details', 'components.pages.packages.package-details')->name('package-details');
+Route::resource('packages', PackageController::class)
+    ->only('index', 'show');
 
 Route::view('/flight-booking', 'components.pages.services.flight-booking')->name('flight-booking');
 
@@ -39,7 +39,6 @@ Route::view('/hotel-reservation', 'components.pages.services.hotel-reservation')
 Route::view('/visa', 'components.pages.services.visa')->name('visa');
 
 Route::view('/travel-insurance', 'components.pages.services.travel-insurance')->name('travel-insurance');
-
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])
@@ -51,7 +50,6 @@ Route::middleware('guest')->group(function () {
     Route::post('sign-up', [AuthController::class, 'postSignUp'])
         ->name('sign-up.post');
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::get('profile', [ProfileController::class, 'index'])
@@ -86,10 +84,9 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/contact-us', [HomeController::class, 'showGeneralInfo'])->name('contact-us');
+Route::get('contact-us', [HomeController::class, 'contactUs'])
+    ->name('contact-us');
+Route::post('contact-us', [HomeController::class, 'postContact'])
+    ->name('contact-us.post');
 
-Route::get('/about-us', [HomeController::class, 'showGeneralInfoAboutUs'])->name('about-us');
-
-Route::get('test', function () {
-    dd(__('validation.required', ['attribute' => 'test']));
-});
+Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');

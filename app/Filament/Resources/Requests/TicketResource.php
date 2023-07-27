@@ -42,6 +42,11 @@ class TicketResource extends Resource
             ]);
     }
 
+    public static function canViewAny(): bool
+    {
+        return false;
+    }
+
     public static function table(Table $table): Table
     {
         return $table

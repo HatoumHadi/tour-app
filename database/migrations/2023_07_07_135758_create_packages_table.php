@@ -14,12 +14,13 @@ return new class extends Migration {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->text('description');
             $table->date('date');
             $table->string('duration');
             $table->double('price');
+            $table->string('thumbnail');
             $table->enum('type', ['basic', 'standard', 'premium']);
-            $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

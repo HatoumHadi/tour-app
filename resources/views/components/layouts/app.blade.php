@@ -115,7 +115,7 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link active">
+                                <a href="{{route('home')}}" @class(['active' => request()->routeIs('home')]) class="nav-link">
                                     Home
                                 </a>
                             </li>
@@ -142,16 +142,16 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{route('packages')}}" class="nav-link">Packages</a>
+                                <a href="{{route('packages.index')}}" class="nav-link">Packages</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('adventures')}}" class="nav-link">Adventures</a>
+                                <a href="{{route('adventures.index')}}" class="nav-link">Adventures</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('contact-us')}}" class="nav-link">Contact us</a>
+                                <a href="{{route('contact-us')}}" @class(['active' => request()->routeIs('contact-us')]) class="nav-link">Contact us</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('about-us')}}" class="nav-link">
+                                <a href="{{route('about-us')}}" @class(['active' => request()->routeIs('about-us')]) class="nav-link">
                                     About us
                                 </a>
                             </li>
