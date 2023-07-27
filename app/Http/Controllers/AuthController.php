@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Filament\Pages\Login;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignUpRequest;
 use App\Models\User;
+use App\View\Components\Pages\Auth\Login;
 use App\View\Components\Pages\Auth\SignUp;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
     public function login()
     {
-        $login = new Login();
-        return $login->render();
+        return Blade::renderComponent(new Login());
     }
 
     public function postLogin(LoginRequest $request)
@@ -31,8 +31,7 @@ class AuthController extends Controller
 
     public function signUp()
     {
-        $signUp = new SignUp();
-        return $signUp->render();
+        return Blade::renderComponent(new SignUp());
     }
 
     public function postSignUp(SignUpRequest $request)

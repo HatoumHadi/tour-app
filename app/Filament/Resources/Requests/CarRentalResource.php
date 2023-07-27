@@ -39,8 +39,6 @@ class CarRentalResource extends Resource
                 Forms\Components\TextInput::make('name'),
                 Forms\Components\DatePicker::make('start_date'),
                 Forms\Components\DatePicker::make('end_date'),
-                Forms\Components\TextInput::make('num_of_days')
-                    ->label('Number of days'),
                 Forms\Components\TextInput::make('price')
                     ->prefix('$'),
                 Forms\Components\DatePicker::make('created_at')
@@ -79,13 +77,6 @@ class CarRentalResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('num_of_days')
-                    ->label('Number of days')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
                 Tables\Columns\TextColumn::make('price')
                     ->searchable()
                     ->sortable()

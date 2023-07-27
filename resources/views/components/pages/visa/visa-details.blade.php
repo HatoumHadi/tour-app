@@ -553,7 +553,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i>New beach, Thailand</p>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Kantua hotel, Thailand</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Kantua hotel, Thailand</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>
@@ -568,7 +568,7 @@
                                 </div>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Hotel paradise international</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Hotel paradise international</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>
@@ -580,7 +580,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i>Kualalampur</p>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Family package</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Family package</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>
@@ -595,7 +595,7 @@
                                 </div>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Explorew the evergreen forest</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Explorew the evergreen forest</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>
@@ -607,7 +607,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i>Enjoy ancient italy, Couple tour </p>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Thailand grand suit</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Thailand grand suit</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>
@@ -619,7 +619,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i>Long island</p>
                             </div>
                             <div class="theme_two_box_content">
-                                <h4><a href="{{route('visa-application')}}">Zefi resort and spa</a></h4>
+                                <h4><a href="{{route('requests.visa')}}">Zefi resort and spa</a></h4>
                                 <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
                                         reviewes)</span></p>
                                 <h3>$99.00 <span>Price starts from</span></h3>

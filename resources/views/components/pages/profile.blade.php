@@ -15,6 +15,5 @@
                 </div>
             </div>
         </section>
-        {{ auth()->user()->toJson() }}
     </div>
 </x-layouts.app>

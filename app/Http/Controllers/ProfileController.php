@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\View\Components\Pages\Profile;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        $profile = new Profile();
-        return $profile->render();
+        return Blade::renderComponent(new Profile());
     }
 }

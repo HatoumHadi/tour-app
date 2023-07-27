@@ -140,7 +140,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('travel-insurance')}}" class="nav-link">
+                                        <a href="{{route('requests.travel-insurance')}}" class="nav-link">
                                             Travel insurance
                                         </a>
                                     </li>

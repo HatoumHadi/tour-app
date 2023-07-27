@@ -20,7 +20,6 @@ return new class extends Migration
             $table->enum('type',['sedan', 'suv', 'coupe', 'minivan', 'luxury car', 'off-road vehicle']);
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('num_of_days');
             $table->string('price');
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
