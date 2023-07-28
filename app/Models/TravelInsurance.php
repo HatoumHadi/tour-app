@@ -17,7 +17,7 @@ class TravelInsurance extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'plan_name',
         'policy_number',
         'coverage_start_date',
         'coverage_end_date',
@@ -30,8 +30,4 @@ class TravelInsurance extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function photoGallery(): \Illuminate\Database\Eloquent\Relations\MorphMany
-    {
-        return $this->morphMany(PhotoGallery::class, 'tag');
-    }
 }

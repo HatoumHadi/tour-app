@@ -22,43 +22,39 @@ class FlightResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(6)
             ->schema([
-                Forms\Components\TextInput::make('airline'),
-                Forms\Components\TextInput::make('flight_number'),
-                Forms\Components\TextInput::make('departure_airport'),
-
-                Forms\Components\Select::make('departure_city_id')
-                    ->label('Departure City')
-                    ->relationship('cityDeparture', 'name'),
-
-                Forms\Components\DateTimePicker::make('departure_time'),
-                Forms\Components\TextInput::make('arrival_airport'),
-
-                Forms\Components\Select::make('arrival_city_id')
-                    ->label('Arrival City')
-                    ->relationship('cityArrival', 'name'),
-
-                Forms\Components\DateTimePicker::make('arrival_time'),
-                Forms\Components\TextInput::make('duration'),
-
-                Forms\Components\Select::make('aircraft_type')
-                    ->options([
-                        'icao' => 'ICAO',
-                        'easa' => 'EASA'
+                Forms\Components\Card::make()
+                    ->relationship('user')
+                    ->columnSpan(6)
+                    ->columns(3)
+                    ->schema([
+                        Forms\Components\TextInput::make('name'),
+                        Forms\Components\TextInput::make('email'),
+                        Forms\Components\TextInput::make('phone_number'),
                     ]),
-                Forms\Components\TextInput::make('price'),
-                Forms\Components\Select::make('aircraft_type')
+                Forms\Components\DatePicker::make('created_at')
+                    ->columnSpan(2)
+                    ->label('Requested at'),
+                Forms\Components\TextInput::make('from')
+                    ->columnSpan(2),
+                Forms\Components\TextInput::make('to')
+                    ->columnSpan(2),
+                Forms\Components\DateTimePicker::make('departure_time')
+                    ->columnSpan(2),
+                Forms\Components\DateTimePicker::make('arrival_time')
+                    ->columnSpan(2),
+                Forms\Components\Select::make('status')
+                    ->columnSpan(2)
                     ->options([
                         'scheduled' => 'Scheduled',
                         'delayed' => 'Delayed',
                         'departed' => 'Departed',
-                        'in air' => 'In Air',
+                        'in-air' => 'In air',
                         'landed' => 'Landed',
                         'arrived' => 'Arrived',
-                        'cancelled' => 'Cancelled',
-                    ]),
-                Forms\Components\DatePicker::make('date')
-                    ->label('Requested at')
+                        'cancelled' => 'Cancelled'
+                    ])
             ]);
     }
 
@@ -66,83 +62,37 @@ class FlightResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('airline')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-                Tables\Columns\TextColumn::make('flight_number')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('departure_airport')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('cityDeparture.name')
-                    ->label('Departure City')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Requested by'),
+                Tables\Columns\TextColumn::make('from')
+                    ->wrap(),
+                Tables\Columns\TextColumn::make('to')
+                    ->wrap(),
                 Tables\Columns\TextColumn::make('departure_time')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('arrival_airport')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('cityArrival.name')
-                    ->label('Arrival City')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
+                    ->dateTime(),
                 Tables\Columns\TextColumn::make('arrival_time')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('duration')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('aircraft_type')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('price')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('aircraft_type')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('date')
+                    ->dateTime(),
+                Tables\Columns\TextColumn::make('status')
+                    ->enum([
+                        'scheduled' => 'Scheduled',
+                        'delayed' => 'Delayed',
+                        'departed' => 'Departed',
+                        'in-air' => 'In air',
+                        'landed' => 'Landed',
+                        'arrived' => 'Arrived',
+                        'cancelled' => 'Cancelled'
+                    ]),
+                Tables\Columns\TextColumn::make('created_at')
                     ->label('Requested at')
-                    ->dateTime()
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
+                    ->dateTime(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
-//                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-//                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 

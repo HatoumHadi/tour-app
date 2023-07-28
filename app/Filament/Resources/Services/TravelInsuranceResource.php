@@ -5,6 +5,8 @@ namespace App\Filament\Resources\Services;
 use App\Filament\Resources\Requests\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Filament\Resources\Requests\TravelInsuranceResource\Pages;
 use App\Filament\Resources\Requests\TravelInsuranceResource\RelationManagers;
+use App\Filament\Resources\Services\TravelInsuranceResource\Pages\ListTravelInsurances;
+use App\Filament\Resources\Services\TravelInsuranceResource\Pages\ViewTravelInsurance;
 use App\Models\TravelInsurance;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -23,14 +25,30 @@ class TravelInsuranceResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(6)
             ->schema([
-                Forms\Components\Select::make('user_id')
-                    ->label('Requested by')
-                    ->relationship('user', 'name'),
-                Forms\Components\TextInput::make('policy_number'),
-                Forms\Components\DatePicker::make('coverage_start_date'),
-                Forms\Components\DatePicker::make('coverage_end_date'),
-                Forms\Components\TextInput::make('insurance_company'),
+                Forms\Components\Card::make()
+                    ->relationship('user')
+                    ->columnSpan(6)
+                    ->columns(3)
+                    ->schema([
+                        Forms\Components\TextInput::make('name'),
+                        Forms\Components\TextInput::make('email'),
+                        Forms\Components\TextInput::make('phone_number'),
+                    ]),
+                Forms\Components\TextInput::make('plan_name')
+                    ->columnSpan(2),
+                Forms\Components\TextInput::make('policy_number')
+                    ->columnSpan(2),
+                Forms\Components\DatePicker::make('coverage_start_date')
+                    ->columnSpan(2),
+                Forms\Components\DatePicker::make('coverage_end_date')
+                    ->columnSpan(2),
+                Forms\Components\TextInput::make('insurance_company')
+                    ->columnSpan(2),
+                Forms\Components\DatePicker::make('created_at')
+                    ->columnSpan(2)
+                    ->label('Requested at')
             ]);
     }
 
@@ -43,29 +61,24 @@ class TravelInsuranceResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
                 Tables\Columns\TextColumn::make('policy_number')
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
+                Tables\Columns\TextColumn::make('insurance_company')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(),
                 Tables\Columns\TextColumn::make('coverage_start_date')
                     ->date()
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
                 Tables\Columns\TextColumn::make('coverage_end_date')
                     ->date()
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('insurance_company')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Requested at')
                     ->dateTime()
@@ -83,18 +96,11 @@ class TravelInsuranceResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            PhotoGalleryRelationManager::class,
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => \App\Filament\Resources\Services\TravelInsuranceResource\Pages\ListTravelInsurances::route('/'),
-            'view' => \App\Filament\Resources\Services\TravelInsuranceResource\Pages\ViewTravelInsurance::route('/{record}'),
+            'index' => ListTravelInsurances::route('/'),
+            'view' => ViewTravelInsurance::route('/{record}'),
         ];
     }
 }

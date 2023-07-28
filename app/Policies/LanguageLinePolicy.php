@@ -18,7 +18,7 @@ class LanguageLinePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_blog::translation');
+        return $user->can('view_any_content::management::translation');
     }
 
     /**
@@ -30,7 +30,7 @@ class LanguageLinePolicy
      */
     public function view(User $user, LanguageLine $languageLine)
     {
-        return $user->can('view_blog::translation');
+        return $user->can('view_content::management::translation');
     }
 
     /**
@@ -41,7 +41,7 @@ class LanguageLinePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_blog::translation');
+        return $user->can('create_content::management::translation');
     }
 
     /**
@@ -53,7 +53,7 @@ class LanguageLinePolicy
      */
     public function update(User $user, LanguageLine $languageLine)
     {
-        return $user->can('update_blog::translation');
+        return $user->can('update_content::management::translation');
     }
 
     /**
@@ -65,7 +65,7 @@ class LanguageLinePolicy
      */
     public function delete(User $user, LanguageLine $languageLine)
     {
-        return $user->can('delete_blog::translation');
+        return $user->can('delete_content::management::translation');
     }
 
     /**
@@ -76,7 +76,7 @@ class LanguageLinePolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_blog::translation');
+        return $user->can('delete_any_content::management::translation');
     }
 
     /**

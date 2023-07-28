@@ -18,7 +18,7 @@ class TravelInsurancePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_requests::travel::insurance');
+        return $user->can('view_any_services::travel::insurance');
     }
 
     /**
@@ -30,7 +30,7 @@ class TravelInsurancePolicy
      */
     public function view(User $user, TravelInsurance $travelInsurance)
     {
-        return $user->can('view_requests::travel::insurance');
+        return $user->can('view_services::travel::insurance');
     }
 
     /**
@@ -41,7 +41,7 @@ class TravelInsurancePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_requests::travel::insurance');
+        return $user->can('create_services::travel::insurance');
     }
 
     /**
@@ -53,7 +53,7 @@ class TravelInsurancePolicy
      */
     public function update(User $user, TravelInsurance $travelInsurance)
     {
-        return $user->can('update_requests::travel::insurance');
+        return $user->can('update_services::travel::insurance');
     }
 
     /**
@@ -65,7 +65,7 @@ class TravelInsurancePolicy
      */
     public function delete(User $user, TravelInsurance $travelInsurance)
     {
-        return $user->can('delete_requests::travel::insurance');
+        return $user->can('delete_services::travel::insurance');
     }
 
     /**
@@ -76,7 +76,7 @@ class TravelInsurancePolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_requests::travel::insurance');
+        return $user->can('delete_any_services::travel::insurance');
     }
 
     /**

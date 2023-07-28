@@ -18,7 +18,7 @@ class HotelReservationPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_requests::hotel::reservation');
+        return $user->can('view_any_services::hotel::reservation');
     }
 
     /**
@@ -30,7 +30,7 @@ class HotelReservationPolicy
      */
     public function view(User $user, HotelReservation $hotelReservation)
     {
-        return $user->can('view_requests::hotel::reservation');
+        return $user->can('view_services::hotel::reservation');
     }
 
     /**
@@ -41,7 +41,7 @@ class HotelReservationPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_requests::hotel::reservation');
+        return $user->can('create_services::hotel::reservation');
     }
 
     /**
@@ -53,7 +53,7 @@ class HotelReservationPolicy
      */
     public function update(User $user, HotelReservation $hotelReservation)
     {
-        return $user->can('update_requests::hotel::reservation');
+        return $user->can('update_services::hotel::reservation');
     }
 
     /**
@@ -65,7 +65,7 @@ class HotelReservationPolicy
      */
     public function delete(User $user, HotelReservation $hotelReservation)
     {
-        return $user->can('delete_requests::hotel::reservation');
+        return $user->can('delete_services::hotel::reservation');
     }
 
     /**
@@ -76,7 +76,7 @@ class HotelReservationPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_requests::hotel::reservation');
+        return $user->can('delete_any_services::hotel::reservation');
     }
 
     /**

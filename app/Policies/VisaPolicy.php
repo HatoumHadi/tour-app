@@ -18,7 +18,7 @@ class VisaPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_requests::visa');
+        return $user->can('view_any_services::visa');
     }
 
     /**
@@ -30,7 +30,7 @@ class VisaPolicy
      */
     public function view(User $user, Visa $visa)
     {
-        return $user->can('view_requests::visa');
+        return $user->can('view_services::visa');
     }
 
     /**
@@ -41,7 +41,7 @@ class VisaPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_requests::visa');
+        return $user->can('create_services::visa');
     }
 
     /**
@@ -53,7 +53,7 @@ class VisaPolicy
      */
     public function update(User $user, Visa $visa)
     {
-        return $user->can('update_requests::visa');
+        return $user->can('update_services::visa');
     }
 
     /**
@@ -65,7 +65,7 @@ class VisaPolicy
      */
     public function delete(User $user, Visa $visa)
     {
-        return $user->can('delete_requests::visa');
+        return $user->can('delete_services::visa');
     }
 
     /**
@@ -76,7 +76,7 @@ class VisaPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_requests::visa');
+        return $user->can('delete_any_services::visa');
     }
 
     /**

@@ -1,12 +1,11 @@
 <?php
 
-use App\Models\City;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,21 +13,12 @@ return new class extends Migration
     {
         Schema::create('flights', function (Blueprint $table) {
             $table->id();
-            $table->string('airline');
-            $table->string('flight_number');
-            $table->string('departure_airport');
-            $table->unsignedBigInteger('departure_city_id');
-            $table->foreign('departure_city_id', 'fk_departure_city_id')->references('id')->on('cities');
+            $table->string('from');
+            $table->string('to');
             $table->timestamp('departure_time');
-            $table->string('arrival_airport');
-            $table->unsignedBigInteger('arrival_city_id');
-            $table->foreign('arrival_city_id', 'fk_arrival_city_id')->references('id')->on('cities');
             $table->timestamp('arrival_time');
-            $table->string('duration');
-            $table->enum('aircraft_type', ['ICAO', 'EASA']);
-            $table->string('price');
-            $table->enum('status', ['Scheduled', 'Delayed', 'Departed', 'In Air', 'Landed', 'Arrived', 'Cancelled']);
-            $table->date('date');
+            $table->enum('status', ['scheduled', 'delayed', 'departed', 'in-air', 'landed', 'arrived', 'cancelled']);
+            $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
         });
     }

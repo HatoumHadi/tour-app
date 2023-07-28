@@ -18,7 +18,7 @@ class AdventurePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_requests::adventure');
+        return $user->can('view_any_content::management::adventure');
     }
 
     /**
@@ -30,7 +30,7 @@ class AdventurePolicy
      */
     public function view(User $user, Adventure $adventure)
     {
-        return $user->can('view_requests::adventure');
+        return $user->can('view_content::management::adventure');
     }
 
     /**
@@ -41,7 +41,7 @@ class AdventurePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_requests::adventure');
+        return $user->can('create_content::management::adventure');
     }
 
     /**
@@ -53,7 +53,7 @@ class AdventurePolicy
      */
     public function update(User $user, Adventure $adventure)
     {
-        return $user->can('update_requests::adventure');
+        return $user->can('update_content::management::adventure');
     }
 
     /**
@@ -65,7 +65,7 @@ class AdventurePolicy
      */
     public function delete(User $user, Adventure $adventure)
     {
-        return $user->can('delete_requests::adventure');
+        return $user->can('delete_content::management::adventure');
     }
 
     /**
@@ -76,7 +76,7 @@ class AdventurePolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_requests::adventure');
+        return $user->can('delete_any_content::management::adventure');
     }
 
     /**

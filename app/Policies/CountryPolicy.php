@@ -18,7 +18,7 @@ class CountryPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_blog::country');
+        return $user->can('view_any_content::management::country');
     }
 
     /**
@@ -30,7 +30,7 @@ class CountryPolicy
      */
     public function view(User $user, Country $country)
     {
-        return $user->can('view_blog::country');
+        return $user->can('view_content::management::country');
     }
 
     /**
@@ -41,7 +41,7 @@ class CountryPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_blog::country');
+        return $user->can('create_content::management::country');
     }
 
     /**
@@ -53,7 +53,7 @@ class CountryPolicy
      */
     public function update(User $user, Country $country)
     {
-        return $user->can('update_blog::country');
+        return $user->can('update_content::management::country');
     }
 
     /**
@@ -65,7 +65,7 @@ class CountryPolicy
      */
     public function delete(User $user, Country $country)
     {
-        return $user->can('delete_blog::country');
+        return $user->can('delete_content::management::country');
     }
 
     /**
@@ -76,7 +76,7 @@ class CountryPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_blog::country');
+        return $user->can('delete_any_content::management::country');
     }
 
     /**

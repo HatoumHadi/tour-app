@@ -13,23 +13,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AboutUsSeeder::class,
             ShieldSeeder::class,
             UserSeeder::class,
-            GeneralInfoSeeder::class,
-            LanguageSeeder::class,
-            CountrySeeder::class,
-            CitySeeder::class,
+            AboutUsSeeder::class,
             AdventureSeeder::class,
-            CarRentalSeeder::class,
+            CountrySeeder::class,
+            FlightSeeder::class,
+            LanguageSeeder::class,
             PackageSeeder::class,
-            PlaceSeeder::class,
-            TicketSeeder::class,
-            HotelSeeder::class,
-            TransportationSeeder::class,
             TravelInsuranceSeeder::class,
             VisaSeeder::class,
-            FlightSeeder::class,
         ]);
     }
 }

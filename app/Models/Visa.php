@@ -17,21 +17,26 @@ class Visa extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'phone',
+        'passport_number',
+        'nationality_country_id',
+        'visa_country_id',
         'application_date',
         'status',
         'user_id',
     ];
-
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function photoGallery(): BelongsTo
+    public function visaCountry(): BelongsTo
     {
-        return $this->belongsTo(PhotoGallery::class);
+        return $this->belongsTo(Country::class, 'visa_country_id');
+    }
+
+    public function nationalityCountry(): BelongsTo
+    {
+        return $this->belongsTo(Country::class, 'nationality_country_id');
     }
 }

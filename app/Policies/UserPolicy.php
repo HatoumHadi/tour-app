@@ -18,7 +18,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_filament::shield::user');
+        return $user->can('view_any_users::and::permissions::user');
     }
 
     /**
@@ -29,7 +29,7 @@ class UserPolicy
      */
     public function view(User $user)
     {
-        return $user->can('view_filament::shield::user');
+        return $user->can('view_users::and::permissions::user');
     }
 
     /**
@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_filament::shield::user');
+        return $user->can('create_users::and::permissions::user');
     }
 
     /**
@@ -51,7 +51,7 @@ class UserPolicy
      */
     public function update(User $user)
     {
-        return $user->can('update_filament::shield::user');
+        return $user->can('update_users::and::permissions::user');
     }
 
     /**
@@ -62,7 +62,7 @@ class UserPolicy
      */
     public function delete(User $user)
     {
-        return $user->can('delete_filament::shield::user');
+        return $user->can('delete_users::and::permissions::user');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserPolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_filament::shield::user');
+        return $user->can('delete_any_users::and::permissions::user');
     }
 
     /**

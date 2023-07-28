@@ -1,7 +1,5 @@
 <x-layouts.app>
-
     <div>
-
         <!-- Common Banner Area -->
         <section id="common_banner">
             <div class="container">
@@ -10,7 +8,7 @@
                         <div class="common_bannner_text">
                             <h2>Contact</h2>
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><span><i class="fas fa-circle"></i></span>Contact Us</li>
                             </ul>
                         </div>
@@ -115,11 +113,11 @@
                                 <div class="contact_details_wrapper">
                                     <div class="contact_detais_item">
                                         <h4>Help line</h4>
-                                        <h3><a href="tel:+01-234-567-890">{{$generalInfo->phone}}</a></h3>
+{{--                                        <h3><a href="tel:+01-234-567-890">{{$generalInfo->phone}}</a></h3>--}}
                                     </div>
                                     <div class="contact_detais_item">
                                         <h4>Support mail</h4>
-                                        <h3><a href="mailto:support@domain.com">{{$generalInfo->email}}</a></h3>
+{{--                                        <h3><a href="mailto:support@domain.com">{{$generalInfo->email}}</a></h3>--}}
                                     </div>
                                     <div class="contact_detais_item">
                                         <h4>Contact hour</h4>
@@ -137,5 +135,4 @@
             </div>
         </section>
     </div>
-
 </x-layouts.app>

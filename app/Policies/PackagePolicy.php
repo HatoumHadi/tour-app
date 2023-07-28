@@ -18,7 +18,7 @@ class PackagePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_requests::package');
+        return $user->can('view_any_content::management::package');
     }
 
     /**
@@ -30,7 +30,7 @@ class PackagePolicy
      */
     public function view(User $user, Package $package)
     {
-        return $user->can('view_requests::package');
+        return $user->can('view_content::management::package');
     }
 
     /**
@@ -41,7 +41,7 @@ class PackagePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_requests::package');
+        return $user->can('create_content::management::package');
     }
 
     /**
@@ -53,7 +53,7 @@ class PackagePolicy
      */
     public function update(User $user, Package $package)
     {
-        return $user->can('update_requests::package');
+        return $user->can('update_content::management::package');
     }
 
     /**
@@ -65,7 +65,7 @@ class PackagePolicy
      */
     public function delete(User $user, Package $package)
     {
-        return $user->can('delete_requests::package');
+        return $user->can('delete_content::management::package');
     }
 
     /**
@@ -76,7 +76,7 @@ class PackagePolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_requests::package');
+        return $user->can('delete_any_content::management::package');
     }
 
     /**

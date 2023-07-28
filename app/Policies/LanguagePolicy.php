@@ -18,7 +18,7 @@ class LanguagePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view_any_blog::language');
+        return $user->can('view_any_content::management::language');
     }
 
     /**
@@ -30,7 +30,7 @@ class LanguagePolicy
      */
     public function view(User $user, Language $language)
     {
-        return $user->can('view_blog::language');
+        return $user->can('view_content::management::language');
     }
 
     /**
@@ -41,7 +41,7 @@ class LanguagePolicy
      */
     public function create(User $user)
     {
-        return $user->can('create_blog::language');
+        return $user->can('create_content::management::language');
     }
 
     /**
@@ -53,7 +53,7 @@ class LanguagePolicy
      */
     public function update(User $user, Language $language)
     {
-        return $user->can('update_blog::language');
+        return $user->can('update_content::management::language');
     }
 
     /**
@@ -65,7 +65,7 @@ class LanguagePolicy
      */
     public function delete(User $user, Language $language)
     {
-        return $user->can('delete_blog::language');
+        return $user->can('delete_content::management::language');
     }
 
     /**
@@ -76,7 +76,7 @@ class LanguagePolicy
      */
     public function deleteAny(User $user)
     {
-        return $user->can('delete_any_blog::language');
+        return $user->can('delete_any_content::management::language');
     }
 
     /**

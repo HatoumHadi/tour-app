@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>Home - Andtourtravel </title>
+    <title>{{ config('app.name') }}</title>
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
     <!-- animate css -->
@@ -36,7 +35,6 @@
 </head>
 
 <body>
-
 <!-- Header Area -->
 <header class="main_header_arae">
     <!-- Top Bar -->
@@ -100,8 +98,6 @@
                     <div class="logo">
                         <a href="{{route('home')}}">
                         </a>
-
-
                     </div>
                 </div>
             </div>
@@ -115,43 +111,50 @@
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{route('home')}}" @class(['active' => request()->routeIs('home')]) class="nav-link">
+                                <a href="{{route('home')}}"
+                                   @class(['active' => request()->routeIs('home')]) class="nav-link">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="#"
+                                   class="nav-link" @class(['active' => request()->routeIs('flights.index', 'hotel-reservations.index', 'visa.index', 'travel-insurances.index')])>
                                     Services
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('flight-booking')}}">Flight booking</a>
+                                        <a href="{{route('flights.index')}}">Flight request</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('hotel-reservation')}}">Hotel reservation</a>
+                                        <a href="{{route('hotel-reservations.index')}}">Hotel reservation request</a>
 
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('visa')}}">Visa</a>
+                                        <a href="{{route('visa.index')}}">Visa application request</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('travel-insurance')}}">Travel insurance</a>
+                                        <a href="{{route('travel-insurances.index')}}">Travel insurance request</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{route('packages.index')}}" class="nav-link">Packages</a>
+                                <a href="{{route('packages.index')}}"
+                                   @class(['active' => request()->routeIs('packages.index')]) class="nav-link">Packages</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('adventures.index')}}" class="nav-link">Adventures</a>
+                                <a href="{{route('adventures.index')}}"
+                                   @class(['active' => request()->routeIs('adventures.index')]) class="nav-link">Adventures</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('contact-us')}}" @class(['active' => request()->routeIs('contact-us')]) class="nav-link">Contact us</a>
+                                <a href="{{route('contact-us')}}"
+                                   @class(['active' => request()->routeIs('contact-us')]) class="nav-link">Contact
+                                    us</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('about-us')}}" @class(['active' => request()->routeIs('about-us')]) class="nav-link">
+                                <a href="{{route('about-us')}}"
+                                   @class(['active' => request()->routeIs('about-us')]) class="nav-link">
                                     About us
                                 </a>
                             </li>
@@ -160,58 +163,12 @@
                 </nav>
             </div>
         </div>
-        <div class="others-option-for-responsive">
-            <div class="container">
-                <div class="dot-menu">
-                    <div class="inner">
-                        <div class="circle circle-one"></div>
-                        <div class="circle circle-two"></div>
-                        <div class="circle circle-three"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="option-inner">
-                        <div class="others-options d-flex align-items-center">
-                            <div class="option-item">
-                                <a href="#" class="search-box"><i class="fas fa-search"></i></a>
-                            </div>
-                            <div class="option-item">
-                                <a href="contact.html" class="btn  btn_navber">Get free quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </header>
-
-<!-- search -->
-<div class="search-overlay">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-close">
-                <span class="search-overlay-close-line"></span>
-                <span class="search-overlay-close-line"></span>
-            </div>
-            <div class="search-overlay-form">
-                <form>
-                    <input type="text" class="input-search" placeholder="Search here...">
-                    <button type="button"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div>
     {{$slot}}
 </div>
-
 
 <!-- Footer  -->
 <footer id="footer_area">
@@ -247,7 +204,7 @@
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="{{ route('about-us') }}">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -306,21 +263,27 @@
 <!-- Meanu js -->
 <script src="{{asset('assets/js/jquery.meanmenu.js')}}"></script>
 <!-- Range js -->
-<script src="assets/js/nouislider.min.js"></script>
-<script src="assets/js/wNumb.js"></script>
+<script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+<script src="{{ asset('assets/js/wNumb.js') }}"></script>
 <!-- owl carousel js -->
 <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 <!-- Slick js -->
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/slick-slider.js"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick-slider.js') }}"></script>
 <!-- wow.js -->
 <script src="{{asset('assets/js/wow.min.js')}}"></script>
 <!-- Custom js -->
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script src="{{asset('assets/js/add-form.js')}}"></script>
 <script src="{{asset('assets/js/form-dropdown.js')}}"></script>
+@vite('resources/js/app.js')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        @if(session()->get('message', $message ?? null))
+        toastr.success('{{ session()->get('message', $message ?? null) }}');
+        @endif
+    })
+</script>
 </body>
-
-
 </html>
 

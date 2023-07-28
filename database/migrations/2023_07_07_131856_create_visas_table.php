@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Country;
 use App\Models\PhotoGallery;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -15,10 +16,12 @@ return new class extends Migration
     {
         Schema::create('visas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone')->nullable();
+            $table->string('passport_number');
+            $table->foreignIdFor(Country::class, 'visa_country_id')->constrained('countries');
+            $table->foreignIdFor(Country::class, 'nationality_country_id')->constrained('countries');
             $table->date('application_date')->nullable();
-            $table->enum('status', ['valid', 'expired', 'approved', 'denied', 'pending', 'revoked', 'overstay'])->default('pending');
+            $table->enum('status', ['valid', 'expired', 'approved', 'denied', 'pending', 'revoked', 'overstay'])
+                ->default('pending');
             $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->softDeletes();

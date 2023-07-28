@@ -3,6 +3,8 @@
 namespace App\Filament\Resources\Services;
 
 use App\Filament\Resources\Requests\HotelReservationResource\RelationManagers;
+use App\Filament\Resources\Services\HotelReservationResource\Pages\ListHotelReservations;
+use App\Filament\Resources\Services\HotelReservationResource\Pages\ViewHotelReservation;
 use App\Models\HotelReservation;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -21,23 +23,35 @@ class HotelReservationResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(6)
             ->schema([
-                Forms\Components\DatePicker::make('check_in'),
-                Forms\Components\DatePicker::make('check_out'),
-                Forms\Components\TextInput::make('number_of_guests'),
+                Forms\Components\Card::make()
+                    ->relationship('user')
+                    ->columnSpan(6)
+                    ->columns(3)
+                    ->schema([
+                        Forms\Components\TextInput::make('name'),
+                        Forms\Components\TextInput::make('email'),
+                        Forms\Components\TextInput::make('phone_number'),
+                    ]),
+                Forms\Components\TextInput::make('hotel_name')
+                    ->columnSpan(2),
+                Forms\Components\DatePicker::make('check_in')
+                    ->columnSpan(2),
+                Forms\Components\DatePicker::make('check_out')
+                    ->columnSpan(2),
+                Forms\Components\TextInput::make('number_of_guests')
+                    ->columnSpan(2),
                 Forms\Components\Select::make('status')
+                    ->columnSpan(2)
                     ->options([
                         'wait_list' => 'Wait list',
                         'cancelled' => 'Cancelled',
                         'confirmed' => 'Confirmed'
                     ]),
-                Forms\Components\Select::make('user_id')
-                    ->label('Requested by')
-                    ->relationship('user', 'name'),
-                Forms\Components\Select::make('hotel_id')
-                    ->relationship('hotel', 'name'),
                 Forms\Components\DatePicker::make('created_at')
-                ->label('Requested at')
+                    ->columnSpan(2)
+                    ->label('Requested at')
             ]);
     }
 
@@ -50,6 +64,7 @@ class HotelReservationResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
+                Tables\Columns\TextColumn::make('hotel_name'),
                 Tables\Columns\TextColumn::make('check_in')
                     ->searchable()
                     ->sortable()
@@ -58,21 +73,10 @@ class HotelReservationResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('number_of_guests')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
                 Tables\Columns\TextColumn::make('status')
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-                Tables\Columns\TextColumn::make('hotel.name')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Requested by')
                     ->dateTime()
@@ -84,6 +88,7 @@ class HotelReservationResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make()
             ])
             ->bulkActions([
             ]);
@@ -99,8 +104,8 @@ class HotelReservationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \App\Filament\Resources\Services\HotelReservationResource\Pages\ListHotelReservations::route('/'),
-            'view' => \App\Filament\Resources\Services\HotelReservationResource\Pages\ViewHotelReservation::route('/{record}'),
+            'index' => ListHotelReservations::route('/'),
+            'view' => ViewHotelReservation::route('/{record}'),
         ];
     }
 }

@@ -25,17 +25,5 @@ class Package extends Model
         'duration',
         'price',
         'type',
-        'user_id'
     ];
-
-    public function photoGallery(): MorphMany
-    {
-        return $this->morphMany(PhotoGallery::class, 'tag');
-    }
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

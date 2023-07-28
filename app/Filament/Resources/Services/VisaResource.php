@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\Services;
 
-use App\Filament\Resources\Requests\CommonRelationManager\PhotoGalleryRelationManager;
 use App\Filament\Resources\Requests\VisaResource\RelationManagers;
+use App\Filament\Resources\Services\VisaResource\Pages\ListVisas;
+use App\Filament\Resources\Services\VisaResource\Pages\ViewVisa;
 use App\Models\Visa;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -22,14 +23,29 @@ class VisaResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+            ->columns(6)
             ->schema([
-                Forms\Components\Select::make('user_id')
-                    ->label('Requested by')
-                    ->relationship('user', 'name'),
-                Forms\Components\TextInput::make('name'),
-                Forms\Components\TextInput::make('phone'),
-                Forms\Components\DatePicker::make('application_date'),
+                Forms\Components\Card::make()
+                    ->relationship('user')
+                    ->columnSpan(6)
+                    ->columns(3)
+                    ->schema([
+                        Forms\Components\TextInput::make('name'),
+                        Forms\Components\TextInput::make('email'),
+                        Forms\Components\TextInput::make('phone_number'),
+                    ]),
+                Forms\Components\TextInput::make('passport_number')
+                    ->columnSpan(2),
+                Forms\Components\Select::make('visa_country_id')
+                    ->columnSpan(2)
+                    ->relationship('visaCountry', 'name'),
+                Forms\Components\Select::make('nationality_country_id')
+                    ->columnSpan(2)
+                    ->relationship('visaCountry', 'name'),
+                Forms\Components\DatePicker::make('application_date')
+                    ->columnSpan(2),
                 Forms\Components\Select::make('status')
+                    ->columnSpan(2)
                     ->options([
                         'valid' => 'Valid',
                         'expired' => 'Expired',
@@ -40,6 +56,7 @@ class VisaResource extends Resource
                         'overstay' => 'Overstay'
                     ]),
                 Forms\Components\DatePicker::make('created_at')
+                    ->columnSpan(2 )
                     ->label('Requested at')
             ]);
     }
@@ -53,28 +70,15 @@ class VisaResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
-                Tables\Columns\TextColumn::make('name')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('phone')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
-                Tables\Columns\TextColumn::make('description')
-                    ->searchable()
-                    ->sortable()
-                    ->toggleable(),
-
+                Tables\Columns\TextColumn::make('visaCountry.name')
+                    ->label('Visa country'),
+                Tables\Columns\TextColumn::make('nationalityCountry.name')
+                    ->label('Nationality country'),
                 Tables\Columns\TextColumn::make('application_date')
                     ->date()
                     ->searchable()
                     ->sortable()
                     ->toggleable(),
-
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Requested at')
                     ->dateTime()
@@ -92,18 +96,11 @@ class VisaResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            PhotoGalleryRelationManager::class
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => \App\Filament\Resources\Services\VisaResource\Pages\ListVisas::route('/'),
-            'view' => \App\Filament\Resources\Services\VisaResource\Pages\ViewVisa::route('/{record}'),
+            'index' => ListVisas::route('/'),
+            'view' => ViewVisa::route('/{record}'),
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Definitions\HotelReservationStatus;
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
 
@@ -14,7 +15,13 @@ class HotelReservationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->id();
+        return auth()->check();
+    }
+
+    protected function getValidatorInstance(): Validator
+    {
+        session()->flash('previous-hotel-reservation');
+        return parent::getValidatorInstance();
     }
 
     /**
@@ -25,8 +32,11 @@ class HotelReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'hotel_name' => [
+                'required'
+            ],
             'check_in' => [
-                'required' .
+                'required',
                 'date',
                 'before:check_out'
             ],
@@ -45,4 +55,5 @@ class HotelReservationRequest extends FormRequest
             ]
         ];
     }
+
 }

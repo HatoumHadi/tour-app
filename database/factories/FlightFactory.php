@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\City;
-use App\Models\Country;
+use App\Models\Flight;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Flight>
+ * @extends Factory<Flight>
  */
 class FlightFactory extends Factory
 {
@@ -18,21 +18,13 @@ class FlightFactory extends Factory
      */
     public function definition(): array
     {
-        $departureCity = City::inRandomOrder()->first();
         return [
-            'airline' => fake()->name,
-            'flight_number' => fake()->numberBetween(100, 10000),
-            'departure_airport' => fake()->name,
-            'departure_city_id' => $departureCity->id,
-            'departure_time' => fake()->dateTime(),
-            'arrival_airport' => fake()->name,
-            'arrival_city_id' => City::inRandomOrder()->whereNot('name', $departureCity->name)->value('id'),
-            'arrival_time' => fake()->dateTime(),
-            'duration' => fake()->numberBetween(1,24),
-            'aircraft_type' => fake()->randomElement(['ICAO', 'EASA']),
-            'price' => fake()->numberBetween(100, 3000),
-            'status' => fake()->randomElement(['Scheduled', 'Delayed', 'Departed', 'In Air', 'Landed', 'Arrived', 'Cancelled']),
-            'date' => fake()->dateTime,
+            'from' => fake()->address,
+            'to' => fake()->address,
+            'departure_time' => fake()->dateTime,
+            'arrival_time' => fake()->dateTime,
+            'status' => fake()->randomElement(['scheduled', 'delayed', 'departed', 'in-air', 'landed', 'arrived', 'cancelled']),
+            'user_id' => User::role('customer')->inRandomOrder()->value('id') ?? User::first()->id
         ];
     }
 }
