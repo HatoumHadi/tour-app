@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
 # configure apache document root as per the image documentation in addition to rewrite and headers mods
-ENV APACHE_DOCUMENT_ROOT /usr/src/travel-agency-app/public
+ENV APACHE_DOCUMENT_ROOT /usr/src/travel-agency/public
 
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
@@ -26,8 +26,8 @@ RUN a2enmod rewrite headers
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # copy project contents into the container and set the working directory to /usr/src/synaps
-COPY . /usr/src/travel-agency-app
-WORKDIR /usr/src/travel-agency-app
+COPY . /usr/src/travel-agency
+WORKDIR /usr/src/travel-agency
 
 # install Laravel dependencies
 RUN composer install --no-interaction -o
