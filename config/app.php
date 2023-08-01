@@ -168,6 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+    ])->replace([
+        Illuminate\Translation\TranslationServiceProvider::class => Spatie\TranslationLoader\TranslationServiceProvider::class,
     ])->toArray(),
 
     /*

@@ -16,12 +16,11 @@ return new class extends Migration
     {
         Schema::create('adventures', function (Blueprint $table) {
             $table->id();
-            $table->json('name');
-            $table->json('description');
-            $table->double('price');
-            $table->string('duration');
-            $table->foreignIdFor(City::class)->constrained();
-            $table->foreignIdFor(User::class)->constrained();
+            $table->string('title');
+            $table->string('slug');
+            $table->text('description');
+            $table->text('content');
+            $table->string('thumbnail');
             $table->timestamps();
             $table->softDeletes();
         });

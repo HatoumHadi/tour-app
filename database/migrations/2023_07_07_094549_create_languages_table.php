@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->json('name');
             $table->string('code');
+            $table->enum('direction', ['ltr', 'rtl']);
             $table->timestamps();
             $table->softDeletes();
         });

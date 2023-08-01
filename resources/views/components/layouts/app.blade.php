@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>Home - Andtourtravel </title>
+    <title>{{ config('app.name') }}</title>
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
     <!-- animate css -->
@@ -18,11 +17,11 @@
     <!-- owl.theme.default css -->
     <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}"/>
     <!-- Slick css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}"/>
     <!--slick-theme.css-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.html')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick-theme.html')}}"/>
     <!-- Rangeslider css -->
-    <link rel="stylesheet" href="{{asset('assets/css/nouislider.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/nouislider.css')}}"/>
     <!-- navber css -->
     <link rel="stylesheet" href="{{asset('assets/css/navber.css')}}"/>
     <!-- meanmenu css -->
@@ -33,10 +32,92 @@
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"/>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+    <style>
+        .text-wrap {
+            white-space: break-spaces !important;
+        }
+    </style>
+    @if($direction === \App\Definitions\LanguageDirection::RTL->value)
+        <style>
+            .topbar-others-options li::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: -15px;
+                right: unset;
+                width: 1px;
+                height: 15px;
+                background-color: #dbdbdb78;
+            }
+
+            .topbar-list li::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: -15px;
+                right: unset;
+                width: 1px;
+                height: 15px;
+                background-color: #dbdbdb78;
+            }
+
+            .offer_area_box .offer_area_content {
+                position: absolute;
+                right: 0;
+                left: unset;
+                bottom: 0;
+                padding: 30px 27px;
+                z-index: 999;
+            }
+
+            .footer_inquery_area {
+                padding-top: 5px;
+                border-right: 2px solid var(--main-color);
+                border-left: unset;
+                margin-top: 25px;
+                padding-right: 9px;
+                padding-left: unset;
+            }
+            .theme_search_form_tabbtn .nav-item {
+                margin-left: 20px;
+                margin-right: unset;
+            }
+            .theme_search_form_tabbtn .nav-tabs .nav-link i {
+                padding-left: 10px;
+                padding-right: unset;
+            }
+            .plan_icon_posation {
+                position: absolute;
+                top: 20px;
+                left: 30px;
+                right: unset;
+            }
+            .flight_Search_boxed {
+                background: rgba(101, 122, 255, 0.09);
+                padding: 10px 20px 10px 10px;
+                border-radius: 10px;
+                position: relative;
+            }
+            .range_plan {
+                z-index: 1;
+            }
+            .common_bannner_text ul li span i {
+                color: var(--white-color);
+                font-size: 7px;
+                position: relative;
+                top: -2px;
+                right: -3px;
+                left: unset;
+            }
+            .main-navbar .navbar .navbar-nav .nav-item:last-child {
+                margin-left: 0;
+                margin-right: 30px;
+            }
+        </style>
+    @endif
 </head>
 
-<body>
-
+<body dir="{{ $direction }}">
 <!-- Header Area -->
 <header class="main_header_arae">
     <!-- Top Bar -->
@@ -46,28 +127,49 @@
                 <div class="col-lg-6 col-md-6">
                     <ul class="topbar-list">
                         <li>
-                            <a href="#!"><i class="fab fa-facebook"></i></a>
-                            <a href="#!"><i class="fab fa-twitter-square"></i></a>
-                            <a href="#!"><i class="fab fa-instagram"></i></a>
-                            <a href="#!"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{ $facebookLink }}"><i class="fab fa-facebook"></i></a>
+                            <a href="{{ $twitterLink }}"><i class="fab fa-twitter-square"></i></a>
+                            <a href="{{ $instagramLink }}"><i class="fab fa-instagram"></i></a>
+                            <a href="{{ $linkedInLink }}"><i class="fab fa-linkedin"></i></a>
                         </li>
-                        <li><a href="#!"><span>+011 234 567 89</span></a></li>
-                        <li><a href="#!"><span>contact@domain.com</span></a></li>
+                        <li><a href="tel:{{ $contactPhoneNumber }}"><span>{{ $contactPhoneNumber }}</span></a></li>
+                        <li @style(['margin-right: 28px' => $direction === \App\Definitions\LanguageDirection::RTL->value])>
+                            <a href="mailto:{{ $contactEmail }}"><span>{{ $contactEmail }}</span></a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <ul class="topbar-others-options">
-                        <li><a href="{{route('login')}}">Login</a></li>
-                        <li><a href="{{route('sign-up')}}">Sign up</a></li>
-                        <li>
+                        @guest
+                            <li><a href="{{route('login')}}">{{ __('translations.login') }}</a></li>
+                            <li><a href="{{route('sign-up')}}">{{ __('translations.register') }}</a></li>
+                        @else
+                            <li>
+                                <div class="dropdown language-option">
+                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        <span>{{ __('translations.my-account') }}</span>
+                                    </button>
+                                    <div class="dropdown-menu language-dropdown-menu">
+                                        <a class="dropdown-item"
+                                           href="{{ route('profile') }}">{{ __('translations.profile') }}</a>
+                                        <a class="dropdown-item"
+                                           href="{{ route('logout') }}">{{ __('translations.logout') }}</a>
+                                    </div>
+                                </div>
+                            </li>
+                        @endguest
+                        <li @style(['margin-right: 28px' => $direction === \App\Definitions\LanguageDirection::RTL->value])>
                             <div class="dropdown language-option">
                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
                                     <span class="lang-name"></span>
                                 </button>
                                 <div class="dropdown-menu language-dropdown-menu">
-                                    <a class="dropdown-item" href="#">English</a>
-                                    <a class="dropdown-item" href="#">Arabic</a>
+                                    @foreach($languages as $language)
+                                        <a class="dropdown-item"
+                                           href="{{ route('change-lang', ['lang' => $language->code]) }}">{{ $language->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </li>
@@ -84,7 +186,6 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{route('home')}}">
-                            <img src="assets/img/logo.png" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -94,145 +195,68 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="{{route('home')}}">
-                        <img src="assets/img/logo.png" alt="logo">
+                        <div class="logo-image-size"></div>
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link active">
-                                    Home
+                                <a href="{{route('home')}}"
+                                   @class(['active' => request()->routeIs('home')]) class="nav-link">
+                                    {{ __('translations.home') }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Services
+                                <a href="#"
+                                   class="nav-link" @class(['active' => request()->routeIs('flights.index', 'hotel-reservations.index', 'visa.index', 'travel-insurances.index')])>
+                                    {{ __('translations.services') }}
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a href="{{route('flight-search-result')}}" class="nav-link">
-                                            Flights
-                                        </a>
+                                        <a href="{{route('flights.index')}}">{{ __('translations.requests.flight') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('hotels')}}" class="nav-link">
-                                            Hotel reservation
-                                        </a>
+                                        <a href="{{route('hotel-reservations.index')}}">{{ __('translations.requests.hotel-reservation') }}</a>
+
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('visa-info')}}" class="nav-link">
-                                            Visa
-                                        </a>
+                                        <a href="{{route('visa.index')}}">{{ __('translations.requests.visa') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{route('travel-insurance')}}" class="nav-link">
-                                            Travel insurance
-                                        </a>
+                                        <a href="{{route('travel-insurances.index')}}">{{ __('translations.requests.travel-insurance') }}</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Packages <i class="fas fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="hotel-booking.html" class="nav-link">Hotel booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="flight-booking.html" class="nav-link">Flight booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="tour-booking.html" class="nav-link">Tour booking</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="booking-history.html" class="nav-link">Booking history</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="my-profile.html" class="nav-link">My profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="wallet.html" class="nav-link">Wallet</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="notification.html" class="nav-link">Notifications</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('packages.index')}}"
+                                   @class(['active' => request()->routeIs('packages.index')]) class="nav-link">{{ __('translations.packages') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('contact-us')}}" class="nav-link">Contact us</a>
+                                <a href="{{route('adventures.index')}}"
+                                   @class(['active' => request()->routeIs('adventures.index')]) class="nav-link">{{ __('translations.adventures') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('about-us')}}" class="nav-link">
-                                    About us
+                                <a href="{{route('contact-us')}}"
+                                   @class(['active' => request()->routeIs('contact-us')]) class="nav-link">{{ __('translations.contact-us') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('about-us')}}"
+                                   @class(['active' => request()->routeIs('about-us')]) class="nav-link">
+                                    {{ __('translations.about-us') }}
                                 </a>
                             </li>
                         </ul>
-                        <div class="others-options d-flex align-items-center">
-                            <div class="option-item">
-                                <a href="#" class="search-box">
-                                    <i class="bi bi-search"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </nav>
-            </div>
-        </div>
-        <div class="others-option-for-responsive">
-            <div class="container">
-                <div class="dot-menu">
-                    <div class="inner">
-                        <div class="circle circle-one"></div>
-                        <div class="circle circle-two"></div>
-                        <div class="circle circle-three"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="option-inner">
-                        <div class="others-options d-flex align-items-center">
-                            <div class="option-item">
-                                <a href="#" class="search-box"><i class="fas fa-search"></i></a>
-                            </div>
-                            <div class="option-item">
-                                <a href="contact.html" class="btn  btn_navber">Get free quote</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- search -->
-<div class="search-overlay">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-layer"></div>
-            <div class="search-overlay-close">
-                <span class="search-overlay-close-line"></span>
-                <span class="search-overlay-close-line"></span>
-            </div>
-            <div class="search-overlay-form">
-                <form>
-                    <input type="text" class="input-search" placeholder="Search here...">
-                    <button type="button"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div>
     {{$slot}}
 </div>
-
 
 <!-- Footer  -->
 <footer id="footer_area">
@@ -240,70 +264,60 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Need any help?</h5>
+                    <h5>{{ __('translations.footer.first-column.title') }}</h5>
                 </div>
                 <div class="footer_first_area">
                     <div class="footer_inquery_area">
-                        <h5>Call 24/7 for any help</h5>
-                        <h3><a href="tel:+00-123-456-789">+00 123 456 789</a></h3>
+                        <h5>{{ __('translations.footer.first-column.first-label') }}</h5>
+                        <h3><a href="tel:{{ $contactPhoneNumber }}">{{ $contactPhoneNumber }}</a></h3>
                     </div>
                     <div class="footer_inquery_area">
-                        <h5>Mail to our support team</h5>
-                        <h3><a href="mailto:support@domain.com">admin@admin.com</a></h3>
+                        <h5>{{ __('translations.footer.first-column.second-label') }}</h5>
+                        <h3><a href="mailto:{{ $contactEmail }}">{{ $contactEmail }}</a></h3>
                     </div>
                     <div class="footer_inquery_area">
-                        <h5>Follow us on</h5>
+                        <h5>{{ __('translations.footer.first-column.third-label') }}</h5>
                         <ul class="soical_icon_footer">
-                            <li><a href="#!"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-twitter-square"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#!"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="{{ $facebookLink }}"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="{{ $twitterLink }}"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="{{ $instagramLink }}"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{ $linkedInLink }}"><i class="fab fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-6 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Company</h5>
+                    <h5>{{ __('translations.footer.second-column.title') }}</h5>
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="{{ route('about-us') }}">{{ __('translations.about-us') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Support</h5>
+                    <h5>{{ __('translations.footer.third-column.title') }}</h5>
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="{{route('contact-us')}}">Contact</a></li>
+                        <li><a href="{{route('contact-us')}}">{{ __('translations.contact-us') }}</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-2 col-md-4 col-sm-6 col-12">
                 <div class="footer_heading_area">
-                    <h5>Other Services</h5>
+                    <h5>{{ __('translations.footer.forth-column.title') }}</h5>
                 </div>
                 <div class="footer_link_area">
                     <ul>
-                        <li><a href="{{route('hotels')}}">List My Hotel</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                <div class="footer_heading_area">
-                    <h5>Top cities</h5>
-                </div>
-                <div class="footer_link_area">
-                    <ul>
-                        <li><a>Chicago</a></li>
-                        <li><a>New York</a></li>
-                        <li><a>San Francisco</a></li>
-                        <li><a>California</a></li>
-                        <li><a>Ohio </a></li>
-                        <li><a>Alaska</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.first-label') }}</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.second-label') }}</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.third-label') }}</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.forth-label') }}</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.fifth-label') }}</a></li>
+                        <li><a>{{ __('translations.footer.forth-column.sixth-label') }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -315,14 +329,14 @@
         <div class="row align-items-center">
             <div class="co-lg-6 col-md-6 col-sm-12 col-12">
                 <div class="copyright_left">
-                    <p>Copyright © 2023 All Rights Reserved</p>
+                    <p>{{ __('translations.copyrights') }}</p>
                 </div>
             </div>
-            <div class="co-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="copyright_right">
-                    <img src="{{asset('assets/img/common/cards.png')}}" alt="img">
-                </div>
-            </div>
+{{--            <div class="co-lg-6 col-md-6 col-sm-12 col-12">--}}
+{{--                <div class="copyright_right">--}}
+{{--                    <img src="{{asset('assets/img/common/cards.png')}}" alt="img">--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </div>
 </div>
@@ -337,21 +351,27 @@
 <!-- Meanu js -->
 <script src="{{asset('assets/js/jquery.meanmenu.js')}}"></script>
 <!-- Range js -->
-<script src="assets/js/nouislider.min.js"></script>
-<script src="assets/js/wNumb.js"></script>
+<script src="{{ asset('assets/js/nouislider.min.js') }}"></script>
+<script src="{{ asset('assets/js/wNumb.js') }}"></script>
 <!-- owl carousel js -->
 <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 <!-- Slick js -->
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/slick-slider.js"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick-slider.js') }}"></script>
 <!-- wow.js -->
 <script src="{{asset('assets/js/wow.min.js')}}"></script>
 <!-- Custom js -->
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script src="{{asset('assets/js/add-form.js')}}"></script>
 <script src="{{asset('assets/js/form-dropdown.js')}}"></script>
+@vite('resources/js/app.js')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        @if(session()->get('message', $message ?? null))
+        toastr.{{ session()->get('status', $status ?? null) ?: 'success' }}('{{ session()->get('message', $message ?? null) }}');
+        @endif
+    })
+</script>
 </body>
-
-
 </html>
 

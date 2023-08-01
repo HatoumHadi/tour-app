@@ -15,31 +15,31 @@ class CountrySeeder extends Seeder
         Country::create([
             'name' => 'Lebanon',
             'code' => 'LB',
-            'is_visa' => true,
-            'is_ticket' => true,
-            'is_adventure' => true,
-            'is_hotel' => true,
-            'is_packages' => true,
+            'has_visa' => true,
+            'has_ticket' => true,
+            'has_adventure' => true,
+            'has_hotel' => true,
+            'has_packages' => true,
         ]);
 
         Country::create([
             'name' => 'United state',
             'code' => 'US',
-            'is_visa' => true,
-            'is_ticket' => true,
-            'is_adventure' => true,
-            'is_hotel' => true,
-            'is_packages' => true,
+            'has_visa' => true,
+            'has_ticket' => true,
+            'has_adventure' => true,
+            'has_hotel' => true,
+            'has_packages' => true,
         ]);
 
         Country::create([
             'name' => 'France',
             'code' => 'FR',
-            'is_visa' => true,
-            'is_ticket' => true,
-            'is_adventure' => true,
-            'is_hotel' => true,
-            'is_packages' => true,
+            'has_visa' => true,
+            'has_ticket' => true,
+            'has_adventure' => true,
+            'has_hotel' => true,
+            'has_packages' => true,
         ]);
     }
 }

@@ -2,11 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Country;
 use App\Models\User;
+use App\Models\Visa;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Visa>
+ * @extends Factory<Visa>
  */
 class VisaFactory extends Factory
 {
@@ -18,11 +20,12 @@ class VisaFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name,
-            'phone' => fake()->phoneNumber,
+            'passport_number' => fake()->randomNumber(5),
+            'visa_country_id' => Country::inRandomOrder()->value('id'),
+            'nationality_country_id' => Country::inRandomOrder()->value('id'),
             'application_date' => fake()->date,
-            'status' => fake()->randomElement( ['Valid', 'Expired', 'Approved', 'Denied', 'Pending', 'Revoked', 'Overstay']),
-            'user_id' => User::inRandomOrder()->value('id'),
+            'status' => fake()->randomElement(['valid', 'expired', 'approved', 'denied', 'pending', 'revoked', 'overstay']),
+            'user_id' => User::role('customer')->inRandomOrder()->value('id'),
         ];
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('travel_insurances', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('plan_name');
             $table->string('policy_number');
             $table->date('coverage_start_date');
             $table->date('coverage_end_date');

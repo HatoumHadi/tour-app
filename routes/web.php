@@ -1,5 +1,15 @@
 <?php
 
+use App\Http\Controllers\AdventureController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HotelReservationController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RequestsController;
+use App\Http\Controllers\TravelInsuranceController;
+use App\Http\Controllers\VisaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,70 +23,60 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('', [HomeController::class, 'index'])
+    ->name('home');
 
+Route::resource('adventures', AdventureController::class)
+    ->only('index', 'show');
 
-Route::get('/',function (){
-    return view('components.pages.index');
-})->name('home');
+Route::resource('packages', PackageController::class)
+    ->only('index', 'show');
 
-Route::get('/adventure-details', function () {
-    return view('components.pages.adventure-details');
-})->name('adventure-details');
+Route::prefix('services')->group(function () {
+    Route::middleware('auth.toast')->group(function () {
+        Route::resource('flights', FlightController::class)
+            ->only('store');
+        Route::resource('hotel-reservations', HotelReservationController::class)
+            ->only('store');
+        Route::resource('visa', VisaController::class)
+            ->only('store');
+        Route::resource('travel-insurances', TravelInsuranceController::class)
+            ->only('store');
+    });
+    Route::resource('flights', FlightController::class)
+        ->only('index');
+    Route::resource('hotel-reservations', HotelReservationController::class)
+        ->only('index');
+    Route::resource('visa', VisaController::class)
+        ->only('index');
+    Route::resource('travel-insurances', TravelInsuranceController::class)
+        ->only('index');
+});
 
-Route::get('/flight-search-result', function () {
-    return view('components.pages.flight.flight-search-result');
-})->name('flight-search-result');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])
+        ->name('login');
+    Route::post('/login', [AuthController::class, 'postLogin'])
+        ->name('login.post');
+    Route::get('/sign-up', [AuthController::class, 'signUp'])
+        ->name('sign-up');
+    Route::post('sign-up', [AuthController::class, 'postSignUp'])
+        ->name('sign-up.post');
+});
 
-Route::get('/flight-booking-submission', function () {
-    return view('components.pages.flight.flight-booking-submission');
-})->name('flight-booking-submission');
+Route::middleware('auth')->group(function () {
+    Route::get('profile', [ProfileController::class, 'index'])
+        ->name('profile');
 
-Route::get('/hotels', function () {
-    return view('components.pages.hotel.hotels');
-})->name('hotels');
+    Route::get('logout', [AuthController::class, 'logout'])
+        ->name('logout');
+});
 
-Route::get('/hotel-details', function () {
-    return view('components.pages.hotel.hotel-details');
-})->name('hotel-details');
+Route::get('contact-us', [HomeController::class, 'contactUs'])
+    ->name('contact-us');
+Route::post('contact-us', [HomeController::class, 'postContact'])
+    ->name('contact-us.post');
 
-Route::get('/visa-info', function () {
-    return view('components.pages.visa.visa-info');
-})->name('visa-info');
-
-Route::get('/visa-details', function () {
-    return view('components.pages.visa.visa-details');
-})->name('visa-details');
-
-Route::get('/visa-application', function () {
-    return view('components.pages.visa.visa-application');
-})->name('visa-application');
-
-Route::get('/travel-insurance', function () {
-    return view('components.pages.travel-insurance.insurance');
-})->name('travel-insurance');
-
-Route::get('/dashboard', function () {
-    return view('components.pages.packages.dashboard');
-})->name('dashboard');
-
-Route::get('/package-details', function () {
-    return view('components.pages.packages.package-details');
-})->name('package-details');
-
-
-Route::get('/login', function () {
-    return view('components.pages.auth.login');
-})->name('login');
-
-Route::get('/sign-up', function () {
-    return view('components.pages.auth.sign-up');
-})->name('sign-up');
-
-Route::get('/contact-us', function () {
-    return view('components.pages.contact-us');
-})->name('contact-us');
-
-Route::get('/about-us', function () {
-    return view('components.pages.about-us');
-})->name('about-us');
-
+Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');
+Route::get('change-lang', [HomeController::class, 'changeLanguage'])
+    ->name('change-lang');

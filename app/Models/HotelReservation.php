@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HotelReservation extends Model
 {
-    use HasFactory, SoftDeletes;
-
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -18,23 +17,16 @@ class HotelReservation extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'hotel_name',
         'check_in',
         'check_out',
         'number_of_guests',
         'status',
         'user_id',
-        'hotel_id',
     ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
-
-    public function hotel(): BelongsTo
-    {
-        return $this->belongsTo(Hotel::class);
-    }
-
-
 }

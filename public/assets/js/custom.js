@@ -59,7 +59,7 @@
 
     // Service Slider
     $('.promotional_tour_slider').owlCarousel({
-        loop: true,
+        loop: false,
         dots: true,
         autoplayHoverPause: true,
         autoplay: true,
@@ -231,7 +231,7 @@
             }
         }
     });
-    // Home Four Popular Slider 
+    // Home Four Popular Slider
         $('.popular_tours_four_slider').owlCarousel({
         loop: true,
         dots: false,
@@ -259,7 +259,7 @@
             }
         }
     });
-    // Home Four Top Details Slider 
+    // Home Four Top Details Slider
         $('.top_details_four_slider').owlCarousel({
         loop: true,
         dots: false,
@@ -287,7 +287,7 @@
             }
         }
     });
-    // Home Four Testimonials Slider 
+    // Home Four Testimonials Slider
         $('.testimonials_slider_four_wrapper').owlCarousel({
         loop: true,
         dots: true,

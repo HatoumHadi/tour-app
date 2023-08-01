@@ -13,6 +13,6 @@ class AdventureSeeder extends Seeder
      */
     public function run(): void
     {
-        Adventure::factory(3)->create();
+        Adventure::factory(10)->create();
     }
 }

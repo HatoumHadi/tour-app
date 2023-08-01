@@ -1,5 +1,8 @@
 <?php
 
+use App\Filament\Pages\Login;
+use App\Http\Middleware\EnglishLocale;
+use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Http\Middleware\MirrorConfigToSubpackages;
@@ -61,7 +64,7 @@ return [
     |
     */
 
-    'home_url' => '/',
+    'home_url' => '/admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -87,7 +90,7 @@ return [
     'auth' => [
         'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
         'pages' => [
-            'login' => \Filament\Http\Livewire\Auth\Login::class,
+            'login' => Login::class,
         ],
     ],
 
@@ -169,7 +172,7 @@ return [
     |
     */
 
-    'dark_mode' => false,
+    'dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -278,7 +281,7 @@ return [
     |
     */
 
-    'default_avatar_provider' => \Filament\AvatarProviders\UiAvatarsProvider::class,
+    'default_avatar_provider' => UiAvatarsProvider::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -322,6 +325,7 @@ return [
             Authenticate::class,
         ],
         'base' => [
+            EnglishLocale::class,
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
