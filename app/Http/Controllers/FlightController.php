@@ -20,7 +20,7 @@ class FlightController extends Controller
         $data['user_id'] = auth()->id();
         Flight::create($data);
         return redirect()->back()->with([
-            'message' => 'Flight request submitted successfully'
+            'message' => __('translations.flight-request-successful')
         ]);
     }
 }

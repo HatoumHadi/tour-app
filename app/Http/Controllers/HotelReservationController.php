@@ -20,7 +20,7 @@ class HotelReservationController extends Controller
         $data['user_id'] = auth()->id();
         HotelReservation::create($data);
         return redirect()->back()->with([
-            'message' => 'Hotel reservation request submitted successfully'
+            'message' => __('translations.hotel-reservation-request-successful')
         ]);
     }
 }

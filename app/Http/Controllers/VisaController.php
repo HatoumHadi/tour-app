@@ -20,7 +20,7 @@ class VisaController extends Controller
         $data['user_id'] = auth()->id();
         Visa::create($data);
         return redirect()->back()->with([
-            'message' => 'Visa application request submitted successfully'
+            'message' => __('translations.visa-request-successful')
         ]);
     }
 }

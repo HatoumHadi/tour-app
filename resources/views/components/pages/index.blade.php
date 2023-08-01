@@ -6,19 +6,16 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <div class="banner_one_text">
-                            <h1>Explore the world together</h1>
-                            <h3>Find awesome flights, hotel, tour, car and packages</h3>
+                            <h1>{{ __('translations.title') }}</h1>
+                            <h3>{{ __('translations.subtitle') }}</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        @auth()
-            <div>
-                <x-request.card/>
-            </div>
-        @endauth
-
+        <div>
+            <x-request.card/>
+        </div>
 
         <!--Promotional Tours Area -->
         <section id="promotional_tours" class="section_padding_top">
@@ -27,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="section_heading_center">
-                            <h2>Popular adventures</h2>
+                            <h2>{{ __('translations.adventures-carousel-title') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -53,7 +50,7 @@
                 </div>
 
                 <div class="load_more_flight">
-                    <a href="{{route('adventures.index')}}" class="btn btn_theme btn_md"> View all</a>
+                    <a href="{{route('adventures.index')}}" class="btn btn_theme btn_md">{{ __('translations.view-all') }}</a>
                 </div>
 
             </div>
@@ -66,7 +63,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="section_heading_center">
-                            <h2>Featured packages</h2>
+                            <h2>{{ __('translations.packages-carousel-title') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -79,8 +76,7 @@
                                 <div class="offer_area_content">
                                     <h2>{{$package->title}}</h2>
                                     <p>{{$package->description}}</p>
-                                    <a href="{{ route('packages.show', $package->id) }}" class="btn btn_theme btn_md">View
-                                        package</a>
+                                    <a href="{{ route('packages.show', $package->id) }}" class="btn btn_theme btn_md">{{ __('translations.view-package') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +84,7 @@
                 </div>
 
                 <div class="load_more_flight">
-                    <a href="{{route('packages.index')}}" class="btn btn_theme btn_md"> View all</a>
+                    <a href="{{route('packages.index')}}" class="btn btn_theme btn_md">{{ __('translations.view-all') }}</a>
                 </div>
             </div>
         </section>

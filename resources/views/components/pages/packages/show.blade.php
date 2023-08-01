@@ -6,12 +6,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Package details</h2>
+                            <h2>{{ $package->title }}</h2>
                             <ul>
-                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('home')}}">{{ __('translations.home') }}</a></li>
                                 <li><span><i class="fas fa-circle"></i></span><a
-                                        href="{{route('packages.index')}}">Package</a></li>
-                                <li><span><i class="fas fa-circle"></i></span>Package details</li>
+                                        href="{{route('packages.index')}}">{{ __('translations.packages') }}</a></li>
+                                <li><span><i class="fas fa-circle"></i></span>{{ $package->title }}</li>
                             </ul>
                         </div>
                     </div>

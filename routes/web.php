@@ -33,7 +33,7 @@ Route::resource('packages', PackageController::class)
     ->only('index', 'show');
 
 Route::prefix('services')->group(function () {
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth.toast')->group(function () {
         Route::resource('flights', FlightController::class)
             ->only('store');
         Route::resource('hotel-reservations', HotelReservationController::class)
@@ -78,9 +78,5 @@ Route::post('contact-us', [HomeController::class, 'postContact'])
     ->name('contact-us.post');
 
 Route::get('about-us', [HomeController::class, 'aboutUs'])->name('about-us');
-
-Route::get('test', function () {
-    return redirect()->back()->with([
-        'message' => 'test'
-    ]);
-})->name('test');
+Route::get('change-lang', [HomeController::class, 'changeLanguage'])
+    ->name('change-lang');

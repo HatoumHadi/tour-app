@@ -56,4 +56,14 @@ class HotelReservationRequest extends FormRequest
         ];
     }
 
+    public function attributes(): array
+    {
+        return [
+            'hotel_name' => __('translations.hotel-name'),
+            'check_in' => __('translations.check-in'),
+            'check_out' => __('translations.check-out'),
+            'number_of_guests' => __('translations.number-of-guests'),
+            'status' => __('translations.status'),
+        ];
+    }
 }

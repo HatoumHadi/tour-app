@@ -10,8 +10,8 @@
                         <div class="common_bannner_text">
                             <h2>{{ $getValue('title') }}</h2>
                             <ul>
-                                <li><a href="{{route('home')}}">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span> About Us</li>
+                                <li><a href="{{route('home')}}">{{ __('translations.home') }}</a></li>
+                                <li><span><i class="fas fa-circle"></i></span>{{ __('translations.about-us') }}</li>
                             </ul>
                         </div>
                     </div>

@@ -53,4 +53,15 @@ class VisaRequest extends FormRequest
         session()->flash('previous-visa');
         return parent::getValidatorInstance();
     }
+
+    public function attributes(): array
+    {
+        return [
+            'passport_number' => __('translations.passport-number'),
+            'visa_country_id' => __('translations.visa-country'),
+            'nationality_country_id' => __('translations.nationality-country'),
+            'application_date' => __('translations.application-date'),
+            'status' => __('translations.status')
+        ];
+    }
 }

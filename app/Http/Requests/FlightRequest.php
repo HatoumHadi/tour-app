@@ -40,16 +40,29 @@ class FlightRequest extends FormRequest
             ],
             'departure_time' => [
                 'required',
-                'date'
+                'date',
+                'before:arrival_time'
             ],
             'arrival_time' => [
                 'required',
-                'date'
+                'date',
+                'after:departure_time'
             ],
             'status' => [
                 'required',
                 new Enum(FlightStatus::class)
             ]
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'from' => __('translations.from'),
+            'to' => __('translations.to'),
+            'departure_time' => __('translations.departure-time'),
+            'arrival_time' => __('translations.arrival-time'),
+            'status' => __('translations.status'),
         ];
     }
 }

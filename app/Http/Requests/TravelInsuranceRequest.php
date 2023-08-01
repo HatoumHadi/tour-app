@@ -51,4 +51,15 @@ class TravelInsuranceRequest extends FormRequest
             ]
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'plan_name' => __('translations.plan-name'),
+            'policy_number' => __('translations.policy-number'),
+            'coverage_start_date' => __('translations.coverage-start-date'),
+            'coverage_end_date' => __('translations.coverage-end-date'),
+            'insurance_company' => __('translations.insurance-company')
+        ];
+    }
 }

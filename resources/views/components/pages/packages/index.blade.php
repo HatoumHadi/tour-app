@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Packages</h2>
+                            <h2>{{ __('translations.packages') }}</h2>
                             <ul>
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span>Packages</li>
+                                <li><a href="{{ route('home') }}">{{ __('translations.home') }}</a></li>
+                                <li><span><i class="fas fa-circle"></i></span>{{ __('translations.packages') }}</li>
                             </ul>
                         </div>
                     </div>

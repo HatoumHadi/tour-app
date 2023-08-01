@@ -20,7 +20,7 @@ class TravelInsuranceController extends Controller
         $data['user_id'] = auth()->id();
         TravelInsurance::create($data);
         return redirect()->back()->with([
-            'message' => 'Travel insurance request submitted successfully'
+            'message' => __('translation.travel-insurance-request-successful')
         ]);
     }
 }

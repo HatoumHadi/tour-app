@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ContentManagement;
 
 use App\Models\Language;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
@@ -31,6 +32,11 @@ class LanguageResource extends Resource
                     ->required(),
                 TextInput::make('code')
                     ->required(),
+                Select::make('direction')
+                    ->options([
+                        'ltr' => 'Left to right',
+                        'rtl' => 'Right to left'
+                    ])
             ]);
     }
 
@@ -40,6 +46,7 @@ class LanguageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('code'),
+                Tables\Columns\TextColumn::make('direction')
             ])
             ->filters([
                 //

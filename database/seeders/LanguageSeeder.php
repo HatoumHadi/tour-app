@@ -18,6 +18,7 @@ class LanguageSeeder extends Seeder
                 'en' => 'English',
                 'ar' => 'الانكليزية',
             ],
+            'direction' => 'ltr',
             'code' => 'en'
         ]);
         Language::create([
@@ -25,6 +26,7 @@ class LanguageSeeder extends Seeder
                 'en' => 'Arabic',
                 'ar' => 'العربية'
             ],
+            'direction' => 'rtl',
             'code' => 'ar'
         ]);
     }

@@ -8,8 +8,8 @@
                         <div class="common_bannner_text">
                             <h2>{{ $adventure->title }}</h2>
                             <ul>
-                                <li><a href="{{route('home')}}">Home</a></li>
-                                <li><a href="{{route('adventures.index')}}"><span><i class="fas fa-circle"></i></span>Adventures</a>
+                                <li><a href="{{route('home')}}">{{ __('translations.home') }}</a></li>
+                                <li><a href="{{route('adventures.index')}}"><span><i class="fas fa-circle"></i></span>{{ __('translations.adventures') }}</a>
                                 </li>
                                 <li><span><i class="fas fa-circle"></i></span>{{ $adventure->title }}</li>
                             </ul>

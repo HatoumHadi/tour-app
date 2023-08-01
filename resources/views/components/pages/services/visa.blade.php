@@ -6,10 +6,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Visa Application Request</h2>
+                            <h2>{{ __('translations.requests.visa') }}</h2>
                             <ul>
-                                <li><a href="{{route('home')}}">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span> Visa application request</li>
+                                <li><a href="{{route('home')}}">{{ __('translations.home') }}</a></li>
+                                <li><span><i class="fas fa-circle"></i></span>{{ __('translations.requests.visa') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="col-lg-12">
                         <div class="tou_booking_form_Wrapper">
                             <div class="booking_tour_form">
-                                <h3 class="heading_theme">Visa application request</h3>
+                                <h3 class="heading_theme">{{ __('translations.requests.visa') }}</h3>
                                 <x-request.tabs.visa class="tour_booking_form_box"/>
                             </div>
                         </div>

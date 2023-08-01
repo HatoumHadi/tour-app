@@ -6,10 +6,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="common_bannner_text">
-                            <h2>Contact</h2>
+                            <h2>{{ __('translations.contact-us') }}</h2>
                             <ul>
-                                <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><span><i class="fas fa-circle"></i></span>Contact Us</li>
+                                <li><a href="{{ route('home') }}">{{ __('translations.home') }}</a></li>
+                                <li><span><i class="fas fa-circle"></i></span>{{ __('translations.contact-us') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="section_heading_center">
-                            <h2>Contact with us</h2>
+                            <h2>{{ __('translations.contact-us') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="contact_left_top_heading">
-                                <h2>Do you have any query? Contact with us to get any support.</h2>
-                                <h3>Leave us a message</h3>
+                                <h2>{{ __('translations.contact-us-title') }}</h2>
+                                <h3>{{ __('translations.contact-us-subtitle') }}</h3>
                             </div>
                             <div class="contact_form_two">
                                 <form action="{{ route('contact-us.post') }}" method="post" id="contact_form_content">
@@ -42,7 +42,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control bg_input" name="first_name"
                                                        @class(['border-danger border-2 border' => $errors->has('first_name')])
-                                                       value="{{ old('first_name') }}" placeholder="First name*">
+                                                       value="{{ old('first_name') }}"
+                                                       placeholder="{{ __('translations.first-name') }}*">
                                                 @error('first_name')
                                                 <div class="form-text text-danger">
                                                     {{ $message }}
@@ -54,7 +55,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control bg_input" name="last_name"
                                                        @class(['border-danger border-2 border' => $errors->has('last_name')])
-                                                       value="{{ old('last_name') }}" placeholder="Last name*">
+                                                       value="{{ old('last_name') }}"
+                                                       placeholder="{{ __('translations.last-name') }}*">
                                                 @error('last_name')
                                                 <div class="form-text text-danger">
                                                     {{ $message }}
@@ -66,7 +68,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control bg_input" name="email"
                                                        @class(['border-danger border-2 border' => $errors->has('email')])
-                                                       value="{{ old('email') }}" placeholder="Email address (Optional)">
+                                                       value="{{ old('email') }}"
+                                                       placeholder="{{ __('translations.email') }} ({{ __('translations.optional') }})">
                                                 @error('email')
                                                 <div class="form-text text-danger">
                                                     {{ $message }}
@@ -78,7 +81,8 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control bg_input" name="mobile_number"
                                                        @class(['border-danger border-2 border' => $errors->has('mobile_number')])
-                                                       value="{{ old('mobile_number') }}" placeholder="Mobile number*">
+                                                       value="{{ old('mobile_number') }}"
+                                                       placeholder="{{ __('translations.mobile-number') }}*">
                                                 @error('mobile_number')
                                                 <div class="form-text text-danger">
                                                     {{ $message }}
@@ -89,8 +93,8 @@
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                             <textarea class="form-control bg_input" rows="5" name="message"
-                                                      @class(['border-danger border-2 border' => $errors->has('mobile_number')])
-                                                      placeholder="Message">{{ old('message') }}</textarea>
+                                                      @class(['border-danger border-2 border' => $errors->has('message')])
+                                                      placeholder="{{ __('translations.message') }}">{{ old('message') }}</textarea>
                                                 @error('message')
                                                 <div class="form-text text-danger">
                                                     {{ $message }}
@@ -100,7 +104,8 @@
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn_theme btn_md">Send message</button>
+                                                <button type="submit"
+                                                        class="btn btn_theme btn_md">{{ __('translations.send-message') }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -109,19 +114,19 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="contact_two_left_wrapper">
-                                <h3>Contact details</h3>
+                                <h3>{{ __('translations.contact-details') }}</h3>
                                 <div class="contact_details_wrapper">
                                     <div class="contact_detais_item">
-                                        <h4>Help line</h4>
-{{--                                        <h3><a href="tel:+01-234-567-890">{{$generalInfo->phone}}</a></h3>--}}
+                                        <h4>{{ __('translations.help-line') }}</h4>
+                                        <h3><a href="tel:{{ $contactPhoneNumber }}">{{ $contactPhoneNumber }}</a></h3>
                                     </div>
                                     <div class="contact_detais_item">
-                                        <h4>Support mail</h4>
-{{--                                        <h3><a href="mailto:support@domain.com">{{$generalInfo->email}}</a></h3>--}}
+                                        <h4>{{ __('translations.support-mail') }}</h4>
+                                        <h3><a href="mailto:{{ $contactEmail }}">{{ $contactEmail }}</a></h3>
                                     </div>
                                     <div class="contact_detais_item">
-                                        <h4>Contact hour</h4>
-                                        <h3>Mon-Sun : 24 hours</h3>
+                                        <h4>{{ __('translatiosn.contact-hours') }}</h4>
+                                        <h3>{{ __('translations.contact-hours-value') }}</h3>
                                     </div>
                                     <div class="contact_map_area">
                                         <iframe

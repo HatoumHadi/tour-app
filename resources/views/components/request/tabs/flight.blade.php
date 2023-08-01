@@ -6,29 +6,36 @@
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div
                     class="flight_Search_boxed" @style(['border-style: dashed; border-color: #dc3545' => $errors->has(['from'])])>
-                    <p>From</p>
-                    <input type="text" name="from" placeholder="From..." value="{{ old('from') }}">
+                    <p>{{ __('translations.from') }}</p>
+                    <input type="text" name="from" placeholder="{{ __('translations.from') }}" value="{{ old('from') }}">
                     <div class="plan_icon_posation">
                         <i class="fas fa-plane-departure"></i>
                     </div>
+                    @if($direction === \App\Definitions\LanguageDirection::RTL->value)
+                        <div class="range_plan">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    @endif
                     @error('from')
-                    <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger text-wrap">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div
                     class="flight_Search_boxed" @style(['border-style: dashed; border-color: #dc3545' => $errors->has(['to'])])>
-                    <p>To</p>
-                    <input type="text" name="to" placeholder="To..." value="{{ old('to') }}">
+                    <p>{{ __('translations.to') }}</p>
+                    <input type="text" name="to" placeholder="{{ __('translations.to') }}" value="{{ old('to') }}">
                     <div class="plan_icon_posation">
                         <i class="fas fa-plane-arrival"></i>
                     </div>
+                    @if($direction === \App\Definitions\LanguageDirection::LTR->value)
                     <div class="range_plan">
                         <i class="fas fa-exchange-alt"></i>
                     </div>
+                    @endif
                     @error('to')
-                    <span class="text-danger">{{ $message }}</span>
+                    <span class="text-danger text-wrap">{{ $message }}</span>
                     @enderror
                 </div>
             </div>
@@ -37,11 +44,11 @@
                     class="form_search_date" @style(['border-radius: 10px; border-style: dashed; border-color: #dc3545' => $errors->has(['departure_time'])])>
                     <div class="flight_Search_boxed date_flex_area">
                         <div class="Journey_date">
-                            <p>Departure time</p>
-                            <input type="date" name="departure_time" placeholder="Departure time..."
+                            <p>{{ __('translations.departure-time') }}</p>
+                            <input type="date" name="departure_time" placeholder="{{ __('translations.departure-time') }}"
                                    value="{{ old('departure_time') }}">
                             @error('departure_time')
-                            <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger text-wrap">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -52,11 +59,11 @@
                     class="form_search_date" @style(['border-radius: 10px; border-style: dashed; border-color: #dc3545' => $errors->has(['arrival_time'])])>
                     <div class="flight_Search_boxed date_flex_area">
                         <div class="Journey_date">
-                            <p>Arrival time</p>
-                            <input type="date" name="arrival_time" placeholder="Arrival time..."
+                            <p>{{ __('translations.arrival-time') }}</p>
+                            <input type="date" name="arrival_time" placeholder="{{ __('translations.arrival-time') }}"
                                    value="{{ old('arrival_time') }}">
                             @error('arrival_time')
-                            <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger text-wrap">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -67,48 +74,48 @@
                     class="form_search_date" @style(['height: 100%', 'border-radius: 10px; border-style: dashed; border-color: #dc3545' => $errors->has(['status'])])>
                     <div class="flight_Search_boxed date_flex_area" style="height: 100%">
                         <div class="Journey_date" style="width: 100%;">
-                            <p>Status</p>
+                            <p>{{ __('translations.status') }}</p>
                             <select name="status" id=""
                                     style="outline: none;width: 100%;background: transparent;border: transparent;font-size: 22px;">
-                                <option value="">Select status</option>
+                                <option value="">{{ __('translations.select-status') }}</option>
                                 <option
                                     @selected(old('status') == FlightStatus::SCHEDULED->value) value="scheduled">
-                                    Scheduled
+                                    {{ __('translations.scheduled') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::DELAYED->value) value="delayed">
-                                    Delayed
+                                    {{ __('translations.delayed') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::DEPARTED->value) value="departed">
-                                    Departed
+                                    {{ __('translations.departed') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::DEPARTED->value) value="in-air">
-                                    In air
+                                    {{ __('translations.in-air') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::LANDED->value) value="landed">
-                                    Landed
+                                    {{ __('translations.landed') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::ARRIVED->value) value="arrived">
-                                    Arrived
+                                    {{ __('translations.arrived') }}
                                 </option>
                                 <option
                                     @selected(old('status') == FlightStatus::CANCELLED->value) value="cancelled">
-                                    Cancelled
+                                    {{ __('translations.cancelled') }}
                                 </option>
                             </select>
                             @error('status')
-                            <span class="text-danger">{{ $message }}</span>
+                            <span class="text-danger text-wrap">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                 </div>
             </div>
             <div class="top_form_search_button">
-                <button type="submit" class="btn btn_theme btn_md">Submit request</button>
+                <button type="submit" class="btn btn_theme btn_md">{{ __('translations.submit-request') }}</button>
             </div>
         </div>
     </form>

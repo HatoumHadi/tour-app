@@ -2,18 +2,20 @@
 
 namespace App\View\Components\Request\Tabs;
 
+use App\Models\Language;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class Flight extends Component
 {
+    public string $direction;
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        $this->direction = Language::whereCode(app()->getLocale())->first()->direction;
     }
 
     /**
