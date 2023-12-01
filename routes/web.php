@@ -34,23 +34,23 @@ Route::resource('packages', PackageController::class)
 
 Route::prefix('services')->group(function () {
     Route::middleware('auth.toast')->group(function () {
-        Route::resource('flights', FlightController::class)
-            ->only('store');
+//        Route::resource('flights', FlightController::class)
+//            ->only('store');
         Route::resource('hotel-reservations', HotelReservationController::class)
             ->only('store');
-        Route::resource('visa', VisaController::class)
-            ->only('store');
-        Route::resource('travel-insurances', TravelInsuranceController::class)
-            ->only('store');
+//        Route::resource('visa', VisaController::class)
+//            ->only('store');
+//        Route::resource('travel-insurances', TravelInsuranceController::class)
+//            ->only('store');
     });
-    Route::resource('flights', FlightController::class)
-        ->only('index');
+//    Route::resource('flights', FlightController::class)
+//        ->only('index');
     Route::resource('hotel-reservations', HotelReservationController::class)
         ->only('index');
-    Route::resource('visa', VisaController::class)
-        ->only('index');
-    Route::resource('travel-insurances', TravelInsuranceController::class)
-        ->only('index');
+//    Route::resource('visa', VisaController::class)
+//        ->only('index');
+//    Route::resource('travel-insurances', TravelInsuranceController::class)
+//        ->only('index');
 });
 
 Route::middleware('guest')->group(function () {

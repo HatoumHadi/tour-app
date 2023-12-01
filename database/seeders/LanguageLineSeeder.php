@@ -160,8 +160,8 @@ class LanguageLineSeeder extends Seeder
             'group' => 'translations',
             'key' => 'subtitle',
             'text' => [
-                'en' => 'Find awesome flights, hotel, tour, car, and packages',
-                'ar' => 'ابحث عن رحلات طيران رائعة وفندق وجولة وسيارة وباقات'
+                'en' => 'Find awesome hotel, tour and packages',
+                'ar' => 'ابحث عن فندق وجولة وعروض رائعة'
             ]
         ]);
         LanguageLine::create([
@@ -264,48 +264,48 @@ class LanguageLineSeeder extends Seeder
             'group' => 'translations',
             'key' => 'footer.forth-column.first-label',
             'text' => [
-                'en' => 'Chicago',
-                'ar' => 'شيكاغو'
+                'en' => 'Byblos',
+                'ar' => 'جبيل'
             ]
         ]);
         LanguageLine::create([
             'group' => 'translations',
             'key' => 'footer.forth-column.second-label',
             'text' => [
-                'en' => 'New York',
-                'ar' => 'نيويورك'
+                'en' => 'Saida',
+                'ar' => 'صيدا'
             ]
         ]);
         LanguageLine::create([
             'group' => 'translations',
             'key' => 'footer.forth-column.third-label',
             'text' => [
-                'en' => 'San Francisco',
-                'ar' => 'سان فرانسيسكو'
+                'en' => 'Baalbek',
+                'ar' => 'بعلبك'
             ]
         ]);
         LanguageLine::create([
             'group' => 'translations',
             'key' => 'footer.forth-column.forth-label',
             'text' => [
-                'en' => 'California',
-                'ar' => 'كاليفورنيا'
+                'en' => 'Tripoli',
+                'ar' => 'طرابلس'
             ]
         ]);
         LanguageLine::create([
             'group' => 'translations',
             'key' => 'footer.forth-column.fifth-label',
             'text' => [
-                'en' => 'Ohio',
-                'ar' => 'أوهايو'
+                'en' => 'Tannourine',
+                'ar' => 'تنورين'
             ]
         ]);
         LanguageLine::create([
             'group' => 'translations',
             'key' => 'footer.forth-column.sixth-label',
             'text' => [
-                'en' => 'Alaska',
-                'ar' => 'ألاسكا'
+                'en' => 'Jounieh',
+                'ar' => 'جونيه'
             ]
         ]);
         LanguageLine::create([

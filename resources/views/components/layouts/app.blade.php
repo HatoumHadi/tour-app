@@ -205,28 +205,29 @@
                                     {{ __('translations.home') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#"
-                                   class="nav-link" @class(['active' => request()->routeIs('flights.index', 'hotel-reservations.index', 'visa.index', 'travel-insurances.index')])>
-                                    {{ __('translations.services') }}
-                                    <i class="fas fa-angle-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
+{{--                            <li class="nav-item">--}}
+{{--                                <a href="#"--}}
+{{--                                   class="nav-link" @class(['active' => request()->routeIs('flights.index', 'hotel-reservations.index', 'visa.index', 'travel-insurances.index')])>--}}
+{{--                                    {{ __('translations.services') }}--}}
+{{--                                    <i class="fas fa-angle-down"></i>--}}
+{{--                                </a>--}}
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a href="{{route('flights.index')}}">{{ __('translations.requests.flight') }}</a>--}}
+{{--                                    </li>--}}
                                     <li class="nav-item">
-                                        <a href="{{route('flights.index')}}">{{ __('translations.requests.flight') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('hotel-reservations.index')}}">{{ __('translations.requests.hotel-reservation') }}</a>
+                                        <a href="{{route('hotel-reservations.index')}}"
+                                           @class(['active' => request()->routeIs('hotel-reservations.index')]) class="nav-link">{{ __('translations.hotel-reservation') }}</a>
 
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('visa.index')}}">{{ __('translations.requests.visa') }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('travel-insurances.index')}}">{{ __('translations.requests.travel-insurance') }}</a>
-                                    </li>
-                                </ul>
-                            </li>
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a href="{{route('visa.index')}}">{{ __('translations.requests.visa') }}</a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="nav-item">--}}
+{{--                                        <a href="{{route('travel-insurances.index')}}">{{ __('translations.requests.travel-insurance') }}</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
 
                             <li class="nav-item">
                                 <a href="{{route('packages.index')}}"

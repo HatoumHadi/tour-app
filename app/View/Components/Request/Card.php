@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class Card extends Component
 {
     public bool $previousFlight = false;
-    public bool $previousHotelReservation = false;
+    public bool $previousHotelReservation = true;
     public bool $previousVisa = false;
     public bool $previousTravelInsurance = false;
 
@@ -19,7 +19,7 @@ class Card extends Component
     public function __construct()
     {
         $this->previousFlight = session()->get('previous-flight', false);
-        $this->previousHotelReservation = session()->get('previous-hotel-reservation', false);
+        $this->previousHotelReservation = session()->get('previous-hotel-reservation', true);
         $this->previousVisa = session()->get('previous-visa', false);
         $this->previousTravelInsurance = session()->get('previous-travel-insurance', false);
     }

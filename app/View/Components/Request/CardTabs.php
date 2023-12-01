@@ -13,7 +13,7 @@ class CardTabs extends Component
      */
     public function __construct(
         public bool $previousFlight = false,
-        public bool $previousHotelReservation = false,
+        public bool $previousHotelReservation = true,
         public bool $previousTravelInsurance = false,
         public bool $previousVisa = false
     )

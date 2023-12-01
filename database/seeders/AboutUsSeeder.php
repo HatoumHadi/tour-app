@@ -30,7 +30,7 @@ class AboutUsSeeder extends Seeder
         ]);
         AboutUs::create([
             'key' => 'intro-description',
-            'value' => 'We Are The World Best Travel Agency Company Since 2000',
+            'value' => 'We Are The World Best Transport insurance agency Company Since 2000',
             'type' => AboutUsType::TEXT,
         ]);
         AboutUs::create([

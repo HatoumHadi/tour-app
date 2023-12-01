@@ -129,8 +129,7 @@
                                         <h3>{{ __('translations.contact-hours-value') }}</h3>
                                     </div>
                                     <div class="contact_map_area">
-                                        <iframe
-                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.6962663570607!2d89.56355961427838!3d22.813715829827952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff901efac79b59%3A0x5be01a1bc0dc7eba!2sAnd+IT!5e0!3m2!1sen!2sbd!4v1557901943656!5m2!1sen!2sbd"></iframe>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13257.933035636695!2d35.493178!3d33.8256459!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f19894e84f24b%3A0xe5592956cfaa421c!2sBeirut%20International%20Airport!5e0!3m2!1sen!2slb!4v1693635532462!5m2!1sen!2slb" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
                             </div>

@@ -19,11 +19,11 @@ class SettingSeeder extends Seeder
         ]);
         Setting::create([
             'key' => SettingKeys::CONTACT_EMAIL,
-            'value' => 'info@travel-agency.lcoal',
+            'value' => 'hady_hatoum@hotmail.com',
         ]);
         Setting::create([
             'key' => SettingKeys::CONTACT_PHONE_NUMBER,
-            'value' => '+1 905 961 9420',
+            'value' => '+961 76032297',
         ]);
         Setting::create([
             'key' => SettingKeys::INSTAGRAM_LINK,
